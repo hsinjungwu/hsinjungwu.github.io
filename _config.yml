@@ -1,0 +1,42 @@
+# Site settings
+title: "@hjwu" 
+brief-intro: "喜歡台語、客語的台客胖子"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://hsinjungwu.github.io"
+
+permalink: /:year-:month-:day-:title/
+
+# other links
+twitter_username: hjwu
+github_username:  hsinjungwu
+email: hsinjungwu@gmail.com
+linkedIn_username: hsinjungwu
+
+description_footer: 前面的世界會更精彩。
+
+# comments
+disqus_shortname: hjwu
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# url
+category_dir: category/
+tag_dir: tag/
+
+# excerpt
+excerpt_separator: "<!-- more -->"
+
+# paginate
+paginate: 6
+
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+  - jemoji
+
+katex_version: 0.7.1
