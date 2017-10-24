@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "重啟"
-date:   2016-02-28 19:51:54
+date:   2017-02-28 19:51:54
 categories: Jekyll
 tags:
   - Jekyll
@@ -17,6 +17,7 @@ tags:
 <!-- more -->
 
 ## 改頭換面
+
 
 部落格上方的標語 **流浪的種子** 與 **人生就是無限的延遲** 來自於 [伍佰](http://wubai.com) 新歌「種子」
 

@@ -28,15 +28,18 @@ kramdown:
 category_dir: category/
 tag_dir: tag/
 
+timezone: Asia/Taipei
+
 # excerpt
 excerpt_separator: "<!-- more -->"
 
 # paginate
 paginate: 6
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-gist
   - jemoji
+  - jekyll-mentions
 
-katex_version: 0.7.1
+katex_version: 0.9.0
