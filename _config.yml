@@ -1,6 +1,6 @@
 # Site settings
 title: "@hjwu" 
-brief-intro: "喜歡台語、客語的台客胖子"
+brief-intro: "想靠程式、數學活在這世界上的胖子"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://hsinjungwu.github.io"
 
@@ -42,4 +42,4 @@ plugins:
   - jemoji
   - jekyll-mentions
 
-katex_version: 0.9.0
+katex_version: 0.9.0-alpha1
