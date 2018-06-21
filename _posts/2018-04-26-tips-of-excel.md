@@ -4,7 +4,7 @@ title:  "Tips of Excel"
 date:   2018-04-26 12:51:54
 categories: "Excel"
 tags:  
-  - "Excel-Array Fomula"
+  - "Excel-Array_Fomula"
   - "Excel-Indirect"
 ---
 

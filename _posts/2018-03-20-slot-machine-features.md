@@ -2,18 +2,18 @@
 layout: post
 title:  "Slot Machine Features"
 date:   2018-03-20 12:51:54
-categories: "Slot Design"
+categories: "Slot_Design"
 tags:
   - symbol
   - feature
   - wild
-  - "expanding wild"
-  - "sticky Wild"
-  - "shifting wild"
-  - "stacked wild"
-  - "transferring wild"
-  - "walking wild"
-  - "random wild"
+  - "expanding_wild"
+  - "sticky_wild"
+  - "shifting_wild"
+  - "stacked_wild"
+  - "transferring_wild"
+  - "walking_wild"
+  - "random_wild"
 ---
 
 * content
