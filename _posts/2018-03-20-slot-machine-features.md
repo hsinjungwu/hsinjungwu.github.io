@@ -7,13 +7,13 @@ tags:
   - symbol
   - feature
   - wild
-  - "expanding_wild"
-  - "sticky_wild"
-  - "shifting_wild"
-  - "stacked_wild"
-  - "transferring_wild"
-  - "walking_wild"
-  - "random_wild"
+  - expanding_wild
+  - sticky_wild
+  - shifting_wild
+  - stacked_wild
+  - transferring_wild
+  - walking_wild
+  - random_wild
 ---
 
 * content
@@ -41,7 +41,7 @@ tags:
 
 ![Black Knight](/files/wild_features/black_knight.PNG)
 
-+ [Zombiezee Money](http://www.vegasslotsonline.com/rival-gaming/zombiezee-money/)：觸發的條件是當某個滾輪上出現 `Wild`，它就會在該滾輪自動延展。
++ [Zombiezee Money](http://www.vegasslotsonline.com/rival-gaming/zombiezee-money/)：觸發的條件是當某個滾輪上出現 `Wild`，且 `Wild` 有貢獻得分時它就會在該滾輪自動延展。
 
 ![Zombiezee Money](/files/wild_features/zombiezee_money.PNG)
 
