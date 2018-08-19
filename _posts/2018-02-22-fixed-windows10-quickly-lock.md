@@ -2,7 +2,7 @@
 layout: post
 title:  "修正 Windows 10 閒置一分鐘後自動進入螢幕保護程式"
 date:   2018-02-22 12:07:54
-categories: "HowTo"
+categories: HowTo
 tags:
   - Windows10
 ---

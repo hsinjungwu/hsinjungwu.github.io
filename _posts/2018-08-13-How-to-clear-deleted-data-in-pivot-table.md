@@ -4,7 +4,7 @@ title:  "如何清除樞紐分析表的資料來源內被刪除項目"
 date:   2018-08-13 12:51:54
 categories: "HowTo"
 tags:  
-  - "Excel"
+  - Excel
 ---
 
 我用了前人寫的樞紐分析表，貼上資料後發現舊資料的內容在下拉選單裡還在。於是透過 Google 大神找到這篇 [Excel 2016 樞紐分析問題](http://forum.twbts.com/thread-19363-1-1.html)。雖然回答得很清楚，但我卻找得很痛苦，故此截圖給自己備份。

@@ -2,9 +2,9 @@
 layout: post
 title:  "Difference between const and readonly"
 date:   2018-05-15 12:51:54
-categories: "Syntax"
+categories: Syntax
 tags:  
-  - "C#"
+  - C#
 
 ---
 

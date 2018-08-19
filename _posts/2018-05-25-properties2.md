@@ -2,9 +2,9 @@
 layout: post
 title:  "讓我誤解的屬性設定(2)"
 date:   2018-05-25 12:51:54
-categories: "Syntax"
+categories: Syntax
 tags:  
-  - "C#"
+  - C#
 
 ---
 
