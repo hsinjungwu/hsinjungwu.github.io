@@ -2,7 +2,7 @@
 layout: post
 title:  "Tips of Excel"
 date:   2018-04-26 12:51:54
-categories: "Excel"
+categories: Excel
 tags:  
   - Excel-Array_Fomula
   - Excel-Indirect

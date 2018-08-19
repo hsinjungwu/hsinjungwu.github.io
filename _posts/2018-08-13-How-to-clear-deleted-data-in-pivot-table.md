@@ -2,7 +2,7 @@
 layout: post
 title:  "如何清除樞紐分析表的資料來源內被刪除項目"
 date:   2018-08-13 12:51:54
-categories: "HowTo"
+categories: HowTo
 tags:  
   - Excel
 ---

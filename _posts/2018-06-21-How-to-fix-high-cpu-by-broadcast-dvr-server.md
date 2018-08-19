@@ -2,7 +2,7 @@
 layout: post
 title:  "修正 Broadcast DVR Server 大量佔用記憶體"
 date:   2018-06-21 12:51:54
-categories: "HowTo"
+categories: HowTo
 tags:  
   - Broadcast_DVR_Server
   - Chrome

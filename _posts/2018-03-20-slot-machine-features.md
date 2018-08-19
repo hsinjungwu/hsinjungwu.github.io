@@ -2,7 +2,7 @@
 layout: post
 title:  "Slot Machine Features"
 date:   2018-03-20 12:51:54
-categories: "Slot_Design"
+categories: Slot_Design
 tags:
   - symbol
   - feature
