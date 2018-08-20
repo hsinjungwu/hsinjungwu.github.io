@@ -100,11 +100,11 @@ tags:
 
 基本上就是在滾輪轉完後，隨機將你的圖標甚至是整個滾輪變成 `Wild`。
 
-例如 [IMMORTAL ROMANCE](https://www.youtube.com/watch?v=OSLpLiA_lmI) 隨機將滾輪變成 *Expading Wild* 或是 [Great Griffin](http://www.vegasslotsonline.com/microgaming/great-griffin/) : 隨機將某些圖標變成 `Wild`。而 [What are Random Wild Symbols?](https://www.moneyslots.net/slots-articles/what-are-random-wild-symbols/) 也給了一些說明與例子。
+例如 [IMMORTAL ROMANCE](https://www.youtube.com/watch?v=OSLpLiA_lmI) 隨機將滾輪變成 *Expanding Wild* 或是 [Great Griffin](http://www.vegasslotsonline.com/microgaming/great-griffin/) : 隨機將某些圖標變成 `Wild`。而 [What are Random Wild Symbols?](https://www.moneyslots.net/slots-articles/what-are-random-wild-symbols/) 也給了一些說明與例子。
 
 ## 後記
 
-看完後，發現這些 *Wild Feature* 在遊戲中 彼此不一定是單獨存在，可以合成。另外也在試看兼試玩中發現更多從來沒想到的玩法，或是知道它但卻沒有想到可以應用它。看來設計遊戲這條路並不輕鬆，還得更努力再多看才行。
+看完後，發現這些 *Wild Feature* 在遊戲中彼此不一定是單獨存在，可以合成。另外也在試看兼試玩中發現更多從來沒想到的玩法，或是知道它但卻沒有想到可以應用它。看來設計遊戲這條路並不輕鬆，還得更努力再多看才行。
 
 ----
 
