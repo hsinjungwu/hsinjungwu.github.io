@@ -2,11 +2,8 @@
 layout: post
 title:  "Slot Machine Features"
 date:   2018-03-20 12:51:54
-categories: Slot_Design
+categories: SlotDesign
 tags:
-  - symbol
-  - feature
-  - wild
   - expanding_wild
   - sticky_wild
   - shifting_wild

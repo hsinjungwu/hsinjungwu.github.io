@@ -2,9 +2,9 @@
 layout: post
 title:  "修正 Windows 10 閒置一分鐘後自動進入螢幕保護程式"
 date:   2018-02-22 12:07:54
-categories: HowTo
 tags:
   - Windows10
+  - screensaver
 ---
 
 過完年回到公司，發現螢幕很快就變黑進入鎖定螢幕畫面。 :scream:　

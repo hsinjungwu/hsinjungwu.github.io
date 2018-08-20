@@ -15,7 +15,7 @@ linkedIn_username: hsinjungwu
 description_footer: 前面的世界會更精彩。
 
 # comments
-disqus_shortname: hjwu
+disqus_shortname: #hjwu
 
 # Build settings
 markdown: kramdown

@@ -2,7 +2,7 @@
 layout: post
 title:  "Elements Of Slot Design"
 date:   2017-12-26 12:07:54
-categories: Slot_Design
+categories: SlotDesign
 tags:
   - math
   - combination

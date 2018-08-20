@@ -2,7 +2,6 @@
 layout: post
 title:  "讓我誤解的屬性設定"
 date:   2018-03-13 12:07:54
-categories: Syntax
 tags:
   - C#
 ---

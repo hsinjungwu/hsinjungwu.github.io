@@ -2,7 +2,6 @@
 layout: post
 title:  "C# 中一個 & 跟兩個 & 的差異"
 date:   2018-03-02 12:07:54
-categories: Syntax
 tags:
   - C#
 ---

@@ -2,7 +2,6 @@
 layout: post
 title:  "重啟"
 date:   2017-02-28 19:51:54
-categories: Jekyll
 tags:
   - Jekyll
   - theme

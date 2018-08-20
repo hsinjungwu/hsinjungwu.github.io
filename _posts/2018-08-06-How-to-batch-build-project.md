@@ -2,10 +2,8 @@
 layout: post
 title:  "如何批次建置 DLL"
 date:   2018-08-06 12:51:54
-categories: "HowTo"
 tags:  
   - MSBuild
-  - Batch
 ---
 
 因為工作需要，寫了個批次執行檔。

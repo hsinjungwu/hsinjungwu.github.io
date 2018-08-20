@@ -2,13 +2,14 @@
 layout: post
 title:  "Difference between const and readonly"
 date:   2018-05-15 12:51:54
-categories: Syntax
 tags:  
   - C#
 
 ---
 
 又踩到了雷。 :bomb:
+
+<!-- more -->
 
 拿同事建置的共用工具 dll 來執行時跳錯，稍微看了一下發現是 `const` 與 `readonly` 搞的鬼。
 
