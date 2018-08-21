@@ -78,7 +78,9 @@ layout: default
                 </div>
                 <ul id="content-side" class="content-ul">
                     <li><a href="#similar_posts">Similar Posts</a></li>
+                    {% if site.disqus_shortname %}
                     <li><a href="#comments">Comments</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- 其他div框放到这里 -->
