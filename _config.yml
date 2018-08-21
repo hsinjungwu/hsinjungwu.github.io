@@ -7,7 +7,6 @@ url: "https://hsinjungwu.github.io"
 permalink: /:year-:month-:day-:title/
 
 # other links
-twitter_username: hjwu
 github_username:  hsinjungwu
 email: hsinjungwu@gmail.com
 linkedIn_username: hsinjungwu
@@ -15,7 +14,7 @@ linkedIn_username: hsinjungwu
 description_footer: 前面的世界會更精彩。
 
 # comments
-disqus_shortname: #hjwu
+# disqus_shortname:
 
 # Build settings
 markdown: kramdown
