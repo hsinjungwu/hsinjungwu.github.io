@@ -11,10 +11,10 @@ type: page
 
 ## Slot
 
-- [ ] Expanding Wild
+- [x] Expanding Wild
   - [x] Wild 出現就觸發
   - [x] Wild 出現在滾輪中間才觸發
-  - [ ] Wild 貢獻得分才觸發
+  - [x] Wild 貢獻得分才觸發 : 其實就是單純的 Expanding Wild，只是有在贏分線上才演給玩家看。
 - [x] Wild Reels Feature
 - [ ] Sticky Wild
 - [ ] Random Wild
@@ -26,6 +26,8 @@ type: page
   - [x] 243
   - [x] 1024
   - [ ] 每個圖標最小得分連線長度不同
+- [ ] ClusterPay
+  - [x] 每一個縱軸都相鄰的情形 : 6x6 以內可用 Excel 拉。
 
 ## Project Euler
 - [ ] 147
