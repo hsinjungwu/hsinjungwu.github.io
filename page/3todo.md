@@ -18,19 +18,23 @@ type: page
 - [x] Wild Reels Feature
 - [x] Sticky Wild
 - [x] Random Wild / Random Reel Wild
-- [ ] Spreading Wild
-- [ ] Walking Wild
+- [x] Spreading Wild
+- [x] Walking Wild
 - [x] 178way Game RTP
 - [ ] Way Game Hit Rate
   - [ ] 178
   - [x] 243
   - [x] 1024
-  - [ ] 每個圖標最小得分連線長度不同
+  - [x] 每個圖標最小得分連線長度不同
 - [x] Cluster Pay
   - [x] 每一個縱軸都相鄰的情形 : 6x6 以內可用 Excel 拉。
-  - [x] 其他情況：用程式列出得分組合 pattern，再用 Excel 表算出對應組合數。
+  - [x] ~其他情況：用程式列出得分組合 pattern，再用 Excel 表算出對應組合數。~ 直接跑模擬吧...
 - [x] Any Pay(畫面出現 n 個以上即賠付，比 Cluster Pay 要求更鬆)。
 - [x] Single Reel Respin。
+- [x] Progress Multiplier
+    - [x] 每次消除就增加倍數且無上限。ex *Extra Chilli*
+    - [x] 每次消除就增加倍數且有上限。ex *Break Away*
+    - [x] 每次 free spin 就增加倍數
 
 ## Project Euler
 - [ ] 147
