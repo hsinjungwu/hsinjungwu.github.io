@@ -2,8 +2,9 @@
 layout: post
 title:  "老虎機-0001-Jammin-Jars"
 date:   2019-11-29 11:51:54
+categories: Slot
 tags:  
-  - Slot
+  - Cascading
 ---
 
 * content
