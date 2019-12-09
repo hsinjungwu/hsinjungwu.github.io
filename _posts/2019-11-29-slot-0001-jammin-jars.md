@@ -5,6 +5,8 @@ date:   2019-11-29 11:51:54
 categories: Slot
 tags:  
   - Cascading
+  - ClusterPay
+  - ProgressiveMultiplier
 ---
 
 * content
