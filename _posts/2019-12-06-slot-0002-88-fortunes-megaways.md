@@ -16,7 +16,7 @@ tags:
 
 沒想到我熱愛的多福多彩系列 [88 Fortunes](https://lon-pt-mob.wi-gameserver.com/resource-service/game.html?realmoney=false&game=eightyeightfortunesmegaways&partnerticket=&partnercode=nyx_newdemo&currency=USD&locale=en_US&lang=en_US&clienttype=html5&nogsoperatorid=241&lobbyurl=&cashierurl=&redirected=true) 也推出 MegaWays<sup>TM</sup> 版了！ :+1:
 
-![epic win](/files/88_fortune_megaways/epic-win.PNG)
+![epic win](/files/88_fortunes_megaways/epic-win.PNG)
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ tags:
 3. 4(5,6) 顆連續 Scatter 觸發 10(12,15)場 Free Game，WILD 不能代替 SCATTER。
 4. 沒有 Jackpot 反而是觸發 Pick Coin feature，決定玩【10 場 + 起始 6 倍】,【12 場 + 起始 4 倍】或,【15 場 + 起始 2 倍】的 Free Game。
 
-![pick coin feature](/files/88_fortune_megaways/pick-coin.PNG)
+![pick coin feature](/files/88_fortunes_megaways/pick-coin.PNG)
 
 ## 感想
 
