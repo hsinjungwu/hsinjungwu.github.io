@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "老虎機-0001-Jammin-Jars"
+title:  "[Slot]-0001 Jammin' Jars"
 date:   2019-11-29 11:51:54
 categories: Slot
 tags:  
@@ -18,14 +18,14 @@ tags:
 
 <!-- more -->
 
-## 規則
+## 規則/特色
 
 1. 盤面 8x8 + Cluster Pay + 消除類。
 2. Wild 本身帶有倍數且出現後不會消失。如果落在贏分線上的話，每貢獻一次得分後就會移動到他週圍的空格且倍數也+1，直到該盤面無法消除。另外一個贏分線上有兩個 Wild 的話，倍數是連乘。
 3. Wild 本身也是 SCATTER，出現 3 個即觸發 6 場免費遊戲。在 Free Game 時 Wild 會保留到 Free Game 結束。
 4. Rainbow Feature : 特色觸發後畫面將會在隨機位置覆蓋至少一個巨型非 Wild 圖標。
 
-## 感想
+## 試玩感受
 
 1. 用 5000 試玩了大概 500 場，覺得一把 40 or 60 是合理範圍下注，超過就是送錢了。 :laughing:
 2. 感覺 *Rainbow Feature* 蠻常出的，應該是為了增加連消率。

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "老虎機-0002-88-Fortunes-Megaways"
+title:  "[Slot]-0002 88 Fortunes Megaways"
 date:   2019-12-06 11:51:54
 categories: Slot
 tags:  
@@ -16,20 +16,20 @@ tags:
 
 沒想到我熱愛的多福多彩系列 [88 Fortunes](https://lon-pt-mob.wi-gameserver.com/resource-service/game.html?realmoney=false&game=eightyeightfortunesmegaways&partnerticket=&partnercode=nyx_newdemo&currency=USD&locale=en_US&lang=en_US&clienttype=html5&nogsoperatorid=241&lobbyurl=&cashierurl=&redirected=true) 也推出 MegaWays<sup>TM</sup> 版了！ :+1:
 
-![epic win](/files/88_fortunes_megaways/epic-win.PNG)
+![epic win](/files/slot/0002/epic-win.PNG)
 
 <!-- more -->
 
-## 規則
+## 規則/特色
 
 1. 經典的消除類 MegaWays 玩法。
 2. 經典的多福多彩押注設計。
 3. 4(5,6) 顆連續 Scatter 觸發 10(12,15)場 Free Game，WILD 不能代替 SCATTER。
 4. 沒有 Jackpot 反而是觸發 Pick Coin feature，決定玩【10 場 + 起始 6 倍】,【12 場 + 起始 4 倍】或,【15 場 + 起始 2 倍】的 Free Game。
 
-![pick coin feature](/files/88_fortunes_megaways/pick-coin.PNG)
+![pick coin feature](/files/slot/0002/pick-coin.PNG)
 
-## 感想
+## 試玩感受
 
 1. 用 1000 試玩了大概 1000 場，一開始一把下 13.2，一路玩到頂 88，贏到快 60000，感覺蠻爽的 :laughing:
 2. 爆分主要是靠 Pick Coin feature 進入 Free Game，完全沒靠 SCATTER 進去過，感覺蠻奇怪的。而且 Pick Coin feature 還會有起始倍數，威力比 Free Game 還強，感覺重點放錯。
