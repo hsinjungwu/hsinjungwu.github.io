@@ -32,7 +32,7 @@ tags:
 
 ![48X](/files/slot/0003/48x.PNG)
 
-![48X](/files/slot/0003/finalwin.PNG)
+![48X-finalwin](/files/slot/0003/48x-finalwin.PNG)
 
 ## 結論
 五連線搭配倍數算是蠻有趣的特色，但這部分的機率跟 FG 的 All Win 倍數有關，估計一般情形頂多 10+ 倍。但 FG 頻率跟 Hit Rate 都偏低，玩到最後會想棄坑。
