@@ -41,4 +41,4 @@ plugins:
   - jemoji
   - jekyll-mentions
 
-katex_version: 0.10.0-beta
+katex_version: 0.11.1
