@@ -18,31 +18,31 @@ tags:
 
 ``` go
 bound := 1000
-  ans := 0
-	for i := 101; i < bound; i++ {
-		if i%10 == 0 {
-			continue
-		}
-		for j := i; j < bound; j++ {
-			if j%10 == 0 {
-				continue
-			}
-			k := i * j
-    
-			// 判斷 k 的值
-      if k%11 > 0 {
+ans := 0
+for i := 101; i < bound; i++ {
+    if i%10 == 0 {
         continue
-      }
-      
-      //判斷迴文
-			isPalindrome := k/100000 == k%10 && k/10000%10 == k%100/10 && k/1000%10 == k%1000/100
+    }
+    for j := i; j < bound; j++ {
+        if j%10 == 0 {
+            continue
+        }
+        k := i * j
 
-			if isPalindrome && ans < k {
-				ans = k
-			}
-		}
-	}
-	fmt.Printf("%v", ans)
+        // 判斷 k 的值
+        if k%11 > 0 {
+            continue
+        }
+    
+        //判斷迴文
+        isPalindrome := k/100000 == k%10 && k/10000%10 == k%100/10 && k/1000%10 == k%1000/100
+
+        if isPalindrome && ans < k {
+            ans = k
+        }
+    }
+}
+fmt.Printf("%v", ans)
 ```
 
 原本在判斷迴文部份，我寫成下面這樣跳錯
