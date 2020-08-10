@@ -6,7 +6,7 @@ tags:
   - Jekyll
   - math
   - BBS
-  - KaTex
+  - KaTeX
 ---
 
 最近難得開筆電連 BBS，結果發現未來最舊小棧(OfO.twbbs.org)居然連不上了！ :scream:

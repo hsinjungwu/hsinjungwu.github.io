@@ -3,7 +3,7 @@ layout: post
 title:  "使用 Excel 解決八皇后問題"
 date:   2019-08-26 10:20:04
 tags:  
-  - EXCEL
+  - Excel
   - Eight_Queens_Puzzle 
 ---
 
