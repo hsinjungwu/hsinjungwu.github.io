@@ -42,3 +42,9 @@ plugins:
   - jekyll-mentions
 
 katex_version: 0.11.1
+
+# collection
+collections:
+  pe:
+    output: true
+    permalink: /pe/:title
