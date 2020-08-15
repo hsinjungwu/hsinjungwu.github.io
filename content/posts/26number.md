@@ -20,7 +20,7 @@ $x, y \in\mathbb{N},$ find all $x, y$ such that $x^3 = y^2+2$
 
 這題的解法可以參考這篇 [The number 26, between 25 and 27 Resolution of the diophantine equation y^3 − x^2 = 2](https://www.normalesup.org/~baglio/maths/26number.pdf)
 
-不過我自己也想了一個比較基礎的解法，證明答案只有 $x,y = (3,5)$。 :smile:
+不過我自己也想了一個比較基礎的解法，證明答案只有 $x,y = (3,5)$。 😃
 
 ## 解法
 
@@ -32,6 +32,7 @@ $x, y \in\mathbb{N},$ find all $x, y$ such that $x^3 = y^2+2$
 
 ### Case 1
 
+<div>
 $$
 \begin{aligned}
 &(x+k)^2+2=x^3 \geq (k+1)x^2\\
@@ -39,6 +40,7 @@ $$
 \implies &2 \geq k(x^2-2x-k)
 \end{aligned}
 $$
+</div>
 
 因為 $1\leq k < x\in \mathbb{N}$，從上面的式子看來可以得到
 
@@ -47,6 +49,7 @@ $$
 
 ### Case 2
 
+<div>
 $$
 \begin{aligned}
 &(x+x)^2 < (x+k)^2+2\\
@@ -54,5 +57,6 @@ $$
 \implies &(3x+k)(x-k)< 2
 \end{aligned}
 $$
+</div>
 
 但 $3x+k > 2$，所以 $x=k$。但這導致 $x^3 = 4x^2+2$，然而沒有一個整數的三次方 mod 4 會餘 2，所以這個情形下無解。

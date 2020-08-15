@@ -1,7 +1,7 @@
 ##########################################
 # Site Settings
 
-baseURL = "https://hsinjungwu.github.io/"
+baseURL = "https://hjwu.me/"
 title = "@hjwu"
 languageCode = "en"
 hasCJKLanguage = true
@@ -102,7 +102,7 @@ uglyURLs = false
     # Avatar
     avatar = "/icons/apple-touch-icon.png"
     # Personal website, default: baseURL
-    website = "https://hsinjungwu.github.io/"
+    website = "https://hjwu.me/"
     # Twitter
     # twitter = "reuixiy"
 
