@@ -94,11 +94,11 @@ uglyURLs = false
 # Author’s information
 [author]
     # Name
-    name = "hsinjungwu"
+    name = "hjwu"
     # Email
     email = "hsinjungwu@gmail.com"
     # Motto or introduction
-    motto = "Viva La Vida"
+    # motto = "Viva La Vida"
     # Avatar
     avatar = "/icons/apple-touch-icon.png"
     # Personal website, default: baseURL
@@ -216,13 +216,19 @@ uglyURLs = false
         pre = "internal"
         post = "tags"
     [[menu.main]]
+        url = "/pe/"
+        name = "Project Euler"
+        weight = 5
+        pre = "internal"
+        post = "pe"
+    [[menu.main]]
         url = "/about/"
         name = "About"
-        weight = 5
+        weight = 6
         pre = "internal"
         post = "user-circle"
     [[menu.main]]
-        weight = 6
+        weight = 7
         identifier = "theme-switcher"
 
 ##########################################
@@ -333,7 +339,7 @@ uglyURLs = false
     # Note: used for HTML head meta, JSON-LD,
     #       Open Graph, Atom, RSS
 
-    siteCreatedTime = "1969-07-20T20:17:43+00:00"
+    siteCreatedTime = "2020-08-01T20:17:43+00:00"
     # ATTENTION: keep this format, change
     #            the number
 

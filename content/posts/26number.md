@@ -5,8 +5,6 @@ draft: false
 dropCap: false
 categories:
     - "Math"
-tags:
-    - "Number Theorey"
 
 ---
 
