@@ -343,7 +343,7 @@ uglyURLs = false
     # ATTENTION: keep this format, change
     #            the number
 
-    siteTwitter = "reuixiy"
+    # siteTwitter = "reuixiy"
     # Note: used for Twitter Cards
 
 
@@ -753,7 +753,7 @@ uglyURLs = false
     # Note: valid for the `posts` and
     #       `page` homepage layout only
 
-    postMetaDateFormat = "2006.1.2"
+    postMetaDateFormat = "2006.01.02"
     # ATTENTION: be sure to follow the
     #            specified format
     #            https://gohugo.io/functions/format/
@@ -1073,9 +1073,9 @@ uglyURLs = false
     ######################################
     # Post Gitinfo
 
-    enablePostGitInfo = false
+    enablePostGitInfo = true
 
-    displayPostGitInfo = false
+    displayPostGitInfo = true
     # Note: *global settings*
     #       `gitinfo` in post’s Front Matter
     #       has a higher priority than here
