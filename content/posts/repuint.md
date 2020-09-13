@@ -14,138 +14,99 @@ categories:
 
 大學同學問我 [森棚教官數學題－全數出動](https://www.ntsec.edu.tw/LiveSupply-Content.aspx?a=6829&fld=&key=&isd=1&icop=10&p=1&lsid=16288)，也給了提示 $n=3^r$ 應該是解答。
 
-## 前置
+## 前置作業
 
-先把要證明的問題稍微複雜點吧！ 🤓
+先定義對於每一個 $n$ 我們最少需要 $\mathcal{L}(n)$ 個 $1$，使得 $n\mid\overbrace{1\dots\dots\dots1}^{\mathcal{L}(n)}$。
 
-1. 當 $n=3^r$ 是解答且 $n\mid\overbrace{11\dots11}^{n}$ 但 $3n\nmid\overbrace{11\dots11}^{n}$。
-2. 其他數字不滿足。
+有一些簡單的特性可以很快看出
 
-## 證明情形一
+1. $\mathcal{L}(n)\leq n$。
+2. 如果正整數 $k$ 也滿足 $n\mid\overbrace{1\dots\dots\dots1}^{k}$，那麼 $\mathcal{L}(n)\mid k$。
+3. 如果 $n\mid m$ 則 $\mathcal{L}(n)\mid\mathcal{L}(m)$。
+4. 如果 $n$ 是解答，表示 $\mathcal{L}(n)=n$
 
-對 $r$ 使用數學歸納法：
+然後先把要證明的問題稍微複雜點吧！ 🤓
 
-**Step 1 : $r=1$ 易證成立。**
++ $n=3^k$ 是解答且 $\overbrace{1\dots\dots\dots1}^{3^k}$ 恰好有 $k$ 個質因數 $3$。
++ 其他數字不滿足。
 
-**Step 2 : $r=k$ 成立，考慮 $r=k+1$ 的情況**
+## 證明 $n=3^k$ 
 
-令 $N_0=3^{k}, N_1=3^{k+1}$。
+**Step 1 : $k=1$**
 
-如果 $N_1$ 不是解答，表示存在一組 $1\leq b < a\leq N_1$ 使得 
+因為 $\mathcal{L}(3)=3$ 所以是解答，且 $111$ 恰好只有 $1$ 個質因數 $3$
+
+**Step 2 : 假設 $k=r$ 成立，試證 $k=r+1$ 也成立。**
+
+由於 $\overbrace{1\cdots\cdots\cdots1}^{3\mathcal{L}(3^r)}$ 可以寫成 $\overbrace{1\cdots1}^{\mathcal{L}(3^r)}$ 與 $1+10^{\mathcal{L}(3^r)}+10^{2\mathcal{L}(3^r)}$ 的乘積。前者由歸納法得知恰有 $k$ 個質因數 $3$，後者由 [倍數檢驗法](https://zh.wikipedia.org/wiki/%E5%80%8D%E6%95%B8) 知道恰有 $1$ 個質因數 $3$。所以它恰有 $k+1$ 個質因數 $3$，即 
+
+<div>
+$$
+3^{k+1}\mid\overbrace{1\cdots\cdots\cdots1}^{3\mathcal{L}(3^r)}
+$$
+</div>
+
+於是根據 **特性2** 跟 **特性 3** 知道
+
+<div>
+$$
+\mathcal{L}(3^r)\mid\mathcal{L}(3^{r+1})\mid3\mathcal{L}(3^r)
+$$
+</div>
+
+所以 $\mathcal{L}(3^{r+1})$ 等於 $\mathcal{L}(3^r)$ 或 $3\mathcal{L}(3^r)$。但根據歸納法知道 $\overbrace{1\dots\dots\dots1}^{3^r}$ 恰好有 $r$ 個質因數 $3$，所以 $3^{r+1}\nmid\overbrace{1\dots\dots\dots1}^{3^r}$
+
+於是 
+
+<div>
+$$
+\mathcal{L}(3^{r+1})=3\mathcal{L}(3^r)=3\times3^r=3^{r+1}
+$$
+</div>
+
+## 證明其他情況
+
+$n$ 為偶數或 $5$ 的倍數，顯見不成立。
+
+先考慮 $\gcd(n,9) = 1$ 的 $n$，透過 [歐拉定理](https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86_(%E6%95%B0%E8%AE%BA)) 知道 $10^{\varphi(n)}\equiv1\pmod{n}$ 且 $10^{\varphi(n)}\equiv1\pmod{9}$
+
+因此 $n\mid\overbrace{1\dots\dots\dots1}^{\varphi(n)}$，換句話說 $\mathcal{L}(n)\leq\varphi(n)< n$ 所以這類的 $n$ 不成立。
+
+接著對於 $\gcd(n,9) = 3$ 的 $n$，令 $m=\frac{n}{3}$。則 $\gcd(m,9)=1$ 那麼
 
 <div>
 $$
 \begin{aligned}
-\overbrace{11\dots11}^{a}-\overbrace{11\dots11}^{b} &=\overbrace{11\dots11}^{a-b}\times1\overbrace{00\dots00}^{b}\\ 
-&\equiv \overbrace{11\dots11}^{a-b} \equiv 0 \pmod{N_1}
+&n=3m\mid(1+10^{\varphi(m)}+10^{2\varphi(m)})\times\overbrace{1\dots\dots\dots1}^{\varphi(m)}\\
+\implies & \mathcal{L}(n)\leq3\varphi(m)< 3m=n
 \end{aligned}
 $$
 </div>
 
-如果 $a-b\equiv 0 \pmod{N_0}$ 可整理得到 $\overbrace{11\dots11}^{N_0} \equiv 0 \pmod{3N_0}$，矛盾。
-
-如果 $a-b\equiv z>0 \pmod{N_0}$，原式可以改寫成 
-
-$$
-\overbrace{11\dots11}^{a-b} \equiv 0 \pmod{N_0}
-$$
-
-那麼可以從前方逐次刪除 $\overbrace{11\dots11}^{N_0}$，可得到
+最後 $\gcd(n,9) = 9$ 的 $n$，令 $m=\frac{n}{9}$。則 $\gcd(m,9)=1$ 那麼
 
 <div>
 $$
-\overbrace{\underbrace{\cancel{11\dots11}}_{N_0\text{ 或 }2N_0\text{ 項}}\underbrace{11\dots11}_{z\text{ 項}}}^{a-b} \equiv \overbrace{11\dots11}^{z} \equiv0 \pmod{N_0}
+\begin{aligned}
+&n=9m\mid(1+10^{\varphi(m)}+\cdots+10^{8\varphi(m)})\times\overbrace{1\dots\dots\dots1}^{\varphi(m)}\\
+\implies & \mathcal{L}(n)\leq9\varphi(m)< 9m=n
+\end{aligned}
 $$
 </div>
 
-但 $z< N_0$，矛盾。所以 
-
-$$
-\tag{*1} N_1\text{ 是一組解答。}
-$$
+於是證明全部完成。 $\blacksquare$
 
 ----
-
-因為 $N_1$ 是一組解答，所以易證 
-
-$$
-\tag{*2}N_1\mid\overbrace{11\dots11}^{N_1}
-$$
-
-----
-
-最後如果 $3N_1\mid\overbrace{11\dots11}^{N_1}$，表示它至少有 $r+2$ 個因數 $3$。但 
-
-$$
-\overbrace{11\dots11}^{N_1}=\overbrace{11\dots11}^{N_0}\times1\overbrace{00\dots00}^{N_0-1}1\overbrace{00\dots00}^{N_0-1}1
-$$
-
-前項 $\overbrace{11\dots11}^{N_0}$ 只有 $r$ 個因數 $3$，後項 $1\overbrace{00\dots00}^{N_0-1}1\overbrace{00\dots00}^{N_0-1}1$ 只有 $1$ 個因數 $3$[^1]，所以矛盾，故
-
-$$
-\tag{*3}3N_1\nmid\overbrace{11\dots11}^{N_1}
-$$
-
-----
-
-根據 `*1`、`*2` 與 `*3`，已證完下面 3 件事。
-
-- [x] $n=3^r$ 是解答
-- [x] $n\mid\overbrace{11\dots11}^{n}$ 
-- [x] $3n\nmid\overbrace{11\dots11}^{n}$
-
-## 證明情形二
-
-$n$ 為偶數或 $5$ 的倍數，顯見不成立。
-
-考慮其他跟 $9$ 互質的數字 $n$，可透過[^2] [輾轉相除法](https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95) 或 [貝祖定理](https://zh.wikipedia.org/wiki/%E8%B2%9D%E7%A5%96%E7%AD%89%E5%BC%8F) 得到存在整數 $a,b$ 滿足 $9a+nb=-1$。
-
-然後要證明下面這件事：
-
-> 對於所有的 $k$ 使得 $ \overbrace{11\dots11}^{n}\neq a \pmod{n}$。
-
-如果存在某個 $k$ 滿足，則 $\frac{10^k-1}{9} \equiv a \pmod{n}$，換句話說存在某個整數 $t$ 使得 
-
-$$
-10^k = 9(tn+a)+1 = 9tn+9a+1 = 9tn+bn = n(9t+b)
-$$
-
-因此 $n\nmid 10$，矛盾。 
-
-然後我們可以透過 [鴿籠定理](https://zh.wikipedia.org/wiki/%E9%B4%BF%E5%B7%A2%E5%8E%9F%E7%90%86) 知道存在 $k_n< n$ 使得 $n\mid \overbrace{11\dots11}^{k_n}$
-
-因此對於 $\gcd(n,9) = 3$ 的 $n$，可找到 $k_{\frac{n}{3}}$ 使得 
-
-$$
-\frac{n}{3}\mid \overbrace{11\dots11}^{k_{\frac{n}{3}}}
-$$
-
-於是找到 $k_n < n$ 滿足
-
-$$
-n\mid \overbrace{11\dots11}^{k_{\frac{n}{3}}}\overbrace{11\dots11}^{k_{\frac{n}{3}}}\overbrace{11\dots11}^{k_{\frac{n}{3}}} = \overbrace{11\dots11}^{k_n}
-$$
-
-同樣的手法也可以用在 $\gcd(n,9) = 9$ 的 $n$ 上。
-
-因此對於非偶數或 $5$ 的倍數 $n$ 都能找到一個 $k_n+1\leq n$ 獲得以下結果，所以它們都不是解答。$\blacksquare$ 
-
-$$
-\overbrace{11\dots11}^{k_n+1}\equiv 1\pmod{n}
-$$
 
 ## 觀察
 
-假設 $\mathcal{L}(n)=k$ 定義為 **最少** 要 $k>0$ 個 1，才可以整除 $n$。那麼這題就是在找出哪些 $n$ 滿足 $\mathcal{L}(n)=n$。
+我一開始是用程式檢查，然後觀察到一些有趣的性質(可能)： 🤔
 
-我一開始是用程式檢查，然後觀察到一些有趣的性質(可能)[^3]： 🤔
-
-1. 如果 $n$ 為大於 5 的質數 $p$，則 $\mathcal{L}(n)\mid n-1$。換句話說 $\mathcal{L}(n)< n$。
-2. 如果 $n=p^k$，其中 $p$ 為非 $2, 5$ 的質數。則 $\mathcal{L}(n)=\mathcal{L}(p)\times p^{k-1}$。
-3. 如果 $n_i=p_i^{k_i}$，其中 $p_i$ 為非 $2, 5$ 的質數。則
+1. 如果 $n=p^k$，其中 $p$ 為非 $2, 5$ 的質數。則 $\mathcal{L}(n)=\mathcal{L}(p)\times p^{k-1}$。
+2. 如果 $n=\prod\limits_{i=1}^{m}p_i^{k_i}$，其中 $p_i$ 為非 $2, 5$ 的質數。則
 <div>
 $$
-\mathcal{L}(n_1\times\cdots\times n_m)\mid\mathcal{L}(n_1),\cdots,\mathcal{L}(n_m)\text{ 的最小公倍數}
+\mathcal{L}(n)\mid \{\mathcal{L}(p_1^{k_1}),\cdots,\mathcal{L}(p_m^{k_m})\}\text{ 的最小公倍數}
 $$
 </div>
 
@@ -154,20 +115,28 @@ $$
 1. $\mathcal{L}(3^k)=\mathcal{L}(3)\times 3^{k-1} = 3^k$
 2. 對於其他的 $n$ 則是 
 $$
-\mathcal{L}(n)\leq\prod_i\mathcal{L}(n_i)=\prod_i\mathcal{L}(p_i)\times p_i^{k_i-1}< \prod_i p_i^{k_i}=n
+\mathcal{L}(n)\leq\prod_i\mathcal{L}(p_i)\times p_i^{k_i-1}< \prod_i p_i^{k_i}=n
 $$
 
 ----
 
-另外在解這題也找到一些相關資訊：
+## 後記
 
-+ [循环单位](https://baike.baidu.com/item/%E5%BE%AA%E7%8E%AF%E5%8D%95%E4%BD%8D)
+1. 原來這個東西有名字叫 [Repunit](https://en.wikipedia.org/wiki/Repunit)。
+
+2. [強者我同學](https://sites.google.com/view/ft-tu/home) 提供了 [輾轉相除法](https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95) 的思路來解 $n\neq 3^r$ 的情形
+
+> 對於 $\gcd(9,p)=1$ 存在 $a,b\in\mathbb{Z}$ 使得 $a,b$ 滿足 $9a+np=-1$。
+>
+> 然後證明對於所有的 $k$ 都不會滿足以下式子。 
+> 
+> <div>
+> $$
+> \overbrace{1\dots1}^{k}\neq a \pmod{p}
+> $$
+> </div>
+
+3. 在解這題時看到 [這篇文章](https://baike.baidu.com/item/%E5%BE%AA%E7%8E%AF%E5%8D%95%E4%BD%8D) 寫的性質，其實就是 [費馬小定理](https://zh.wikipedia.org/wiki/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86) 的應用
 > 循环单位还有一个规律，就是：如果要让一个循环单位能除进一个质数，那这个质数必须大于6，而且，“1”的个数要比那个质数少1。
-+ [Repunit](https://en.wikipedia.org/wiki/Repunit)
 
-:::
-
-----
-[^1]: [倍數檢驗法](https://zh.wikipedia.org/wiki/%E5%80%8D%E6%95%B8)
-[^2]: 由 [強者我同學](https://sites.google.com/view/ft-tu/home) 指點。
-[^3]: 敬待有緣人協助。😎 
+4. 觀察到的 **性質1** 如果是對的，應該(?)能用 **證明 $n=3^3$** 一樣的手法證明。😕 
