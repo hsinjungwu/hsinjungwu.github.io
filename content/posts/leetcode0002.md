@@ -1,0 +1,82 @@
+---
+title: "LeetCode 0002－Add Two Numbers"
+date: 2020-09-22T12:25:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+>
+> You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+<!--more-->
+
+只求 pass 的解答。
+
+```go
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	var r []int
+	v := 0
+	for l1 != nil || l2 != nil {
+		if l1 != nil {
+			v += l1.Val
+			l1 = l1.Next
+		}
+		if l2 != nil {
+			v += l2.Val
+			l2 = l2.Next
+		}
+		r = append(r, v%10)
+		v /= 10
+	}
+
+	s := len(r) - 1
+	result := &ListNode{}
+	if v > 0 {
+		result.Val = v
+	} else {
+		result.Val = r[s]
+		s--
+	}
+
+	for i := s; i >= 0; i-- {
+		result = &ListNode{
+			Val:  r[i],
+			Next: result,
+		}
+	}
+
+	return result
+}
+```
+
+過去曾用 `c#` 寫的解法。
+
+```csharp
+public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
+    int sum = l1.val + l2.val;
+
+    ListNode ans = new ListNode(sum % 10);
+    ListNode n1 = l1.next;
+    ListNode n2 = l2.next;
+
+    ListNode tmp = ans; 
+    while(n1 != null || n2 != null)
+    {
+        sum = (sum / 10) + (n1 == null ? 0 : n1.val) + (n2 == null ? 0 : n2.val);
+        tmp.next = new ListNode(sum % 10);
+        n1 = n1 == null ? null : n1.next;
+        n2 = n2 == null ? null : n2.next;
+        tmp = tmp.next;
+    }
+
+    if (sum >= 10) tmp.next = new ListNode(1);
+    return ans;
+}
+```
+

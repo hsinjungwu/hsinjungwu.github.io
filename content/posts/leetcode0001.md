@@ -1,0 +1,69 @@
+---
+title: "LeetCode 0001－Two Sum"
+date: 2020-09-21T12:25:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+> 
+> You may assume that each input would have exactly one solution, and you may not use the same element twice.
+> 
+> You can return the answer in any order.
+
+<!--more-->
+
+我之前拿這題來當好多語言入門的練習題啊～
+
+```python
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i in range(len(nums)-1):
+            for j in range(i+1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+```
+
+```csharp
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+        for(int i = 0; i<nums.Length; i++)
+        {
+            for(int j = i+1; j<nums.Length; j++)
+            {
+                if (nums[i] + nums[j] == target)
+                return new int[] {i,j};
+            }
+        }
+        return null;
+    }
+}
+```
+
+至於 `golang` 我嘗試另一種邏輯。
+
+```go
+func twoSum(nums []int, target int) []int {
+	m := make(map[int]int)
+	for i := 0; i < len(nums); i++ {
+		k := target - nums[i]
+		v, ok := m[k]
+		if ok {
+			return []int{i, v}
+		} else {
+			m[nums[i]] = i
+		}
+	}
+	return nil
+}
+```
