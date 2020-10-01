@@ -58,25 +58,35 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 過去曾用 `c#` 寫的解法。
 
 ```csharp
-public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
-    int sum = l1.val + l2.val;
-
-    ListNode ans = new ListNode(sum % 10);
-    ListNode n1 = l1.next;
-    ListNode n2 = l2.next;
-
-    ListNode tmp = ans; 
-    while(n1 != null || n2 != null)
-    {
-        sum = (sum / 10) + (n1 == null ? 0 : n1.val) + (n2 == null ? 0 : n2.val);
-        tmp.next = new ListNode(sum % 10);
-        n1 = n1 == null ? null : n1.next;
-        n2 = n2 == null ? null : n2.next;
-        tmp = tmp.next;
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
+        int sum = l1.val + l2.val;
+        
+        ListNode ans = new ListNode(sum % 10);
+        ListNode n1 = l1.next;
+        ListNode n2 = l2.next;
+        
+        ListNode tmp = ans; 
+        while(n1 != null || n2 != null)
+        {
+            sum = (sum / 10) + (n1 == null ? 0 : n1.val) + (n2 == null ? 0 : n2.val);
+            tmp.next = new ListNode(sum % 10);
+            n1 = n1 == null ? null : n1.next;
+            n2 = n2 == null ? null : n2.next;
+            tmp = tmp.next;
+        }
+        
+        if (sum >= 10) tmp.next = new ListNode(1);
+        return ans;
     }
-
-    if (sum >= 10) tmp.next = new ListNode(1);
-    return ans;
 }
 ```
 

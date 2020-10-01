@@ -1,0 +1,106 @@
+---
+title: "LeetCode 0029－Divide Two Integers"
+date: 2020-09-24T20:20:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> Given two integers `dividend` and `divisor`, divide two integers without using multiplication, division and mod operator.
+
+Return the quotient after `dividing` dividend by `divisor`.
+
+The integer division should truncate toward zero, which means losing its fractional part. For example, `truncate(8.345) = 8` and `truncate(-2.7335) = -2`.
+
+<!--more-->
+
+只求 pass 的解答。
+
+```go
+func divide(dividend int, divisor int) int {
+	if divisor == 1 {
+		return dividend
+	}
+
+	if dividend == 0 {
+		return 0
+	}
+
+	max := 2147483647
+	min := -2147483648
+	if divisor == -1 {
+		if dividend > min {
+			return -dividend
+		}
+		return max
+	}
+
+	if dividend > 0 {
+		if divisor > 0 {
+			return innerDivide(dividend, divisor)
+		}
+		return -innerDivide(dividend, -divisor)
+	}
+
+	if divisor > 0 {
+		return -innerDivide(-dividend, divisor)
+	}
+	return innerDivide(-dividend, -divisor)
+}
+
+func innerDivide(a, b int) int {
+	if a < b {
+		return 0
+	}
+	c := b
+	ans := 0
+	for a >= c {
+		a -= c
+		c += c
+		ans = 2*ans + 1
+	}
+	return ans + innerDivide(a, b)
+}
+```
+
+過去曾用 `c#` 寫的解法。
+
+```csharp
+public class Solution {
+    public int Divide(int dividend, int divisor) {
+        if (divisor == 0) throw new DivideByZeroException();
+        if (divisor == 1) return dividend;
+        if (divisor == -1) return dividend > int.MinValue ? 0 - dividend : int.MaxValue;
+
+        int ans = Divide(Math.Abs((long)dividend), Math.Abs((long)divisor));
+
+        if ((dividend >= 0 && divisor > 0) || (dividend < 0 && divisor < 0)) return ans;
+        return 0 - ans;
+    }
+    
+    private int Divide(long a, long b)
+    {
+        if (a < b) return 0;
+        
+        int finalAns = 0;
+        while(a >= b)
+        {
+            long c = b;
+            int ans = 0;
+            while (a >= c)
+            {
+                a -= c;
+                c += c;
+                ans += ans + 1;
+            }
+            finalAns += ans;
+        }
+        return finalAns;
+    }
+}
+```
+

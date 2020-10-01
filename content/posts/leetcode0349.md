@@ -1,0 +1,50 @@
+---
+title: "LeetCode 0349－Intersection of Two Arrays"
+date: 2020-09-24T21:20:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> Given two arrays, write a function to compute their intersection.
+
+<!--more-->
+
+只求 pass 的解答。
+
+```go
+func intersection(nums1 []int, nums2 []int) []int {
+	m := make(map[int]int)
+	for _, n1 := range nums1 {
+		if _, has := m[n1]; !has {
+			m[n1] = 1
+		}
+	}
+	var result []int
+	for _, n2 := range nums2 {
+		if v, has := m[n2]; has && v == 1 {
+			m[n2] = 2
+			result = append(result, n2)
+		}
+	}
+	return result
+}
+```
+
+過去曾用 `python` 寫的解法，能用一行也太神奇了。而且語法很數學，難怪大家都愛用 `python`。
+
+```python
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        return list(set([x for x in nums1 for y in nums2 if x == y]))
+```
+

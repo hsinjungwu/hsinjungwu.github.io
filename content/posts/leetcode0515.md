@@ -1,0 +1,68 @@
+---
+title: "LeetCode 0515－Find Largest Value in Each Tree Row"
+date: 2020-09-24T22:20:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> Given the `root` of a binary tree, return an array of the largest value in each row of the tree **(0-indexed)**.
+
+<!--more-->
+
+只求 pass 的解答。
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func largestValues(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
+
+	var ans []int
+	var checkNodes []*TreeNode
+	checkNodes = append(checkNodes, root)
+	for {
+		if len(checkNodes) == 0 {
+			break
+		}
+		var values []int
+		var tmp []*TreeNode
+		for _, n := range checkNodes {
+			if n != nil {
+				values = append(values, n.Val)
+				if n.Left != nil {
+					tmp = append(tmp, n.Left)
+				}
+				if n.Right != nil {
+					tmp = append(tmp, n.Right)
+				}
+			}
+		}
+		ans = append(ans, max(values))
+		checkNodes = tmp
+	}
+	return ans
+}
+
+func max(values []int) int {
+	m := values[0]
+	for i := 1; i < len(values); i++ {
+		if m < values[i] {
+			m = values[i]
+		}
+	}
+	return m
+}
+```

@@ -45,21 +45,23 @@ func lengthOfLongestSubstring(s string) int {
 過去曾用 `c#` 寫的解法。
 
 ```csharp
-public int LengthOfLongestSubstring(string s) {
-	int ans = 0;
-	string tmp = string.Empty;
-
-	for(int i = 0; i < s.Length; i++)
-	{
-		int j = tmp.IndexOf(s[i]);
-		if (j == -1) tmp += s[i].ToString();
-		else 
-		{
-			ans = Math.Max(ans, tmp.Length);
-			tmp = (j == tmp.Length ? string.Empty : tmp.Substring(j+1)) + s[i].ToString();
-		}
-	}
-	return Math.Max(ans, tmp.Length);
+public class Solution {
+    public int LengthOfLongestSubstring(string s) {
+        int ans = 0;
+        string tmp = string.Empty;
+        
+        for(int i = 0; i < s.Length; i++)
+        {
+            int j = tmp.IndexOf(s[i]);
+            if (j == -1) tmp += s[i].ToString();
+            else {
+                ans = Math.Max(ans, tmp.Length);
+                tmp = (j == tmp.Length ? string.Empty : tmp.Substring(j+1)) + s[i].ToString();
+            }
+        }
+        
+        return Math.Max(ans, tmp.Length);
+    }
 }
 ```
 

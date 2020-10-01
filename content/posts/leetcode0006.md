@@ -62,20 +62,26 @@ func convert(s string, numRows int) string {
 過去曾用 `python` 寫的解法。
 
 ```python
-def ans(s, numRows):
-    if numRows == 1:
-        return s
-    result = ""
-    for i in range(0, numRows):
-        step = 2 * (numRows - 1 - i)
-        idx = i
-        while idx < len(s):
-            result = result + s[idx]
-            if 0 < i < numRows - 1:
-                nidx = idx + step
-                if nidx < len(s):
-                    result = result + s[nidx]
-            idx = idx + 2 * numRows - 2
-    return result
+class Solution(object):
+    def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        if numRows == 1:
+            return s
+        result = ""
+        for i in range(0, numRows):
+            step = 2 * (numRows - 1 - i)
+            idx = i
+            while idx < len(s):
+                result = result + s[idx]
+                if 0 < i < numRows - 1:
+                    nidx = idx + step
+                    if nidx < len(s):
+                        result = result + s[nidx]
+                idx = idx + 2 * numRows - 2
+        return result
 ```
 

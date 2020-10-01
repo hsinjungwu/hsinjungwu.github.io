@@ -1,0 +1,74 @@
+---
+title: "LeetCode 0007－Reverse Integer"
+date: 2020-09-24T12:25:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> Given a 32-bit signed integer, reverse digits of an integer.
+
+<!--more-->
+
+只求 pass 的解答。
+
+```go
+func reverse(x int) int {
+	if x == 0 {
+		return 0
+	}
+
+	bound := 2147483647
+
+	isPositive := x > 0
+	if !isPositive {
+		x *= -1
+		bound++
+	}
+
+	ans := 0
+	for x > 0 {
+		ans = ans*10 + x%10
+		if ans > bound {
+			return 0
+		}
+		x /= 10
+	}
+
+	if isPositive {
+		return ans
+	}
+	return -ans
+}
+```
+
+過去曾用 `python` 寫的解法。
+
+```python
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        maxint = 2 ** 31 - 1
+        minint = -1 * (2 ** 31)
+        if x > maxint or x < minint:
+            return 0
+        operator = 1 if x > 0 else -1
+        absx = math.fabs(x)
+        result = 0
+        while absx > 0:
+            digit = absx % 10
+            result = result * 10 + digit
+            absx = (absx - digit) // 10
+    
+        if minint <= result <= maxint:
+            return int(operator * result)
+        return 0
+```
+
