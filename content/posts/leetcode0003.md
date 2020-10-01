@@ -1,0 +1,65 @@
+---
+title: "LeetCode 0003－Longest Substring Without Repeating Characters"
+date: 2020-09-23T12:25:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> Given a string `s`, find the length of the longest substring without repeating characters.
+
+<!--more-->
+
+只求 pass 的解答。
+
+```go
+func lengthOfLongestSubstring(s string) int {
+	m := make(map[rune]int)
+	max := 0
+	for i, r := range s {
+		if d, has := m[r]; has {
+			if max < len(m) {
+				max = len(m)
+			}
+
+			for k, v := range m {
+				if v < d {
+					delete(m, k)
+				}
+			}
+		}
+		m[r] = i
+	}
+
+	if max < len(m) {
+		max = len(m)
+	}
+	return max
+}
+```
+
+過去曾用 `c#` 寫的解法。
+
+```csharp
+public int LengthOfLongestSubstring(string s) {
+	int ans = 0;
+	string tmp = string.Empty;
+
+	for(int i = 0; i < s.Length; i++)
+	{
+		int j = tmp.IndexOf(s[i]);
+		if (j == -1) tmp += s[i].ToString();
+		else 
+		{
+			ans = Math.Max(ans, tmp.Length);
+			tmp = (j == tmp.Length ? string.Empty : tmp.Substring(j+1)) + s[i].ToString();
+		}
+	}
+	return Math.Max(ans, tmp.Length);
+}
+```
+

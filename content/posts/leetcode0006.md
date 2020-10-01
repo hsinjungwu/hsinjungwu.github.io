@@ -1,0 +1,81 @@
+---
+title: "LeetCode 0006－Longest Substring Without Repeating Characters"
+date: 2020-09-24T12:25:00+08:00
+draft: false
+dropCap: false
+categories:
+    - "LeetCode"
+
+---
+
+題目如下：
+
+> And then read line by line: `"PAHNAPLSIIGYIR"`
+>
+> Write the code that will take a string and make this conversion given a number of rows:
+>
+> ```
+> string convert(string s, int numRows);
+> ```
+
+<!--more-->
+
+只求 pass 的解答。
+
+```go
+func convert(s string, numRows int) string {
+	if numRows == 1 {
+		return s
+	}
+
+	table := make([]strings.Builder, numRows)
+	y := 0
+	down := true
+	for _, r := range s {
+		table[y].WriteRune(r)
+		if down {
+			if y == numRows-1 {
+				y--
+				down = false
+			} else {
+				y++
+			}
+		} else {
+			if y == 0 {
+				y++
+				down = true
+			} else {
+				y--
+			}
+		}
+	}
+
+	var result strings.Builder
+	for _, v := range table {
+		result.WriteString(v.String())
+	}
+
+	return result.String()
+}
+```
+
+過去曾用 `python` 寫的解法。
+
+```python
+def ans(s, numRows):
+    if numRows == 1:
+        return s
+    result = ""
+    for i in range(0, numRows):
+        step = 2 * (numRows - 1 - i)
+        idx = i
+        while idx < len(s):
+            result = result + s[idx]
+            if 0 < i < numRows - 1:
+                nidx = idx + step
+                if nidx < len(s):
+                    result = result + s[nidx]
+            idx = idx + 2 * numRows - 2
+    return result
+```
+
