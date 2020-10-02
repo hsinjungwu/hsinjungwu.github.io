@@ -76,4 +76,4 @@ $$
 $$
 </div> 
 
-於是 $\forall n\in\mathbb{Z}$ 其中 $n\neq 2, 3, 5$ 都會有解。
+於是 $\forall n\in\mathbb{N}$ 其中 $n\neq 2, 3, 5$ 都會有解。
