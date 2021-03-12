@@ -58,7 +58,7 @@ tags:
 
 <div>
 $$
-(n_{1,k}+n_{2,k}+n_{3,k}+n_{4,k}+n_{5,k})\times P^3 \times (1-P^3)^{k-1}
+(n_{1,k}+n_{2,k}+n_{3,k}+n_{4,k}+n_{5,k})\times P^3 \times (1+P+P^2)^{k-1}
 $$
 </div>
 
