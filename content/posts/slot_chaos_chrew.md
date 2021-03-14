@@ -58,7 +58,7 @@ tags:
 
 <div>
 $$
-(n_{1,k}+n_{2,k}+n_{3,k}+n_{4,k}+n_{5,k})\times P^3 \times (1-P^3)^{k-1}
+(n_{1,k}+n_{2,k}+n_{3,k}+n_{4,k}+n_{5,k})\times P^3 \times (1+P+P^2)^{k-1}
 $$
 </div>
 
@@ -67,11 +67,19 @@ $$
 <div>
 $$
 \begin{aligned}
-n_{1,k+1} &= \big(g_5\circ g_4\circ g_3\circ g_2\circ f_1(n_{1,k})\big)-P\times n_{1,k}\\
-n_{2,k+1} &= \big(g_5\circ g_4\circ g_3\circ f_2\circ g_1(n_{2,k})\big)-P\times n_{2,k}\\
-n_{3,k+1} &= \big(g_5\circ g_4\circ f_3\circ g_2\circ g_1(n_{3,k})\big)-P\times n_{3,k}\\
-n_{4,k+1} &= \big(g_5\circ f_4\circ g_3\circ g_2\circ g_1(n_{4,k})\big)-P\times n_{4,k}\\
-n_{5,k+1} &= \big(f_5\circ g_4\circ g_3\circ g_2\circ g_1(n_{5,k})\big)-P\times n_{5,k}
+n_{1,k+1} &= g_5\circ g_4\circ g_3\circ g_2\circ f_1(n_{1,k})-P\times n_{1,k}\\
+n_{2,k+1} &= g_5\circ g_4\circ g_3\circ f_2\circ g_1(n_{2,k})-P\times n_{2,k}\\
+n_{3,k+1} &= g_5\circ g_4\circ f_3\circ g_2\circ g_1(n_{3,k})-P\times n_{3,k}\\
+n_{4,k+1} &= g_5\circ f_4\circ g_3\circ g_2\circ g_1(n_{4,k})-P\times n_{4,k}\\
+n_{5,k+1} &= f_5\circ g_4\circ g_3\circ g_2\circ g_1(n_{5,k})-P\times n_{5,k}
 \end{aligned}
 $$
 </div>
+
+## 遊戲體驗
+
+1. 畫面 5x5 只有 15 線感覺很少見，像是因為 FG 需要 5x5 才讓 BG 也是這樣大小。
+2. 走線的設計除了 2 條對角線之外，其他沒有跨越 3 列。因此圖標的堆疊反而是擋路，有時會有種畫面很多但分數普普的感覺。
+3. 免費遊戲進場頻率覺得還行，沒有到太硬。
+4. FG 計算是可以透過 Excel 直接求出，但調性可能不太容易直接使用自然機率調整，或許要利用一些條件計加以控制玩家體驗。
+5. 這種 FG 只看倍數的規則簡單，追求目標也很明確。在 [Relax Gaming](https://relax-gaming.com/) 的 [Money Train 2](https://relax-gaming.com/products/casino/moneytrain2)、[Nolimit City](https://www.nolimitcity.com/) 的 [FIRE IN THE HOLE XBOMB](https://www.nolimitcity.com/games/fire-in-the-hole-xbomb/) 等等都有出現且成績也算不錯，或許可以實做這個特色。
