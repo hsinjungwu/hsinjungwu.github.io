@@ -216,20 +216,20 @@ uglyURLs = false
         pre = "internal"
         post = "tags"
     [[menu.main]]
-        url = "/pe/"
-        name = "Project Euler"
+        url = "https://frank.hjwu.me/"
+        name = "Project"
         weight = 5
-        pre = "internal"
-        post = "pe"
+        pre = "external"
+        post = "rocket"
     [[menu.main]]
         url = "/about/"
         name = "About"
         weight = 6
         pre = "internal"
         post = "user-circle"
-    [[menu.main]]
-        weight = 7
-        identifier = "theme-switcher"
+    # [[menu.main]]
+    #    weight = 7
+    #    identifier = "theme-switcher"
 
 ##########################################
 # Theme Settings
@@ -395,7 +395,7 @@ uglyURLs = false
     #            `categoryBy` to `sections`
 
     # Display title of posts?
-    displayPosts = true
+    displayPosts = false
 
     # Display count of posts under each
     # category?
@@ -511,7 +511,7 @@ uglyURLs = false
 
     enableDarkMode = true
 
-    defaultTheme = "light"
+    defaultTheme = "dark"
     # Note: light or dark
 
     hideThemeToggle = false

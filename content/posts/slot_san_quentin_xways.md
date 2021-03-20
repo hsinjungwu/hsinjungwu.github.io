@@ -76,6 +76,9 @@ tags:
 
 1. FG 要贏得 1000+ 倍，主要是靠圖標堆疊、百搭倍數以及大獎圖標的倍數。需要耐心跟多一點的好運，因此用買的進去會不容易回本。但以透過 Base Game拍進去來說，內容是值得期待的。
 2. 採用圖標分割來達到 Ways 多樣性，並用顯示 ways 數量與標題的 `xWays` 來吃 `Megaways` 的豆腐，會吸引到想玩 megaways 的玩家，但又少了侵權的問題。
-3. 單一圖標倍數的設計感覺是可以拿來嘗試的特色，避開 All Win 倍數或百搭倍數的過強爆發力，但又不失期待感。[Hacksaw Gaming](https://www.hacksawgaming.com/) 的 [The Respinner](https:\\cf-iomeu-cdn.relaxg.com\casino\launcher.html?channel=web&gameid=rlx.hacksaw.hacksaw.1058&jurisdiction=CW&lang=en_GB&moneymode=fun&partner=aventocuracao&partnerid=525) 就做的還不錯。
+3. 單一圖標倍數的設計感覺是可以拿來嘗試的特色，避開 All Win 倍數或百搭倍數的過強爆發力，但又不失期待感。[Hacksaw Gaming](https://www.hacksawgaming.com/) 的 [The Respinner](https://cf-iomeu-cdn.relaxg.com/casino/launcher.html?channel=web&gameid=rlx.hacksaw.hacksaw.1058&jurisdiction=CW&lang=en_GB&moneymode=fun&partner=aventocuracao&partnerid=525) 就做的還不錯。
 
 [^1]: https://www.bigwinboard.com/san-quentin-nolimit-city-slot-review/
+
+
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
