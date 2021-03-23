@@ -216,11 +216,11 @@ uglyURLs = false
         pre = "internal"
         post = "tags"
     [[menu.main]]
-        url = "https://frank.hjwu.me/"
-        name = "Project"
+        url = "/solutions/"
+        name = "Solutions"
         weight = 5
-        pre = "external"
-        post = "rocket"
+        pre = "internal"
+        post = "coffee"
     [[menu.main]]
         url = "/about/"
         name = "About"

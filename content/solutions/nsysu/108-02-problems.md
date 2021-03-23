@@ -1,10 +1,8 @@
 ---
-title: "中山大學 108 學年度第二學期雙週一題"
+title: "108 學年度第二學期"
 date: 2020-08-26T10:20:00+08:00
 draft: false
 dropCap: false
-categories:
-    - "Math"
 
 ---
 
