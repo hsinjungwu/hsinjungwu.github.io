@@ -21,7 +21,7 @@ $$f(x + 5) − f(x)\leq 3(x + 3), f(x + 15) − f(x)\geq 9(x + 8)$$
 
 > 利用 [裂項求和(Telescoping sum)](https://zh.wikipedia.org/wiki/%E8%A3%82%E9%A0%85%E5%92%8C) 就可以了。總之答案是 608。
 
-## Q2
+## Q2 ✔
 
 設 $\mathcal{S}$ 是由正整數所組成的集合，裡面元素為 "後五位數字為 20210，且其後五位數被刪除後的數字仍可整除該數" 的正整數(例如 520210 刪除 20210 後的 520210 可被 5 整除)，求 $\mathcal{S}$ 裡面所有元素之位數總和(例如 520210 為 5 + 2 + 0 + 2 + 1 + 0 = 10)
 
@@ -32,3 +32,33 @@ $$f(x + 5) − f(x)\leq 3(x + 3), f(x + 15) − f(x)\geq 9(x + 8)$$
 > $$
 > </div>
 > 所以答案為 $(1+2+5+7+11+1+14+13+8+10+5+7+11+10+7+5)+16\times 5=197.$
+
+## Q3 
+
+一個圓心為 $O$ 半徑為 65 的圓。已知弦 $\overline{AB}$ 長為 32 與弦 $\overline{CD}$ 長為 66 相交於 $P$ 點，且兩弦中點的距離為 39，求 $\overline{OP}$。
+
+> 假設 $\overline{AB}$ 與 $\overline{CD}$ 中點分別為 $M$ 與 $N$，可以知道 $\angle{OMP} = \angle{ONP} = 90^\circ$ 因此 $MONP$ 為圓內接四邊形
+> 
+> 接著先做以下假設 $\overline{OM}, \overline{MP}, \overline{PN}, \overline{NO}$ 以及對角線 $\overline{OP}, \overline{MN}$ 的長度分別為 $b,x,y,a,z,c$。
+> 
+> 根據 [托勒密定理](https://zh.wikipedia.org/wiki/%E6%89%98%E5%8B%92%E5%AF%86%E5%AE%9A%E7%90%86) 以及 [畢氏定理](https://zh.wikipedia.org/wiki/%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86) 有
+> 
+> <div>
+> $$
+> \begin{aligned}
+> cz &= ax+by\\
+> z^2 &= b^2 + x^2\\
+> z^2 &= a^2 + y^2
+> \end{aligned}
+> $$
+> </div>
+> 
+> 再把這三個方程式整理一下可以得到
+> 
+> <div>
+> $$
+> (a+b-c)(a+b+c)(c+a-b)(c-a+b)z^2 = (2abc)^2
+> $$
+> </div>
+> 
+> 又根據題目給的資料可知 $a=56, b=63, c=39$，代入即可得到 $z=\frac{17199}{2\sqrt{18170}}$
