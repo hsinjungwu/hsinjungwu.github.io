@@ -46,4 +46,15 @@ gdrive upload -r -p 指定資料夾的ID %folderName%
 
 ## 發生錯誤
 + 檔名路徑有空格：可以使用雙引號 <kbd>"</kbd> 把檔名路徑夾起來。
-+ **invalid_grant**：到 `C:\Users\UserName\AppData\Roaming\.gdrive` 刪掉對應的 `token_xx.json`，然後重新輸入 `gdrive list` 再次驗證即可。    
++ **invalid_grant**：到 `C:\Users\UserName\AppData\Roaming\.gdrive` 刪掉對應的 `token_xx.json`，然後重新輸入 `gdrive list` 再次驗證即可。或是使用下列語法。
+```bat
+@echo off
+REM token 檔名
+SET TOKEN="token_v2"
+REM 使用者名稱
+SET USERNAME="User"
+SET CONFIG="C:\Users\%USERNAME%\AppData\Roaming\.gdrive\%TOKEN%.json"
+IF EXIST %CONFIG% DEL /F %CONFIG%
+gdrive list
+PAUSE
+```
