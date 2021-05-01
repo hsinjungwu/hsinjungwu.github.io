@@ -63,7 +63,7 @@ $$f(x + 5) − f(x)\leq 3(x + 3), f(x + 15) − f(x)\geq 9(x + 8)$$
 > 
 > 又根據題目給的資料可知 $a=56, b=63, c=39$，代入即可得到 $z=\frac{17199}{2\sqrt{18170}}$
 
-## Q4
+## Q4 ✔
 
 在 $1, 2, 3, \cdots, 2021$ 的直線排列 $(a_1, a_2, \cdots, a_{2021})$ 中，滿足條件 $(∗)$ 的排列共有多少
 個？
@@ -91,3 +91,29 @@ $$
 > 所以 $V_n = V_{n-1} + 2^{n-1}-1$
 >
 > 再次利用 [裂項求和(Telescoping sum)](https://zh.wikipedia.org/wiki/%E8%A3%82%E9%A0%85%E5%92%8C) 可以得到 $V_n = 2^n-n-1$，因此答案為 $2^{2001}-2002$
+
+## Q5
+
+如圖，已知一個直角三角形 $\triangle ABC$，$\overline{BC}$ 為斜邊，斜邊長為 $a$，斜邊上的高為 $h$，$O$
+為斜邊上的中點，今將斜邊 $n$ ($n > 1$, $n$ 為奇數) 等分，若 $P, Q$ 為其中兩個等分點，且 $\overline{PQ} =
+\frac{a}{n}$，$O$ 點介於 $P$, $Q$ 之間，設 $\angle PAQ = \alpha$，求 $\lim\limits_{n\to\infty}n\tan\alpha$。
+
+> 令 $\overline{OH} = k$， 可知 $h^2+k^2=a^2$。
+>
+> 再令 $\angle QAH=\beta, \angle PAH=\gamma$，則根據和角公式可以得到
+>
+> <div>
+> $$
+> \tan(\alpha) = \tan(\beta-\gamma) = \frac{\tan(\beta)-\tan(\gamma)}{1-\tan(\beta)\tan(\gamma)}
+> $$
+> </div>
+>
+> 又 $\tan(\beta) = \frac{k+\frac{a}{2n}}{h}$ 以及 $\tan(\gamma) = \frac{k-\frac{a}{2n}}{h}$
+>
+> 因此帶入可得到
+>
+> <div>
+> $$
+> \lim\limits_{n\to\infty}n\tan\alpha = \frac{h}{a}
+> $$
+> </div>
