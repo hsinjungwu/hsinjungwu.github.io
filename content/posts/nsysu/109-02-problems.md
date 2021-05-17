@@ -92,13 +92,13 @@ $$
 >
 > 再次利用 [裂項求和(Telescoping sum)](https://zh.wikipedia.org/wiki/%E8%A3%82%E9%A0%85%E5%92%8C) 可以得到 $V_n = 2^n-n-1$，因此答案為 $2^{2001}-2002$
 
-## Q5
+## Q5 ✔
 
 如圖，已知一個直角三角形 $\triangle ABC$，$\overline{BC}$ 為斜邊，斜邊長為 $a$，斜邊上的高為 $h$，$O$
 為斜邊上的中點，今將斜邊 $n$ ($n > 1$, $n$ 為奇數) 等分，若 $P, Q$ 為其中兩個等分點，且 $\overline{PQ} =
 \frac{a}{n}$，$O$ 點介於 $P$, $Q$ 之間，設 $\angle PAQ = \alpha$，求 $\lim\limits_{n\to\infty}n\tan\alpha$。
 
-> 令 $\overline{OH} = k$， 可知 $h^2+k^2=a^2$。
+> 令 $\overline{OH} = k$， 可知 $h^2+k^2=\frac{a^2}{4}$。
 >
 > 再令 $\angle QAH=\beta, \angle PAH=\gamma$，則根據和角公式可以得到
 >
@@ -108,12 +108,41 @@ $$
 > $$
 > </div>
 >
-> 又 $\tan(\beta) = \frac{k+\frac{a}{2n}}{h}$ 以及 $\tan(\gamma) = \frac{k-\frac{a}{2n}}{h}$
+> 又 $\tan(\beta) = \frac{k+\frac{a}{4n}}{h}$ 以及 $\tan(\gamma) = \frac{k-\frac{a}{4n}}{h}$
 >
 > 因此帶入可得到
 >
 > <div>
 > $$
-> \lim\limits_{n\to\infty}n\tan\alpha = \frac{h}{a}
+> \lim\limits_{n\to\infty}n\tan\alpha = \frac{4h}{a}
 > $$
 > </div>
+
+## Q6 
+今一單位球(半徑為 1 的球)球心為原點，且球面上兩點 $P、Q$ 座標分別為 $P(1, 0, 0),
+Q(−\frac{1}{2}, \frac{3}{4}, \frac{\sqrt{3}}{4})$，延著球面行進，於 $PQ$ 最短路徑中取一點 $R$，使得
+$\overset{\frown}{PR} : \overset{\frown}{QR} = 1 : 3$，試求 $R$ 點座標。
+
+> 由 $\cos{\theta} = \frac{\mathbf{a \cdot b}}{|\vec{a}| \, |\vec{b}|}$ 可以得知 $\angle POQ = 120^{\circ}$。
+>
+> 因為 $\overset{\frown}{PR} : \overset{\frown}{QR} = 1 : 3$ 則
+> <div>
+> $$
+> \begin{aligned}
+> \left \langle \vec{OP}, \vec{OR} \right \rangle &= \cos30^{\circ}\\
+> \left \langle \vec{OQ}, \vec{OR} \right \rangle &= \cos90^{\circ}
+> \end{aligned}
+> $$
+> </div>
+>
+> 令 $R = (x,y,z)$，因此
+> <div>
+> $$
+> \begin{aligned}
+> x^2 + y^2 + z^2 &= 1\\
+> x &= \frac{\sqrt{3}}{2}\\
+> \frac{-1}{2}x+\frac{3}{4}y+\frac{\sqrt{3}}{4}z &=0
+> \end{aligned}
+> $$
+> </div>
+> 所以 $R=(\frac{\sqrt{3}}{2}, \frac{\sqrt{3}}{4}, \frac{1}{4})$
