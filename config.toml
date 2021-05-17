@@ -524,7 +524,7 @@ uglyURLs = false
     #       Unless you enable the following
     #       option.
 
-    overrideSystemPreferences = false
+    overrideSystemPreferences = true
 
 
     ######################################
