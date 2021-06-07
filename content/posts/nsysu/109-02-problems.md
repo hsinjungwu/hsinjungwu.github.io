@@ -118,7 +118,7 @@ $$
 > $$
 > </div>
 
-## Q6 
+## Q6 ✔
 今一單位球(半徑為 1 的球)球心為原點，且球面上兩點 $P、Q$ 座標分別為 $P(1, 0, 0),
 Q(−\frac{1}{2}, \frac{3}{4}, \frac{\sqrt{3}}{4})$，延著球面行進，於 $PQ$ 最短路徑中取一點 $R$，使得
 $\overset{\frown}{PR} : \overset{\frown}{QR} = 1 : 3$，試求 $R$ 點座標。
@@ -146,3 +146,50 @@ $\overset{\frown}{PR} : \overset{\frown}{QR} = 1 : 3$，試求 $R$ 點座標。
 > $$
 > </div>
 > 所以 $R=(\frac{\sqrt{3}}{2}, \frac{\sqrt{3}}{4}, \frac{1}{4})$
+
+## Q7 
+對所有正整數 $n$，令 $A_n = (1 + \frac{1}{n})^{n}$, $B_n = (1 + \frac{1}{n})^{n+1}$, $C_n=\frac{2A_{n}B_{n}}{A_n+B_n}$, 證明 $C_1 < C_2 < \cdots < C_n < \cdots$ 。
+
+> 我們先簡單整理一下可以得到
+>
+> <div>
+> $$
+> \frac{C_n}{C_{n-1}} = \frac{(2n-1)(n+1)^{n+1}(n-1)^{n-1}}{(2n+1)n^{2n}}
+> $$
+> </div>
+>
+> 又
+> <div>
+> $$
+> \begin{align*}
+> 1+\frac{1}{n}&=\frac{1}{1-\frac{1}{n+1}}\\
+> &>1+\frac{1}{n+1}+\frac{1}{(n+1)^2}+\cdots+\frac{1}{(n+1)^{n-1}}\\
+> &\geq1+\sum_{i=1}^{i=n-1}\frac{{n-1\choose i}}{(n-1)^i}\frac{1}{(n+1)^i}\\
+> &=1+\sum_{i=1}^{i=n-1}{n-1\choose i}\frac{1}{(n^2-1)^i}\\
+> &=(1+\frac{1}{n^2-1})^{n-1}
+> \end{align*}
+> $$
+> </div>
+
+而 $\forall n > 1$ 有 $1+\frac{1}{n}>1+\frac{1}{2n-1}$ 
+
+所以可推得
+> <div>
+> $$
+> \begin{align*}
+> (\frac{n+1}{n})^2 &=(1+\frac{1}{n})^2\\
+> &>(1+\frac{1}{2n-1})(1+\frac{1}{n})\\
+> &>(1+\frac{1}{2n-1})(1+\frac{1}{n^2-1})^{n-1}\\
+> &=\frac{2n+1}{2n-1}(\frac{n^2}{n^2-1})^{n-1}\\
+> &=\frac{(2n+1)n^{2n-2}}{(2n-1)(n-1)^{n-1}(n+1)^{n-1}}\\
+> \end{align*}
+> $$
+> </div>
+>
+> 於是得到結論 
+>
+> <div>
+> $$
+> \frac{(2n-1)(n+1)^{n+1}(n-1)^{n-1}}{(2n+1)n^{2n}} = \frac{C_n}{C_{n-1}} > 1, \forall n > 1
+> $$
+> </div>
