@@ -147,7 +147,7 @@ $\overset{\frown}{PR} : \overset{\frown}{QR} = 1 : 3$，試求 $R$ 點座標。
 > </div>
 > 所以 $R=(\frac{\sqrt{3}}{2}, \frac{\sqrt{3}}{4}, \frac{1}{4})$
 
-## Q7 
+## Q7 ✔
 對所有正整數 $n$，令 $A_n = (1 + \frac{1}{n})^{n}$, $B_n = (1 + \frac{1}{n})^{n+1}$, $C_n=\frac{2A_{n}B_{n}}{A_n+B_n}$, 證明 $C_1 < C_2 < \cdots < C_n < \cdots$ 。
 
 > 我們先簡單整理一下可以得到
@@ -170,10 +170,10 @@ $\overset{\frown}{PR} : \overset{\frown}{QR} = 1 : 3$，試求 $R$ 點座標。
 > \end{align*}
 > $$
 > </div>
-
-而 $\forall n > 1$ 有 $1+\frac{1}{n}>1+\frac{1}{2n-1}$ 
-
-所以可推得
+>
+> 而 $\forall n > 1$ 有 $1+\frac{1}{n}>1+\frac{1}{2n-1}$ 
+>
+> 所以可推得
 > <div>
 > $$
 > \begin{align*}
@@ -191,5 +191,89 @@ $\overset{\frown}{PR} : \overset{\frown}{QR} = 1 : 3$，試求 $R$ 點座標。
 > <div>
 > $$
 > \frac{(2n-1)(n+1)^{n+1}(n-1)^{n-1}}{(2n+1)n^{2n}} = \frac{C_n}{C_{n-1}} > 1, \forall n > 1
+> $$
+> </div>
+
+## Q8
+令 $A$, $B$ 分別為 $3\times2$, $2\times3$ 矩陣，若 
+
+<div>
+$$
+AB=\begin{pmatrix}
+   8 & 2 & -2 \\
+   2 & 5 & 4 \\
+   -2 & 4 & 5
+\end{pmatrix}
+$$
+</div>
+
+證明 
+<div>
+$$
+BA=\begin{pmatrix}
+   9 & 0\\
+   0 & 9
+\end{pmatrix}
+$$
+</div>
+
+> 簡單計算可以得到 $ABAB = (9I_3)AB = A(9I_2)B$
+>
+> 考慮 $2\times3$ 的矩陣 $C$
+>
+> **情況 1** : 如果 $a_{11}a_{22}-a_{12}a_{21} \neq 0$，取 $C$ 為
+>
+> <div>
+> $$
+> \begin{pmatrix}
+>   \frac{a_{22}}{a_{11}a_{22}-a_{12}a_{21}} & \frac{-a_{12}}{a_{11}a_{22}-a_{12}a_{21}} & 0\\
+>   \frac{-a_{21}}{a_{11}a_{22}-a_{12}a_{21}} & \frac{a_{11}}{a_{11}a_{22}-a_{12}a_{21}} & 0\\
+> \end{pmatrix}
+> $$
+> </div>
+> 
+> **情況 2** : 如果 $a_{11}a_{22}-a_{12}a_{21} = 0$, 易證 $(a_{11}, a_{12}, a_{21}, a_{22})$ 只可能為以下兩種情形
+> 1. $(\neq0,0,0,\neq0)$
+> 2. $(0,\neq0,\neq0,0)$
+>
+> 則可分別取 $C$ 為
+> <div>
+> $$
+> \begin{pmatrix}
+>   \frac{1}{a_{11}} & 0 & 0\\
+>   0 & \frac{1}{a_{22}} & 0\\
+> \end{pmatrix}
+> $$
+> </div>
+> 或
+> <div>
+> $$
+> \begin{pmatrix}
+>   0 &\frac{1}{a_{21}} & 0 \\
+>   \frac{1}{a_{12}} & 0 & 0\\
+> \end{pmatrix}
+> $$
+> </div>
+>
+> 可知 $CA = I_2$ 
+>
+> 同理也可以找到 $3\times2$ 的矩陣 $D$ 使得 $BD=I_2$
+>
+> 於是
+> <div>
+> $$
+> \begin{aligned}
+> BA &= I_2(BA)I_2\\
+> &= (CA)(BA)(BD)\\
+> &= C(ABAB)D\\
+> &= C\bigg((9I_3)AB\bigg)D \\
+> &= C\bigg(A(9I_2)B\bigg)D\\
+> &= (CA)(9I_2)(BD)\\
+> &= I_2(9I_2)I_2\\
+> &= \begin{pmatrix}
+>   9 & 0\\
+>   0 & 9\\
+> \end{pmatrix}
+> \end{aligned}
 > $$
 > </div>
