@@ -14,19 +14,60 @@ categories:
 <!--more-->
 
 細節如下，下面列出我的計算過程。
-|題號|得分|
-|:----:|:----:|
-|1|4|
-|3|3|
-|4|4|
-|5|5|
-|6|5|
-|10|3|
-|11|3|
-|12|4|
-|13|5|
-|17|4|
-|18|4|
+<table>
+<thead>
+<tr>
+<th align="center">題號</th>
+<th align="center">得分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
 
 ----
 
