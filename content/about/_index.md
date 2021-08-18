@@ -44,7 +44,7 @@ dropCap: false
 17. [Gu Gu Gu 3](https://h5c.cqgame.games/180/?token=guest:::3000): Multiplier Wild & Buy Reel Respin
 18. [Sweet Pop](https://h5c.cqgame.games/206/?token=guest:::3000) : Cascading Any 8 game with All Win Multiplier 
 19. [Hot Pinatas](https://h5c.cqgame.games/215/?token=guest:::3000) Cascading with Bonus
-
+20. [Dollar Bomb](https://h5c.cqgame.games/218/?token=guest:::3000) Megaways with All Win Progressive Multiplier 
 ----
 
 **Table Games**
