@@ -26,7 +26,9 @@ categories:
 ```js
 function run() {
   var msg = queryMail();
-  lineMessage(msg);
+  if (msg.length > 0) {
+    lineMessage(msg);
+  }
 }
 
 var token = "xxx"; //your token
