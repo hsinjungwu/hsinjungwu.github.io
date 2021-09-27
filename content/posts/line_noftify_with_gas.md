@@ -31,7 +31,7 @@ function run() {
   }
 }
 
-var token = "xxx"; //your token
+var token = "xxx";
 
 function lineMessage(msg) {
   var option = {
@@ -53,16 +53,18 @@ function queryMail() {
   for (var i = 0; i < messages.length; i++) {
     for (var j = 0; j < messages[i].length; j++) {
       var mail = messages[i][j];
-      rtnMsg +=
-        "\n" +
-        Utilities.formatDate(mail.getDate(), "GMT+8", "yyyy/MM/dd") +
-        " " +
-        mail.getPlainBody();
-      mail.markRead(); //標為已讀
+      if (mail.isUnread()) {
+        rtnMsg +=
+          "\n" +
+          Utilities.formatDate(mail.getDate(), "GMT+8", "yyyy/MM/dd") +
+          " " +
+          mail.getPlainBody();
+        mail.markRead();
+      }
     }
   }
   for (var i = 0; i < messages.length; i++) {
-    threads[i].moveToArchive(); //封存
+    threads[i].moveToArchive();
   }
 
   return rtnMsg;
