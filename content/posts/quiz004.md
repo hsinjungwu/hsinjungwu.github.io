@@ -4,7 +4,7 @@ date: 2020-10-01T11:09:00+08:00
 draft: false
 dropCap: false
 categories:
-    - "Math"
+  - "Math"
 ---
 
 文章：[[分析] 求範圍 by jazzter@ptt](http://www.ptt.cc/bbs/Math/M.1342593839.A.24E.html)
@@ -19,7 +19,7 @@ $$
 $$
 </div>
 
-----
+---
 
 解答：直接暴力通分，然後交叉相乘。然後可以化簡拆開成下列諸項：
 
@@ -50,6 +50,6 @@ $$
 
 其它強者的解法：
 
-+ [LimSinE@ptt](https://www.ptt.cc/bbs/Math/M.1342603205.A.B14.html)
-+ [JohnMash@ptt](https://www.ptt.cc/bbs/Math/M.1342604850.A.605.html)
-+ [TWN2@ptt](https://www.ptt.cc/bbs/Math/M.1342650313.A.2C6.html)
+- [LimSinE@ptt](https://www.ptt.cc/bbs/Math/M.1342603205.A.B14.html)
+- [JohnMash@ptt](https://www.ptt.cc/bbs/Math/M.1342604850.A.605.html)
+- [TWN2@ptt](https://www.ptt.cc/bbs/Math/M.1342650313.A.2C6.html)

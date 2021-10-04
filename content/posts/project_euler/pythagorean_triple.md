@@ -4,8 +4,7 @@ date: 2021-05-20T02:13:00+08:00
 draft: false
 dropCap: false
 categories:
-    - "Project Euler"
-
+  - "Project Euler"
 ---
 
 在 [Project Euler](https://projecteuler.net/) 中偶爾會遇到 [畢氏三元數](https://en.wikipedia.org/wiki/Pythagorean_triple)，才知道原來跟它不是很熟啊！ 😣
@@ -24,7 +23,7 @@ c &= m^2+n^2
 $$
 </div>
 
-----
+---
 
 裡面有一題有提到一個有趣的性質[^1]
 

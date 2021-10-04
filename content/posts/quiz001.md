@@ -4,7 +4,7 @@ date: 2020-10-01T02:13:00+08:00
 draft: false
 dropCap: false
 categories:
-    - "Math"
+  - "Math"
 ---
 
 很久以前在 FB 上看到的這題

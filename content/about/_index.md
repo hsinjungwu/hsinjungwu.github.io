@@ -4,7 +4,7 @@ date: 2020-08-14T12:31:49+08:00
 dropCap: false
 ---
 
-# Game Mathematician 
+# Game Mathematician
 
 3+ years relevant experience in the gaming industry creating mathematical models.
 
@@ -15,16 +15,17 @@ dropCap: false
 
 ## Skills
 
-+ C#
-+ Golang
-+ SQL Stored Procedure
-+ Python
-+ Git
-+ Excel(familiar with native formula)
+- C#
+- Golang
+- SQL Stored Procedure
+- Python
+- Git
+- Excel(familiar with native formula)
 
 ## Projects
 
 **Slot**
+
 1. [Running Toro](https://h5c.cqgame.games/86/?token=guest:::3000) : middle row Expanding Wild
 2. [Happy Magpies](https://h5c.cqgame.games/88/?token=guest:::3000) : Random Full Reel Wilds
 3. [Jelly Pop Humming](https://h5c.cqgame.games/100/?token=guest:::3000) : Cascading with 3 levels
@@ -40,12 +41,13 @@ dropCap: false
 13. [Casting Gold](https://h5c.cqgame.games/145/?token=guest:::3000) : Walking Wild
 14. [Six Candy](https://h5c.cqgame.games/153/?token=guest:::3000) : Any 6
 15. [Hecules](https://h5c.cqgame.games/161/?token=guest:::3000) : Cascading with Stack Wild, All Win Multiplier
-16. [6 Toros](https://h5c.cqgame.games/173/?token=guest:::3000) : Cascading Cluster Pay with Stick Wild, All Win Progressive Multiplier 
+16. [6 Toros](https://h5c.cqgame.games/173/?token=guest:::3000) : Cascading Cluster Pay with Stick Wild, All Win Progressive Multiplier
 17. [Gu Gu Gu 3](https://h5c.cqgame.games/180/?token=guest:::3000): Multiplier Wild & Buy Reel Respin
-18. [Sweet Pop](https://h5c.cqgame.games/206/?token=guest:::3000) : Cascading Any 8 game with All Win Multiplier 
+18. [Sweet Pop](https://h5c.cqgame.games/206/?token=guest:::3000) : Cascading Any 8 game with All Win Multiplier
 19. [Hot Pinatas](https://h5c.cqgame.games/215/?token=guest:::3000) Cascading with Bonus
-20. [Dollar Bomb](https://h5c.cqgame.games/218/?token=guest:::3000) Megaways with All Win Progressive Multiplier 
-----
+20. [Dollar Bomb](https://h5c.cqgame.games/218/?token=guest:::3000) Megaways with All Win Progressive Multiplier
+
+---
 
 **Table Games**
 
@@ -54,7 +56,8 @@ dropCap: false
 3. [Peeking Banker Bull-Bull](https://h5bt.cqgame.games/h5/BT03/??token=guest)
 4. [Pok Deng](https://h5bt.cqgame.games/h5/CH03/??token=guest)
 
-----
+---
 
 **Scratchcard**
+
 1. [Golden Pigs](https://h5c.cqgame.games/168/?token=guest:::3000)

@@ -4,8 +4,10 @@ date: 2021-09-27T10:20:00+08:00
 draft: false
 dropCap: false
 categories:
+  - "HowTo"
+tags:
   - "Line"
-  - "GoogleAppsScript"
+  - "Google Apps Script"
 ---
 
 前幾天忘了自己下班有沒有打卡，除了回去補打之外不然就是要經過種種驗證登入公司信箱查詢。套句強者我學長說的 **幹壞事是進步最大的原動力**，於是開始了這段簡單旅程。

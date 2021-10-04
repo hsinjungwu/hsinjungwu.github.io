@@ -4,7 +4,7 @@ date: 2020-08-20T13:14:00+08:00
 draft: false
 dropCap: false
 categories:
-    - "Math"
+  - "Math"
 ---
 
 之前讀研究所的作業。 😰
@@ -13,7 +13,7 @@ categories:
 
 ## 題目
 
-Let $F_n$ denote the $n$-th fibonacci number. Let $\alpha=\frac{1+\sqrt{5}}{2}.$ Prove that 
+Let $F_n$ denote the $n$-th fibonacci number. Let $\alpha=\frac{1+\sqrt{5}}{2}.$ Prove that
 
 $$
 F_n\geq\frac{\alpha^{n-\frac{1}{n}}}{\sqrt{5}}.

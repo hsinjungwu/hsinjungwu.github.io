@@ -4,10 +4,10 @@ date: 2020-10-01T12:31:00+08:00
 draft: false
 dropCap: false
 categories:
-    - "Math"
+  - "Math"
 ---
 
-文章：[尼斯的靈魂](https://frankliou.wordpress.com/)的 [0417每日數題](https://frankliou.wordpress.com/2012/04/17/0417%e6%af%8f%e6%97%a5%e6%95%b8%e9%a1%8c/)
+文章：[尼斯的靈魂](https://frankliou.wordpress.com/)的 [0417 每日數題](https://frankliou.wordpress.com/2012/04/17/0417%e6%af%8f%e6%97%a5%e6%95%b8%e9%a1%8c/)
 
 <!--more-->
 
