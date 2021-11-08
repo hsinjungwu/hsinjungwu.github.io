@@ -36,8 +36,20 @@ $$
 
 > 找出空間一點 $(x,y,0)$ 與 $(3,-2,\pm2)$ 跟 $(-3,-4,\pm5)$ 的距離和最短。經過一番簡單計算可以得到 $(x,y)=(\frac{9}{7},\frac{-2}{7})$ 有最小值 $11$。
 
-## Q3
+## Q3 ✔
 
 設 $\frac{1}{2a}+\frac{1}{3b}=30$，其中 $a, b$ 為正數，求 $3\log_{\frac{1}{6}}a+2\log_{\frac{1}{6}}b$ 的最大值。
 
 > 因為 $180 = \frac{3}{a} + \frac{2}{b} \geq 5\sqrt[5]{\frac{1}{a^3b^2}}$，所以 $a^3b^2 \leq{\frac{1}{6}}^{10}$。又題目所求原式可寫成 $\log_{\frac{1}{6}}{a^3b^2}$ 所以答案為 $10.$
+
+## Q4
+
+如下圖，大圓的半徑為 $10$，小圓的半徑為 $4$，$A$ 在大圓的圓周上且為小圓的圓心，$\overline{BC}$ 為大圓的弦且與小圓相切。若 $\overline{AB} = 16$ ，則 $\overline{AC}$ =？
+
+![NSYSU-110-01-Q4](https://i.imgur.com/bwW3rYy.png)
+
+> 令大圓圓心為 $O$，點 $A$ 到 $\overline{BC}$ 的垂足為 $M$。設圓周角 $\angle{ABC}=\theta$，則圓心角 $\angle{AOC}=2\theta$。
+>
+> 從 $\triangle ABM$ 可得 $\sin\theta = \frac{1}{4}$。而從 $\triangle ACO$ 可得 $\cos 2\theta = \frac{200-\overline{AC}^2}{200}=1-\frac{\overline{AC}^2}{200}$。
+>
+> 於是由兩倍角公式可得到 $\overline{AC} = 5$
