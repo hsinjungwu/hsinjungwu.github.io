@@ -14,7 +14,7 @@ notAllowedTypesInArchive = ["about", "talks", "showcase"] # not allowed page typ
 notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
 enablePinnedPosts = true # show pinned posts first in the main view
 
-viewportSize = "wide" # widest, wider, wide, normal, narrow
+viewportSize = "widest" # widest, wider, wide, normal, narrow
 enableUiAnimation = true
 hideSingleContentsWhenJSDisabled = false
 minItemsToShowInTagCloud = 1 # Minimum items to show in tag cloud
@@ -29,7 +29,7 @@ showMobileMenuTerms = ["tags", "categories", "series"]
 enableThemeChange = true # site color theme
 
 # body
-enableBreadcrumb = true # breadcrumb for list, single page
+enableBreadcrumb = false # breadcrumb for list, single page
 enableSearch = true # site search with Fuse
 enableSearchHighlight = true # when true, search keyword will be highlighted
 enableGoToTop = true # scroll to top
@@ -43,13 +43,13 @@ talksGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 
 # whoami: usage - home page sidebar, single page bottom of post. all values can be empty
 myname = "FR4NK"
-email = "hsinjungwu+job@gmail.com"
-whoami = "Math RD"
+email = "hsinjungwu@gmail.com"
+whoami = "Math / Backend RD"
 bioImageUrl = "" # image url like "http//..." or "images/anyfoldername/mybioimage.jpg" If not set, we find a avatar image in root/static/images/whoami/avatar.(png|jpg|svg)
 useGravatar = false # we use this option highest priority
 location = "Taichung, Taiwan"
 organization = ""
-link = ""
+link = "https://hjwu.me"
 
 # sidebar
 enableBio = true # in home page sidebar
@@ -73,8 +73,8 @@ enableSidebarPostsByOrder = false # another lists in the sidebar
 # footer
 showPoweredBy = true # show footer text: Powered by Hugo and Zzo theme
 showFeedLinks = true # RSS Feed 
-showSocialLinks = true # email, facebook, twitter ...
-enableLangChange = true # show button at bottom left of footer.
+showSocialLinks = false # email, facebook, twitter ...
+enableLangChange = false # show button at bottom left of footer.
 
 # service
 googleTagManager = "" # GTM-XXXXXX
@@ -134,18 +134,18 @@ commento = false
   dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [socialOptions] # if set, social icons will show up.
-  email = ""
+  email = "mail:hsinjungwu@gmail.com"
   phone = ""
   facebook = ""
   twitter = ""
-  github = ""
+  github = "https://github.com/hsinjungwu"
   stack-overflow = ""
   instagram = ""
   google-plus = ""
   youtube = ""
   medium = ""
   tumblr = ""
-  linkedin = ""
+  linkedin = "https://www.linkedin.com/in/hsinjungwu/"
   pinterest = ""
   stack-exchange = ""
   telegram = ""
