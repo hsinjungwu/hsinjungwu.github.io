@@ -8,6 +8,8 @@ categories:
 tags:
   - "IEEE754"
   - "EXCEL"
+libraries:
+- katex  
 ---
 
 遇到 [Issue when importing float as string from Excel. Adding precision incorrectly](https://stackoverflow.com/questions/51025969/issue-when-importing-float-as-string-from-excel-adding-precision-incorrectly) 跟 [Excel importation may misinterpret fractional numbers](https://community.claris.com/en/s/question/0D50H00006ezK2L/excel-importation-may-misinterpret-fractional-numbers) 提到的問題，細細研究才發現水很深啊～ 😏
@@ -32,11 +34,13 @@ tags:
 
 目前測試的結果看起來 Excel 會依照小數點位數採取不同方式來記錄數字<small>(原因不明)</small>
 
+{{< boxmd >}} 
 - 1 位：直接存
 - 2 位<small>(不知道為什麼有這兩種差異)</small>：
   + $0.07 = 7.0000000000000007\mathrm{E}{-2}$
   + 其他則直接用浮點換算的 `0.XXXXXXXXXXXXXXXXXX(共18位)` 紀錄。
 - 超過 2 位：以科學符號紀錄浮點換算的值，並保留 **17** 個數字，然後第 18 個數字四捨五入。
+{{< /boxmd >}}
 
 所以原本的問題
 
@@ -53,6 +57,6 @@ $$
     - [OOXML：Excel(xlsx)是什么](https://insutanto.net/code-notes/2021-05/ooxml/what-is-excel-xlsx)
     - [OOXML：详解 Excel 工作表(worksheet)](https://insutanto.net/code-notes/2021-05/ooxml/what-is-excel-worksheet)
     - [OOXML：详解 Excel 共享字符串(sharedStrings)](https://insutanto.net/code-notes/2021-05/ooxml/what-is-excel-sharedstrings)
-3. [安裝 ExcelDataReader](https://www.nuget.org/packages/ExcelDataReader/) 記得也[安裝 ExcelDataReader.DataSet](https://www.nuget.org/packages/ExcelDataReader.DataSet/) 不然沒法使用範例的 `var result = reader.AsDataSet();`。
+3. [安裝 ExcelDataReader](https://www.nuget.org/packages/ExcelDataReader/) 記得也 [安裝 ExcelDataReader.DataSet](https://www.nuget.org/packages/ExcelDataReader.DataSet/) 不然沒法使用範例的 `var result = reader.AsDataSet();`。
 4. 找到這篇 [Excel 技巧整理](https://komotonekobox.blogspot.com/search/label/%28A-c%29Excel%E6%8A%80%E5%B7%A7)，雖然現在工作不太接觸 Excel 但還是有備無患。
 5. 也找到微軟官方提供的 [Office 產品疑難排解](https://docs.microsoft.com/zh-tw/office/troubleshoot/office-client-welcome)。
