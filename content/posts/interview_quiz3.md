@@ -3,13 +3,11 @@ title: "面試題目三"
 date: 2020-08-20T11:26:00+08:00
 draft: false
 dropCap: false
-categories:
+tags:
   - "Interview"
 ---
 
 這題在大學時曾被問過，而最近(2017 年)在面試時或聽人面試過程時也出現，不知道這些面試官們為什麼這麼有志一同？ 😑
-
-<!--more-->
 
 題目如下：
 

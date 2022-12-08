@@ -3,18 +3,12 @@ title: "關於 EXCEL 內的浮點數儲存內容"
 date: 2021-10-06T10:20:00+08:00
 draft: false
 dropCap: false
-categories:
-  - "WHY"
 tags:
   - "IEEE754"
   - "EXCEL"
-libraries:
-- katex  
 ---
 
 遇到 [Issue when importing float as string from Excel. Adding precision incorrectly](https://stackoverflow.com/questions/51025969/issue-when-importing-float-as-string-from-excel-adding-precision-incorrectly) 跟 [Excel importation may misinterpret fractional numbers](https://community.claris.com/en/s/question/0D50H00006ezK2L/excel-importation-may-misinterpret-fractional-numbers) 提到的問題，細細研究才發現水很深啊～ 😏
-
-<!--more-->
 
 ## 問題重現
 
@@ -34,21 +28,17 @@ libraries:
 
 目前測試的結果看起來 Excel 會依照小數點位數採取不同方式來記錄數字<small>(原因不明)</small>
 
-{{< boxmd >}} 
 - 1 位：直接存
 - 2 位<small>(不知道為什麼有這兩種差異)</small>：
   + $0.07 = 7.0000000000000007\mathrm{E}{-2}$
   + 其他則直接用浮點換算的 `0.XXXXXXXXXXXXXXXXXX(共18位)` 紀錄。
 - 超過 2 位：以科學符號紀錄浮點換算的值，並保留 **17** 個數字，然後第 18 個數字四捨五入。
-{{< /boxmd >}}
 
 所以原本的問題
 
-<div>
 $$
 0.0004 \approx 4.00000000000000019168694409544\mathrm{E}{-4} \approx 4.0000000000000002\mathrm{E}{-4}
 $$
-</div>
 
 ## 後記
 

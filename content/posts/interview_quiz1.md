@@ -3,13 +3,11 @@ title: "面試題目一"
 date: 2020-08-19T10:20:00+08:00
 draft: false
 dropCap: false
-categories:
+tags:
   - "Interview"
 ---
 
-前同事的同事去某間公司被問的題目
-
-<!--more-->
+前同事的同事去某間公司被問的題目。
 
 ## 題目
 

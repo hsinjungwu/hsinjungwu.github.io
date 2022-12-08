@@ -1,17 +1,14 @@
 ---
-title: "How To Batch Upload Files To Google Drive"
+title: "Batch Upload Files To Google Drive"
 date: 2021-03-10T20:25:00+08:00
 draft: false
 dropCap: false
-categories:
-  - "HowTo"
 tags:
+  - "HowTo"
   - "GDrive"
 ---
 
 協助公司同仁處理日常工作。🤓
-
-<!--more-->
 
 ## 建置
 
