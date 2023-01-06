@@ -74,7 +74,7 @@ $n$ 為偶數或 $5$ 的倍數，顯見不成立。
 
 $$
 \begin{aligned}
-&n=3m\mid(1+10^{\varphi(m)}+10^{2\varphi(m)})\times\overbrace{1\dots\dots\dots1}^{\varphi(m)}\\
+&n=3m\mid(1+10^{\varphi(m)}+10^{2\varphi(m)})\times\overbrace{1\dots\dots\dots1}^{\varphi(m)}\\\\
 \implies & \mathcal{L}(n)\leq3\varphi(m)< 3m=n
 \end{aligned}
 $$
@@ -83,7 +83,7 @@ $$
 
 $$
 \begin{aligned}
-&n=9m\mid(1+10^{\varphi(m)}+\cdots+10^{8\varphi(m)})\times\overbrace{1\dots\dots\dots1}^{\varphi(m)}\\
+&n=9m\mid(1+10^{\varphi(m)}+\cdots+10^{8\varphi(m)})\times\overbrace{1\dots\dots\dots1}^{\varphi(m)}\\\\
 \implies & \mathcal{L}(n)\leq9\varphi(m)< 9m=n
 \end{aligned}
 $$
