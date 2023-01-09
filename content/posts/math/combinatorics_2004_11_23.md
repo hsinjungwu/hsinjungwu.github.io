@@ -61,4 +61,4 @@ $$
 
 ## 後記
 
-當年的做法跟 [這篇](https://math.stackexchange.com/questions/1087678/let-a-n-2-sqrt-n-sum-k-1n-frac1-sqrtk-show-a-n-converges-and-1) 發文者一樣，只走到 $1 < \lim\limits_{n\to\infty}a_n\leq2$，後來就不了了之。
+當初只做出 trivial case $n$ is odd。後來有抄助教跟某同學的解法，但好像是錯的？
