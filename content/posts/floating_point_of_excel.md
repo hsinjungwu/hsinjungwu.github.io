@@ -6,6 +6,7 @@ dropCap: false
 tags:
   - "IEEE754"
   - "EXCEL"
+  - "Math"
 ---
 
 遇到 [Issue when importing float as string from Excel. Adding precision incorrectly](https://stackoverflow.com/questions/51025969/issue-when-importing-float-as-string-from-excel-adding-precision-incorrectly) 跟 [Excel importation may misinterpret fractional numbers](https://community.claris.com/en/s/question/0D50H00006ezK2L/excel-importation-may-misinterpret-fractional-numbers) 提到的問題，細細研究才發現水很深啊～ 😏

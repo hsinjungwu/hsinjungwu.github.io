@@ -5,6 +5,7 @@ draft: false
 dropCap: false
 tags:
   - "Random Number Generator"
+  - "Math"
 ---
 
 剛好看到 [亂數產生器：Random 與 RNGCryptoServiceProvider](https://blog.miniasp.com/post/2008/05/13/Random-vs-RNGCryptoServiceProvider)，想到當年回台中面試 [新博](http://www.simbo.com.tw/) 有被問類似的題目。 
