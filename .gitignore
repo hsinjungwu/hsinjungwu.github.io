@@ -1,2 +1,4 @@
 .vscode/*
 *.lock
+public/*
+resources/_gen/*

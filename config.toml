@@ -36,7 +36,7 @@ hideColorSchemeToggle = true
 # Series see also post count
 maxSeeAlsoItems = 5
 # Custom CSS
-customCSS = ["kbd.css"]
+customCSS = ["kbd.css", "table.css"]
 # Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
 customSCSS = []
 # Custom JS
@@ -146,3 +146,8 @@ url = "posts/"
 name = "Tags"
 weight = 3
 url = "tags/"
+
+[[languages.en.menu.main]]
+name = "Project Euler"
+weight = 4
+url = "pe/"
