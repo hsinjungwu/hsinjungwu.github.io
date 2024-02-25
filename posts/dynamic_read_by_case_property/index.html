@@ -1,0 +1,111 @@
+<!doctype html><html lang=en><head><title>動態讀取 By Case 的第三方物件 Public Field · FR4NK 乾一杯</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="HJWu"><meta name=description content="剛來公司時某個舊專案 BigProject 因為要對接多個同父異母專案的物件 ExtObject，有時需特例處理各專案額外開的 Public Field。 😱
+暴力法 Link to heading 由於有歷史包袱，所以在一開始時是使用 反射 暴力處理。
+public static bool SetFieldValue(string fn, object val, object obj) { try { Type t = obj.GetType(); object v = Convert.ChangeType(val,t.GetField(fn).FieldType); t.GetField(fn).SetValue(obj, v); return true; } catch { return false; } } public static T GetFieldValue<T>(string fn, object obj) { try { Type t = obj.GetType(); FieldInfo fi = t.GetField(fn); return (T)fi.GetValue(obj); } catch { return default; } } 溝通後 Link to heading 但後來在對方有機會改版的情況下請對方新增下列函數，我們也相對應使用 NewBigProject 套用 NewExtObject ，所以未來的新專案都沒事了！🤩"><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="動態讀取 By Case 的第三方物件 Public Field "><meta name=twitter:description content="剛來公司時某個舊專案 BigProject 因為要對接多個同父異母專案的物件 ExtObject，有時需特例處理各專案額外開的 Public Field。 😱
+暴力法 Link to heading 由於有歷史包袱，所以在一開始時是使用 反射 暴力處理。
+public static bool SetFieldValue(string fn, object val, object obj) { try { Type t = obj.GetType(); object v = Convert.ChangeType(val,t.GetField(fn).FieldType); t.GetField(fn).SetValue(obj, v); return true; } catch { return false; } } public static T GetFieldValue<T>(string fn, object obj) { try { Type t = obj.GetType(); FieldInfo fi = t.GetField(fn); return (T)fi.GetValue(obj); } catch { return default; } } 溝通後 Link to heading 但後來在對方有機會改版的情況下請對方新增下列函數，我們也相對應使用 NewBigProject 套用 NewExtObject ，所以未來的新專案都沒事了！🤩"><meta property="og:title" content="動態讀取 By Case 的第三方物件 Public Field "><meta property="og:description" content="剛來公司時某個舊專案 BigProject 因為要對接多個同父異母專案的物件 ExtObject，有時需特例處理各專案額外開的 Public Field。 😱
+暴力法 Link to heading 由於有歷史包袱，所以在一開始時是使用 反射 暴力處理。
+public static bool SetFieldValue(string fn, object val, object obj) { try { Type t = obj.GetType(); object v = Convert.ChangeType(val,t.GetField(fn).FieldType); t.GetField(fn).SetValue(obj, v); return true; } catch { return false; } } public static T GetFieldValue<T>(string fn, object obj) { try { Type t = obj.GetType(); FieldInfo fi = t.GetField(fn); return (T)fi.GetValue(obj); } catch { return default; } } 溝通後 Link to heading 但後來在對方有機會改版的情況下請對方新增下列函數，我們也相對應使用 NewBigProject 套用 NewExtObject ，所以未來的新專案都沒事了！🤩"><meta property="og:type" content="article"><meta property="og:url" content="https://hjwu.me/posts/dynamic_read_by_case_property/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-01-16T20:25:00+08:00"><meta property="article:modified_time" content="2023-01-16T20:25:00+08:00"><link rel=canonical href=https://hjwu.me/posts/dynamic_read_by_case_property/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.7f9d180e3b3bebba9ba80d55eed1255c35e00764872854736d6ad7db38884ffc.css integrity="sha256-f50YDjs767qbqA1V7tElXDXgB2SHKFRzbWrX2ziIT/w=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.216e36d3eaf6f4cdfd67dc1200c49a8169e6478102977b3e9ac51a064c57054c.css integrity="sha256-IW420+r29M39Z9wSAMSagWnmR4ECl3s+msUaBkxXBUw=" crossorigin=anonymous media=screen><link rel=stylesheet href=/kbd.min.ede294452924ed1c7fe8f864b4a95082f9f30ab56bad8316a0adc2aa57984f45.css integrity="sha256-7eKURSkk7Rx/6PhktKlQgvnzCrVrrYMWoK3CqleYT0U=" crossorigin=anonymous media=screen><link rel=stylesheet href=/table.min.cb36ad14767f554e557b0c8c2d6b3910cef4610f40ad5dca9dc6b330e34459c3.css integrity="sha256-yzatFHZ/VU5VewyMLWs5EM70YQ9ArV3KncazMONEWcM=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.100.1"></head><body class="preload-transitions colorscheme-dark"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/>FR4NK 乾一杯</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/>Posts</a></li><li class=navigation-item><a class=navigation-link href=/tags/>Tags</a></li><li class=navigation-item><a class=navigation-link href=/pe/>Project Euler</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://hjwu.me/posts/dynamic_read_by_case_property/>動態讀取 By Case 的第三方物件 Public Field</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2023-01-16T20:25:00+08:00>January 16, 2023</time></span>
+<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+2-minute read</span></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/howto/>HowTo</a></span></div></div></header><div><p>剛來公司時某個舊專案 <code>BigProject</code> 因為要對接多個同父異母專案的物件 <code>ExtObject</code>，有時需特例處理各專案額外開的 <code>Public Field</code>。 😱</p><h3 id=暴力法>暴力法
+<a class=heading-link href=#%e6%9a%b4%e5%8a%9b%e6%b3%95><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>由於有歷史包袱，所以在一開始時是使用 <a href=https://learn.microsoft.com/zh-tw/dotnet/csharp/programming-guide/concepts/reflection>反射</a> 暴力處理。</p><div class=highlight><pre tabindex=0 style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=display:flex><span><span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>static</span> <span style=color:#6ab825;font-weight:700>bool</span> SetFieldValue(<span style=color:#6ab825;font-weight:700>string</span> fn, <span style=color:#6ab825;font-weight:700>object</span> val, <span style=color:#6ab825;font-weight:700>object</span> obj)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>try</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        Type t = obj.GetType();
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>object</span> v = Convert.ChangeType(val,t.GetField(fn).FieldType);
+</span></span><span style=display:flex><span>        t.GetField(fn).SetValue(obj, v);
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> <span style=color:#6ab825;font-weight:700>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>catch</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> <span style=color:#6ab825;font-weight:700>false</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>       
+</span></span><span style=display:flex><span><span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>static</span> T GetFieldValue&lt;T&gt;(<span style=color:#6ab825;font-weight:700>string</span> fn, <span style=color:#6ab825;font-weight:700>object</span> obj)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>try</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        Type t = obj.GetType();
+</span></span><span style=display:flex><span>        FieldInfo fi = t.GetField(fn);
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> (T)fi.GetValue(obj);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>catch</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> <span style=color:#6ab825;font-weight:700>default</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}       
+</span></span></code></pre></div><h3 id=溝通後>溝通後
+<a class=heading-link href=#%e6%ba%9d%e9%80%9a%e5%be%8c><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>但後來在對方有機會改版的情況下請對方新增下列函數，我們也相對應使用 <code>NewBigProject</code> 套用 <code>NewExtObject</code> ，所以未來的新專案都沒事了！🤩</p><div class=highlight><pre tabindex=0 style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=display:flex><span><span style=color:#6ab825;font-weight:700>internal</span> <span style=color:#6ab825;font-weight:700>static</span> <span style=color:#6ab825;font-weight:700>class</span> <span style=color:#447fcf;text-decoration:underline>PropertyHelper</span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>static</span> TValue GetValue&lt;TValue&gt;(<span style=color:#6ab825;font-weight:700>object</span> prop)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> (TValue)Convert.ChangeType(prop, <span style=color:#6ab825;font-weight:700>typeof</span>(TValue));
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>static</span> <span style=color:#6ab825;font-weight:700>void</span> SetValue&lt;TValue&gt;(<span style=color:#6ab825;font-weight:700>ref</span> TValue prop, <span style=color:#6ab825;font-weight:700>object</span> <span style=color:#6ab825;font-weight:700>value</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        prop = (TValue)Convert.ChangeType(<span style=color:#6ab825;font-weight:700>value</span>, <span style=color:#6ab825;font-weight:700>typeof</span>(TValue));
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6ab825;font-weight:700>internal</span> <span style=color:#6ab825;font-weight:700>class</span> <span style=color:#447fcf;text-decoration:underline>NewExtObject</span> {
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>int</span> iField;
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>private</span> Dictionary&lt;<span style=color:#6ab825;font-weight:700>string</span>, <span style=color:#6ab825;font-weight:700>object</span>&gt; map = <span style=color:#6ab825;font-weight:700>new</span> Dictionary&lt;<span style=color:#6ab825;font-weight:700>string</span>, <span style=color:#6ab825;font-weight:700>object</span>&gt;()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        { <span style=color:#ed9d13>&#34;f&#34;</span>, iField },
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>public</span> TValue GetValue&lt;TValue&gt;(<span style=color:#6ab825;font-weight:700>string</span> name)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> PropertyHelper.GetValue&lt;TValue&gt;(map[name]);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>void</span> SetValue(<span style=color:#6ab825;font-weight:700>string</span> name, <span style=color:#6ab825;font-weight:700>object</span> iptValue)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>switch</span> (name)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#6ab825;font-weight:700>case</span> <span style=color:#ed9d13>&#34;f&#34;</span>:
+</span></span><span style=display:flex><span>                PropertyHelper.SetValue(<span style=color:#6ab825;font-weight:700>ref</span> iField, iptValue);
+</span></span><span style=display:flex><span>                <span style=color:#6ab825;font-weight:700>break</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=靜極思動>靜極思動
+<a class=heading-link href=#%e9%9d%9c%e6%a5%b5%e6%80%9d%e5%8b%95><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>而人是懶惰的，由於偶爾還是要處理 <code>BigProject</code> 與 <code>ExtObject</code>，就想說有沒有辦法讓 <code>NewBigProject</code> 與 <code>ExtObject</code> 也能溝通。</p><p>一開始的想法是要用 <code>MyObject</code> 封裝 <code>ExtObject</code>。接著再取同名函數，然後內部使用 <a href=https://learn.microsoft.com/zh-tw/dotnet/csharp/programming-guide/concepts/reflection>反射</a> 處理。</p><div class=highlight><pre tabindex=0 style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=display:flex><span><span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>class</span> <span style=color:#447fcf;text-decoration:underline>MyObject</span>     
+</span></span><span style=display:flex><span>{    
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>private</span> ExtObject <span style=color:#3677a9>_</span>o;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>public</span> MyObject(ExtObject obj)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#3677a9>_</span>o = obj;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>public</span> TValue GetValue&lt;TValue&gt;(<span style=color:#6ab825;font-weight:700>string</span> name)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        MethodInfo miGetValue = <span style=color:#3677a9>_</span>o.GetType().GetMethod(<span style=color:#ed9d13>&#34;GetValue&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>if</span> (miGetValue == <span style=color:#6ab825;font-weight:700>null</span>) <span style=color:#6ab825;font-weight:700>return</span> <span style=color:#6ab825;font-weight:700>default</span>;
+</span></span><span style=display:flex><span>        <span style=color:#999;font-style:italic>//泛型還需要特別處理</span>
+</span></span><span style=display:flex><span>        MethodInfo gGetValue = miGetValue.MakeGenericMethod(<span style=color:#6ab825;font-weight:700>typeof</span>(TValue));
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>object</span> ro = gGetValue.Invoke(<span style=color:#3677a9>_</span>o, <span style=color:#6ab825;font-weight:700>new</span> <span style=color:#6ab825;font-weight:700>object</span>[] { name });
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> (TValue)Convert.ChangeType(ro, <span style=color:#6ab825;font-weight:700>typeof</span>(TValue));               
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><strong>使用擴充方法</strong></p><p>但最初就是要捨棄 <a href=https://learn.microsoft.com/zh-tw/dotnet/csharp/programming-guide/concepts/reflection>反射</a> 現在又走老路感覺很奇怪。於是想到了可以使用 <a href=https://learn.microsoft.com/zh-tw/dotnet/csharp/programming-guide/classes-and-structs/extension-methods>擴充方法</a> 而且好處是</p><blockquote><p>您可以使用擴充方法來擴充類別或介面，但無法覆寫它們。而且永遠不會呼叫擁有與介面或類別方法相同名稱和簽章的擴充方法。</p></blockquote><div class=highlight><pre tabindex=0 style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=display:flex><span><span style=color:#6ab825;font-weight:700>public</span> <span style=color:#6ab825;font-weight:700>static</span> TValue GetValue&lt;TValue&gt;(<span style=color:#6ab825;font-weight:700>this</span> ExtObject opt, <span style=color:#6ab825;font-weight:700>string</span> name)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>throw</span> <span style=color:#6ab825;font-weight:700>new</span> Exception(<span style=color:#ed9d13>&#34;dll is too old to support GetValue Method&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>回傳例外的原因是它永遠不該被呼叫。</p></div><footer></footer></article><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:!0},{left:'$',right:'$',display:!1},{left:'\\(',right:'\\)',display:!1},{left:'\\[',right:'\\]',display:!0}]})"></script></section></div><footer class=footer><section class=container>©
+2019 -
+2024
+HJWu
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/js/coder.min.58b7a9358d5831c0eb1b33743f36c7a3dd69ee69d5563ac836fba3c4181f0b38.js integrity="sha256-WLepNY1YMcDrGzN0PzbHo91p7mnVVjrINvujxBgfCzg="></script></body></html>
