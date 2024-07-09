@@ -7,7 +7,7 @@ tags:
   - "Math"
 ---
 
-一直想把 20 年前在 BBS 上寫的 [數學解答](https://solutions.hjwu.me/) 貼出來，但不論是 [Jekyll](https://jekyllrb.com/) 或是 [HUGO](https://gohugo.io/) 都對 $\LaTeX$ 不那麼友善。直到最近看到 [Docusaurus](https://docusaurus.io/) 才覺得驚為天人。
+一直想把 20 年前在 BBS 上寫的 [數學解答](https://hjwu.github.io/math-log) 貼出來，但不論是 [Jekyll](https://jekyllrb.com/) 或是 [HUGO](https://gohugo.io/) 都對 $\LaTeX$ 不那麼友善。直到最近看到 [Docusaurus](https://docusaurus.io/) 才覺得驚為天人。
 
 ## 操作備忘
 
