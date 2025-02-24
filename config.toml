@@ -12,11 +12,11 @@ enableEmoji = true
 # disqusShortname = "yourdiscussshortname"
 
 [params]
-author = "HJWu"
+author = "🐶💕HJWu"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "比 90% RD 的數學強，比 90% 數值的程式強"
 keywords = "blog,developer,personal"
-info = ["Math / Backend RD"]
+info = ["Game Mathematician"]
 avatarURL = "images/whoami/avatar.png"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
