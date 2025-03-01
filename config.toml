@@ -3,13 +3,15 @@ title = "FR4NK 乾一杯"
 theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
-paginate = 10
 pygmentsStyle = "native"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 enableEmoji = true
 # Enable Disqus comments
 # disqusShortname = "yourdiscussshortname"
+
+[pagination]
+pagerSize = 10
 
 [params]
 author = "FR4NK 與陳馬尼 🐶"
