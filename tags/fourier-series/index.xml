@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fourier Series on FR4NK 乾一杯</title><link>https://hsinjungwu.github.io/tags/fourier-series/</link><description>Recent content in Fourier Series on FR4NK 乾一杯</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 08 Jul 2024 20:25:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/fourier-series/index.xml" rel="self" type="application/rss+xml"/><item><title>傅立葉展開</title><link>https://hsinjungwu.github.io/posts/fourier_series/</link><pubDate>Mon, 08 Jul 2024 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/fourier_series/</guid><description>&lt;p>前幾天面試到一位剛畢業的新鮮人時，他提到了 &lt;a href="https://zh.wikipedia.org/wiki/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0" class="external-link" target="_blank" rel="noopener">傅立葉級數&lt;/a>，剛好前幾天有向圖書館線上借閱 &lt;a href="https://www.books.com.tw/products/E050203731" class="external-link" target="_blank" rel="noopener">數學女孩物理筆記：波的疊加 (電子書)&lt;/a>，就剛好倚老賣老借花獻佛介紹它啦。&lt;/p>
+&lt;hr>
+&lt;p>問 : 為什麼要用傅利葉表示將函數 $f(x)$ 寫成下面這種形式呢？&lt;/p>
+&lt;p>$$
+f(x) = \sum\limits_{k=0}^{\infty}(a_k\cos \text{k}x+b_k\sin\text{k}x)
+$$&lt;/p>
+&lt;p>答 : 因為想用單純的事物來表示複雜的事物。&lt;/p>
+&lt;blockquote>
+&lt;p>傅利葉展開可以將特定函數表示成三角函數的線性組合，如此一來，便能清楚知道該函數性質，擁有什麼樣的對稱性，還可以當成三角函數的線性組合處理。&lt;/p>&lt;/blockquote></description></item></channel></rss>

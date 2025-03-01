@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Project Euler on FR4NK 乾一杯</title><link>https://hsinjungwu.github.io/tags/project-euler/</link><description>Recent content in Project Euler on FR4NK 乾一杯</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 24 Feb 2024 10:20:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/project-euler/index.xml" rel="self" type="application/rss+xml"/><item><title>[PE 筆記] Pythagorean Triplet</title><link>https://hsinjungwu.github.io/posts/pe/pythagorean_triplet/</link><pubDate>Sat, 24 Feb 2024 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/pe/pythagorean_triplet/</guid><description>&lt;p>記憶中在 &lt;a href="https://projecteuler.net/" class="external-link" target="_blank" rel="noopener">Project Euler&lt;/a> 遇到 &lt;a href="https://en.wikipedia.org/wiki/Pythagorean_triple" class="external-link" target="_blank" rel="noopener">Pythagorean triple(畢氏三元數)&lt;/a> 相關題目時，都會優先使用以下生成方式解題&lt;/p>
+&lt;div class="notice tip">
+ &lt;div class="notice-title">
+ &lt;i class="fa-solid fa-lightbulb" aria-hidden="true">&lt;/i>Tip
+ &lt;/div>
+ &lt;div class="notice-content">&lt;p>當正整數 $m$ 與 $n$ 滿足 $m&amp;gt;n$, 互質且一奇一偶&lt;/p>
+&lt;ul>
+&lt;li>$a = m^2-n^2$&lt;/li>
+&lt;li>$b = 2mn$&lt;/li>
+&lt;li>$c = m^2+n^2$&lt;/li>
+&lt;/ul>
+&lt;p>則 $a,b,c$ 為素畢氏三元數。&lt;/p>&lt;/div>
+&lt;/div></description></item></channel></rss>

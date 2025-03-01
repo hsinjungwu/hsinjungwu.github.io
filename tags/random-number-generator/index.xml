@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Random Number Generator on FR4NK 乾一杯</title><link>https://hsinjungwu.github.io/tags/random-number-generator/</link><description>Recent content in Random Number Generator on FR4NK 乾一杯</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 01 Nov 2021 10:20:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/random-number-generator/index.xml" rel="self" type="application/rss+xml"/><item><title>關於亂數產生器</title><link>https://hsinjungwu.github.io/posts/about_rng/</link><pubDate>Mon, 01 Nov 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/about_rng/</guid><description>&lt;p>剛好看到 &lt;a href="https://blog.miniasp.com/post/2008/05/13/Random-vs-RNGCryptoServiceProvider" class="external-link" target="_blank" rel="noopener">亂數產生器：Random 與 RNGCryptoServiceProvider&lt;/a>，想到當年回台中面試 &lt;a href="http://www.simbo.com.tw/" class="external-link" target="_blank" rel="noopener">新博&lt;/a> 有被問類似的題目。&lt;/p>
+&lt;p>文中的 &lt;strong>產生亂數&lt;/strong> 的寫法會有一點不均勻的亂，他的做法跟下面的例子是一樣的。&lt;/p>
+&lt;blockquote>
+&lt;p>當你中午有四家餐廳想吃，但不知該選那家。於是想用一顆六面骰來幫你決定，你的策略是超過 4 的取餘數。&lt;/p>
+&lt;p>結果你發現你很常選到第 1, 2 家，因為他們的機率比選 3, 4 的還高。&lt;/p>&lt;/blockquote>
+&lt;p>而原文中的程式碼就出現了這個問題。雖然在指定範圍小的時候，這個誤差可以忽略，但當取值範圍夠大時問題就浮出來。&lt;/p>
+&lt;p>例如在 0 ~ 2147483647(&lt;code>int.MaxValue&lt;/code>) 中取權重比為 &lt;em>1:2:4&lt;/em> 但是取的基數範圍不同。則結果如下&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">基數&lt;/th>
+ &lt;th style="text-align: center">1/7&lt;/th>
+ &lt;th style="text-align: center">2/7&lt;/th>
+ &lt;th style="text-align: center">4/7&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">7&lt;/td>
+ &lt;td style="text-align: center">14.2857%&lt;/td>
+ &lt;td style="text-align: center">28.5714%&lt;/td>
+ &lt;td style="text-align: center">57.1429%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">700&lt;/td>
+ &lt;td style="text-align: center">14.2857%&lt;/td>
+ &lt;td style="text-align: center">28.5714%&lt;/td>
+ &lt;td style="text-align: center">57.1429%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">70000&lt;/td>
+ &lt;td style="text-align: center">14.2860%&lt;/td>
+ &lt;td style="text-align: center">28.5717%&lt;/td>
+ &lt;td style="text-align: center">57.1422%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">7000000&lt;/td>
+ &lt;td style="text-align: center">14.2958%&lt;/td>
+ &lt;td style="text-align: center">28.5916%&lt;/td>
+ &lt;td style="text-align: center">57.1126%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">700000000&lt;/td>
+ &lt;td style="text-align: center">16.1810%&lt;/td>
+ &lt;td style="text-align: center">27.9397%&lt;/td>
+ &lt;td style="text-align: center">55.8794%&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>建議 &lt;strong>產生一個非負數的亂數&lt;/strong> 調整為&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span> Next()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rngp.GetBytes(rb);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> &lt;span style="color:#ff79c6">value&lt;/span> = BitConverter.ToInt32(rb, &lt;span style="color:#bd93f9">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (&lt;span style="color:#ff79c6">value&lt;/span> &amp;lt; &lt;span style="color:#bd93f9">0&lt;/span>) &lt;span style="color:#ff79c6">value&lt;/span> -= &lt;span style="color:#8be9fd">int&lt;/span>.MinValue;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">value&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>而 &lt;strong>產生一個非負數且最大值 max 以下的亂數&lt;/strong> 調整如下。這部分的數學就不特別解釋了。🤭&lt;/p></description></item></channel></rss>

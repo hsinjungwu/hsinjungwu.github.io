@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GDrive on FR4NK 乾一杯</title><link>https://hsinjungwu.github.io/tags/gdrive/</link><description>Recent content in GDrive on FR4NK 乾一杯</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 10 Mar 2021 20:25:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/gdrive/index.xml" rel="self" type="application/rss+xml"/><item><title>Batch Upload Files To Google Drive</title><link>https://hsinjungwu.github.io/posts/batch_upload_files_to_google_drive/</link><pubDate>Wed, 10 Mar 2021 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/batch_upload_files_to_google_drive/</guid><description>&lt;p>協助公司同仁處理日常工作。🤓&lt;/p>
+&lt;h2 id="建置">
+ 建置
+ &lt;a class="heading-link" href="#%e5%bb%ba%e7%bd%ae">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>Fork from &lt;a href="https://github.com/prasmussen/gdrive" class="external-link" target="_blank" rel="noopener">原版 gdrive&lt;/a>&lt;/li>
+&lt;li>參考 &lt;a href="https://hiraku.tw/2020/01/5894/" class="external-link" target="_blank" rel="noopener">如何在終端機介面使用 Google Drive (gdrive cmd)&lt;/a> 裡的說明修改 &lt;strong>ClientId&lt;/strong> 跟 &lt;strong>ClientSecret&lt;/strong>。&lt;/li>
+&lt;li>執行 &lt;code>CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build&lt;/code> 產生執行檔 &lt;em>gdrive.exe&lt;/em>
+&lt;ul>
+&lt;li>要執行 &lt;code>go mod init&lt;/code>&lt;/li>
+&lt;li>&lt;em>go.mod&lt;/em> 裡面的 &lt;code>golang.org/x/oauth2&lt;/code> 版號要調整&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="安裝">
+ 安裝
+ &lt;a class="heading-link" href="#%e5%ae%89%e8%a3%9d">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>將 &lt;code>gdrive.exe&lt;/code> 放到 &lt;code>C:\Windows&lt;/code>&lt;/li>
+&lt;li>參考 &lt;a href="https://sunxiaoshan.medium.com/google-driver-in-command-line-426c8d4031fb" class="external-link" target="_blank" rel="noopener">Google Drive in Command Line&lt;/a> 的圖解教學即可。&lt;/li>
+&lt;/ol>
+&lt;h2 id="使用">
+ 使用
+ &lt;a class="heading-link" href="#%e4%bd%bf%e7%94%a8">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>可透過以下語法執行批次操作，其他使用 &lt;code>gdrive help&lt;/code> 查詢。&lt;/p></description></item></channel></rss>

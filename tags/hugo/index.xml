@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on FR4NK 乾一杯</title><link>https://hsinjungwu.github.io/tags/hugo/</link><description>Recent content in Hugo on FR4NK 乾一杯</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jan 2023 00:25:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>啟用 kbd tag</title><link>https://hsinjungwu.github.io/posts/enable_kbd_tag/</link><pubDate>Wed, 04 Jan 2023 00:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/enable_kbd_tag/</guid><description>&lt;p>一直好奇為什麼 &lt;code>kbd&lt;/code> tag 在某些 theme 一直無法正確呈現，剛剛才發現原始碼有這段 &lt;code>&amp;lt;!-- raw HTML omitted --&amp;gt;&lt;/code>。&lt;/p>
+&lt;p>Google 後發現 &lt;a href="https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032" class="external-link" target="_blank" rel="noopener">Raw HTML getting omitted in 0.60.0&lt;/a> 所以表示這是老問題了。解法可以在 &lt;em>config.toml&lt;/em> 加入這段&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[markup.goldmark.renderer]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>unsafe= &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>但看到 &lt;code>unsafe= true&lt;/code> 總覺得彆扭，所以我決定採取使用 &lt;code>shortcodes&lt;/code> 來處理。&lt;/p>
+&lt;ol>
+&lt;li>參考這篇 &lt;a href="https://ouch1978.github.io/docs/docusaurus/customization/apply-kbd-style-in-markdown" class="external-link" target="_blank" rel="noopener">讓你的 Markdown 有更漂亮的鍵盤按鍵表示方式&lt;/a> 新增 &lt;em>assests\kbd.css&lt;/em>。&lt;/li>
+&lt;li>調整 &lt;em>config.toml&lt;/em> 為 &lt;code>customCSS = [&amp;quot;kbd.css&amp;quot;]&lt;/code>&lt;/li>
+&lt;li>新增 &lt;em>layouts\shortcodes\kbd.html&lt;/em>&lt;/li>
+&lt;/ol></description></item></channel></rss>

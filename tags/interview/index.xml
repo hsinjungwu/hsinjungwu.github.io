@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Interview on FR4NK 乾一杯</title><link>https://hsinjungwu.github.io/tags/interview/</link><description>Recent content in Interview on FR4NK 乾一杯</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Jul 2023 01:20:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/interview/index.xml" rel="self" type="application/rss+xml"/><item><title>面試 - 6</title><link>https://hsinjungwu.github.io/posts/interview/06/</link><pubDate>Wed, 05 Jul 2023 01:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/06/</guid><description>&lt;p>前幾天去台北某外商面試機率工程師。筆試題目如下 :&lt;/p>
+&lt;ol>
+&lt;li>求以下機率
+&lt;ul>
+&lt;li>有兩個小孩其中一個不為男，2 個都女的&lt;/li>
+&lt;li>有兩個小孩，已知年紀大的是男，年紀小的是女的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>求平均速度&lt;/li>
+&lt;li>貝氏定理應用
+&lt;ul>
+&lt;li>工廠產出壞東西的機率&lt;/li>
+&lt;li>壞東西出現在某個工廠的機率。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>52 張牌，翻開第一張，賭下一張點數大或小。
+&lt;ul>
+&lt;li>開第一張牌可以選擇換或不換，你有沒有最佳策略：例如多少點數就換。&lt;/li>
+&lt;li>之後開第二張牌，猜大或猜小的策略是什麼？&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>其中前 3 題手寫，約高中程度。大概 5 分鐘就能完成。如果有錯可能就被感謝了。😅。&lt;/p>
+&lt;p>而第 4 題跟面試人員一起討論，他們會引導你。不要太緊張的話應該都很順利。&lt;/p></description></item><item><title>面試 - 5</title><link>https://hsinjungwu.github.io/posts/interview/05/</link><pubDate>Fri, 16 Dec 2022 01:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/05/</guid><description>&lt;p>N 年前去 &lt;a href="https://www.trendmicro.com/zh_tw/forHome.html" class="external-link" target="_blank" rel="noopener">趨勢科技&lt;/a> 面試時，有一位主管問我一塊蛋糕切四刀最多能切多少塊，我當時只想到平面切三刀能切七塊，接著再腰斬就有 14 塊。答完後我問那位主管 14 是否是最好的答案，他說他覺得是 16 並畫出答案。不過我後來離開時才想到他的答案應該是 12 塊而已。&lt;/p>
+&lt;p>而這件事情就不了了之。直到剛剛發現這個影片 &lt;a href="https://www.bilibili.com/video/BV1p24y1d7gW/" class="external-link" target="_blank" rel="noopener">帅气学霸切蛋糕四刀如何切成十五块&lt;/a> 終於解了我多年疑惑。&lt;/p></description></item><item><title>面試 - 4</title><link>https://hsinjungwu.github.io/posts/interview/04/</link><pubDate>Mon, 14 Sep 2020 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/04/</guid><description>&lt;p>前同事今天面試的題目，我稍微改了題目敘述。😁&lt;/p>
+&lt;blockquote>
+&lt;p>給定 5 張撲克牌，判斷它是否是順子。如果不是，顯示出有幾個不同的數字, 最長的長度為何，有著這個長度的數字是哪些？&lt;/p>&lt;/blockquote>
+&lt;p>我前同事是用 &lt;code>map&lt;/code> + &lt;code>sort&lt;/code> 去處理。但我選擇了另一個路子來解這題。當然，一些細節(如果它是用一副撲克牌發的話、長度可以開到 14 不用 15)我就先跳過。總之程式碼如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;strconv&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>([]&lt;span style="color:#8be9fd">string&lt;/span>, &lt;span style="color:#bd93f9">15&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span>; i &amp;lt; &lt;span style="color:#bd93f9">11&lt;/span>; i&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		names[i] = strconv.&lt;span style="color:#50fa7b">Itoa&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">1&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;A&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">14&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;A&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">11&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;J&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">12&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;Q&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">13&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;K&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	data &lt;span style="color:#ff79c6">:=&lt;/span> []&lt;span style="color:#8be9fd">int&lt;/span>{&lt;span style="color:#bd93f9">1&lt;/span>, &lt;span style="color:#bd93f9">12&lt;/span>, &lt;span style="color:#bd93f9">12&lt;/span>, &lt;span style="color:#bd93f9">12&lt;/span>, &lt;span style="color:#bd93f9">11&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	s, c, m, ids &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#50fa7b">getRank&lt;/span>(data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> s &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		fmt.&lt;span style="color:#50fa7b">Printf&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;順子：%s,%s,%s,%s,%s\n&amp;#34;&lt;/span>, names[s], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">2&lt;/span>], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">3&lt;/span>], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">4&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		fmt.&lt;span style="color:#50fa7b">Printf&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;有 %d 個不同的數字, 最長的長度為 %d，有著這個長度的數字是 %v\n&amp;#34;&lt;/span>, c, m, ids)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">getRank&lt;/span>(data []&lt;span style="color:#8be9fd">int&lt;/span>) (&lt;span style="color:#8be9fd">int&lt;/span>, &lt;span style="color:#8be9fd">int&lt;/span>, &lt;span style="color:#8be9fd">int&lt;/span>, []&lt;span style="color:#8be9fd">int&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	m &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>([]&lt;span style="color:#8be9fd">int&lt;/span>, &lt;span style="color:#bd93f9">15&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, d &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> data {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		m[d]&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> d &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			m[&lt;span style="color:#bd93f9">14&lt;/span>]&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">14&lt;/span>; i &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> &lt;span style="color:#bd93f9">5&lt;/span>; i&lt;span style="color:#ff79c6">--&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		t &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> j &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; j &amp;lt; &lt;span style="color:#bd93f9">5&lt;/span>; j&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			t &lt;span style="color:#ff79c6">*=&lt;/span> m[i&lt;span style="color:#ff79c6">-&lt;/span>j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> t &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">return&lt;/span> i, &lt;span style="color:#bd93f9">0&lt;/span>, &lt;span style="color:#bd93f9">0&lt;/span>, &lt;span style="color:#ff79c6">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	cnt &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	max &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> maxID []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">13&lt;/span>; i &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>; i&lt;span style="color:#ff79c6">--&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> m[i] &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			cnt&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> m[i] &amp;gt; max {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				max = m[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				maxID = []&lt;span style="color:#8be9fd">int&lt;/span>{i}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> m[i] &lt;span style="color:#ff79c6">==&lt;/span> max {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				maxID = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(maxID, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>, cnt, max, maxID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>面試 - 3</title><link>https://hsinjungwu.github.io/posts/interview/03/</link><pubDate>Thu, 20 Aug 2020 11:26:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/03/</guid><description>&lt;p>這題在大學時曾被問過，而最近(2017 年)在面試時或聽人面試過程時也出現，不知道這些面試官們為什麼這麼有志一同？ 😑&lt;/p>
+&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>在 12 個球中有一個特殊球的重量與眾不同（不知道偏重還是偏輕），而其他球的重量全部相同，請用無砝碼的天平稱 3 次找出特殊球，並確定特殊球是偏輕還是偏重。&lt;/p>&lt;/blockquote>
+&lt;p>下面提供我的解法，如果對這個問題有更深的興趣的話可以參考 &lt;a href="https://en.wikipedia.org/wiki/Balance_puzzle" class="external-link" target="_blank" rel="noopener">Balance puzzle&lt;/a>。不過就算解答出這題面試也不會上啊～哭哭 😭&lt;/p>
+&lt;h3 id="前置作業">
+ 前置作業：
+ &lt;a class="heading-link" href="#%e5%89%8d%e7%bd%ae%e4%bd%9c%e6%a5%ad">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>一開始先將球分成 3 堆，以 ${ A_1, A_2, A_3, A_4 }$、${ B_1, B_2, B_3, B_4 }$ 與 ${ C_1, C_2, C_3, C_4 }$ 記之。&lt;/p>
+&lt;p>接著有一個 &lt;strong>已知事實&lt;/strong>：&lt;/p>
+&lt;blockquote>
+&lt;p>已知三球其中一顆較重(輕)。任意取兩球相比，若一樣則沒秤到的球較重(輕)。若不同，則較重(輕)的球就是答案。&lt;/p>&lt;/blockquote>
+&lt;h3 id="解法">
+ 解法：
+ &lt;a class="heading-link" href="#%e8%a7%a3%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>拿 $\mathcal{L}_1 = { A_1, A_2, A_3, A_4 }$ 與 $\mathcal{R}_1 = { B_1, B_2, B_3, B_4 }$ 進行第一次秤重，這時會有 3 種情形：&lt;/p></description></item><item><title>面試 - 2</title><link>https://hsinjungwu.github.io/posts/interview/02/</link><pubDate>Thu, 20 Aug 2020 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/02/</guid><description>&lt;p>2017 年獵頭幫我介紹的面試考題。當時信上寫 &lt;strong>Before 2017-10-30&lt;/strong> 結果我發現時已經是 &lt;strong>2017-10-31 凌晨&lt;/strong> 了&amp;hellip; 😅&lt;/p>
+&lt;p>由於已經遲繳了，因此看到 &lt;a href="https://codility.com" class="external-link" target="_blank" rel="noopener">Codility&lt;/a> 題目只要求 &lt;strong>正確性&lt;/strong> 後我對時間 / 空間複雜度也就不太在意了。&lt;/p>
+&lt;p>總共是 3 題兩小時，下面列出我理解後的內容與解答，但程式碼可能跟我交付的有差。 😩&lt;/p>
+&lt;h2 id="第一題">
+ 第一題
+ &lt;a class="heading-link" href="#%e7%ac%ac%e4%b8%80%e9%a1%8c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;blockquote>
+&lt;p>給定一字串 S (只有數字與英文字母)，找出最長子字串滿足內容沒有數字且至少有一大寫字母。如果存在回傳該子字串長度，否則回傳 -1&lt;/p>&lt;/blockquote>
+&lt;p>看著倒數計時的數字，我還是有點緊張。所以我直接暴力這題&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd">int&lt;/span> Solution(&lt;span style="color:#8be9fd">string&lt;/span> S)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (&lt;span style="color:#8be9fd">string&lt;/span>.IsNullOrWhiteSpace(S)) &lt;span style="color:#ff79c6">return&lt;/span> -&lt;span style="color:#bd93f9">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> longestSub = S.Split(&lt;span style="color:#ff79c6">new&lt;/span> &lt;span style="color:#8be9fd">char&lt;/span>{&lt;span style="color:#f1fa8c">&amp;#39;0&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;1&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;2&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;3&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;4&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;5&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;6&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;7&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;8&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;9&amp;#39;&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Where(s =&amp;gt; s.Any(c =&amp;gt; &lt;span style="color:#8be9fd">char&lt;/span>.IsUpper(c)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .OrderByDescending(s =&amp;gt; s.Length)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .FirstOrDefault();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> longestSub == &lt;span style="color:#ff79c6">null&lt;/span> ? -&lt;span style="color:#bd93f9">1&lt;/span> : longestSub.Length;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>等醒來後才想到也可以不用 &lt;code>Linq&lt;/code> 這樣寫&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd">int&lt;/span> Solution(&lt;span style="color:#8be9fd">string&lt;/span> S)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> ans = -&lt;span style="color:#bd93f9">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> sum = &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">bool&lt;/span> hasUpper = &lt;span style="color:#ff79c6">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">char&lt;/span> c &lt;span style="color:#ff79c6">in&lt;/span> S)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (Char.IsDigit(c))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (hasUpper) ans = Math.Max(ans, sum);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sum = &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hasUpper = &lt;span style="color:#ff79c6">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">continue&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hasUpper |= Char.IsUpper(c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sum++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (hasUpper) ans = Math.Max(ans, sum);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> ans;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="第二題">
+ 第二題
+ &lt;a class="heading-link" href="#%e7%ac%ac%e4%ba%8c%e9%a1%8c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;blockquote>
+&lt;p>給定 &lt;code>POP&lt;/code>, &lt;code>DUP&lt;/code>, &lt;code>+&lt;/code>, &lt;code>-&lt;/code> 跟 &lt;code>數字&lt;/code> 組成的字串算出結果。請依下表計算答案，若答案為負或是無法計算請回傳 &lt;code>-1&lt;/code>。&lt;/p></description></item><item><title>面試 - 1</title><link>https://hsinjungwu.github.io/posts/interview/01/</link><pubDate>Wed, 19 Aug 2020 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/01/</guid><description>&lt;p>前同事的同事去某間公司被問的題目。&lt;/p>
+&lt;h2 id="題目">
+ 題目
+ &lt;a class="heading-link" href="#%e9%a1%8c%e7%9b%ae">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>給定正整數 $n$，找出位數總和與它相同，而且大於它的最小正整數。例如&lt;/p>
+&lt;ul>
+&lt;li>772 =&amp;gt; 781&lt;/li>
+&lt;li>293 =&amp;gt; 329&lt;/li>
+&lt;li>100 =&amp;gt; 10000&lt;/li>
+&lt;/ul>
+&lt;h2 id="解法">
+ 解法
+ &lt;a class="heading-link" href="#%e8%a7%a3%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="初始作法">
+ 初始作法
+ &lt;a class="heading-link" href="#%e5%88%9d%e5%a7%8b%e4%bd%9c%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>對於末兩位數字小於 90，且非 10 的倍數的數字，&lt;code>+9&lt;/code> 就結束。&lt;/li>
+&lt;li>剩下的數字，我是先推出至少要加幾個 9，搭配 &lt;code>+9&lt;/code> 迴圈檢查 &lt;strong>digit sum&lt;/strong> 是否相同。&lt;/li>
+&lt;/ul>
+&lt;h3 id="改善解法">
+ 改善解法
+ &lt;a class="heading-link" href="#%e6%94%b9%e5%96%84%e8%a7%a3%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>做出來之後，我測試了一下剩餘的例子，發現有規律性，所以改成以下寫法。但沒有也沒空證明是對的 😆&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;time&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	t &lt;span style="color:#ff79c6">:=&lt;/span> time.&lt;span style="color:#50fa7b">Now&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	data &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">998&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ans &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#50fa7b">getAns&lt;/span>(data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	elapsed &lt;span style="color:#ff79c6">:=&lt;/span> time.&lt;span style="color:#50fa7b">Since&lt;/span>(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	fmt.&lt;span style="color:#50fa7b">Printf&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;Elapsed time: %v, data = %d, ans = %d&amp;#34;&lt;/span>, elapsed, data, ans)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">getAns&lt;/span>(data &lt;span style="color:#8be9fd">int&lt;/span>) &lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	r &lt;span style="color:#ff79c6">:=&lt;/span> data &lt;span style="color:#ff79c6">%&lt;/span> &lt;span style="color:#bd93f9">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	q &lt;span style="color:#ff79c6">:=&lt;/span> data &lt;span style="color:#ff79c6">/&lt;/span> &lt;span style="color:#bd93f9">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	step &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> r &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		b0 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			b0 &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		s0 &lt;span style="color:#ff79c6">:=&lt;/span> q &lt;span style="color:#ff79c6">%&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = (b0&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>)&lt;span style="color:#ff79c6">*&lt;/span>(&lt;span style="color:#bd93f9">10&lt;/span>&lt;span style="color:#ff79c6">-&lt;/span>s0)&lt;span style="color:#ff79c6">/&lt;/span>&lt;span style="color:#bd93f9">9&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">9&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			step &lt;span style="color:#ff79c6">+=&lt;/span> s0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			s0 &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> r &amp;gt; &lt;span style="color:#bd93f9">90&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		b9X &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		s9X &lt;span style="color:#ff79c6">:=&lt;/span> r &lt;span style="color:#ff79c6">%&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">9&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			b9X &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = (b9X&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>)&lt;span style="color:#ff79c6">*&lt;/span>s9X&lt;span style="color:#ff79c6">/&lt;/span>&lt;span style="color:#bd93f9">9&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> r&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		sX0 &lt;span style="color:#ff79c6">:=&lt;/span> r &lt;span style="color:#ff79c6">/&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = &lt;span style="color:#bd93f9">11&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span> sX0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">9&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			step &lt;span style="color:#ff79c6">+=&lt;/span> sX0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			sX0 &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> data &lt;span style="color:#ff79c6">+&lt;/span> step&lt;span style="color:#ff79c6">*&lt;/span>&lt;span style="color:#bd93f9">9&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="結論">
+ 結論
+ &lt;a class="heading-link" href="#%e7%b5%90%e8%ab%96">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>不知道我前同事的同事是在什麼情況下被問。如果是白板題，我差不多就用初始解法打發，因為我數學不好也缺乏敏銳度。如果是考線上我才會用觀察法重新改寫。&lt;/p></description></item></channel></rss>

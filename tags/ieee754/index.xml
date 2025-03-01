@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IEEE754 on FR4NK 乾一杯</title><link>https://hsinjungwu.github.io/tags/ieee754/</link><description>Recent content in IEEE754 on FR4NK 乾一杯</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 06 Oct 2021 10:20:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/ieee754/index.xml" rel="self" type="application/rss+xml"/><item><title>關於 EXCEL 內的浮點數儲存內容</title><link>https://hsinjungwu.github.io/posts/floating_point_of_excel/</link><pubDate>Wed, 06 Oct 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/floating_point_of_excel/</guid><description>&lt;p>遇到 &lt;a href="https://stackoverflow.com/questions/51025969/issue-when-importing-float-as-string-from-excel-adding-precision-incorrectly" class="external-link" target="_blank" rel="noopener">Issue when importing float as string from Excel. Adding precision incorrectly&lt;/a> 跟 &lt;a href="https://community.claris.com/en/s/question/0D50H00006ezK2L/excel-importation-may-misinterpret-fractional-numbers" class="external-link" target="_blank" rel="noopener">Excel importation may misinterpret fractional numbers&lt;/a> 提到的問題，細細研究才發現水很深啊～ 😏&lt;/p>
+&lt;h2 id="問題重現">
+ 問題重現
+ &lt;a class="heading-link" href="#%e5%95%8f%e9%a1%8c%e9%87%8d%e7%8f%be">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>建立一個 Excel 檔案，並在工作表 1 的 &lt;em>A1&lt;/em> 儲存格寫上 &lt;strong>0.0004&lt;/strong>&lt;/li>
+&lt;li>使用 &lt;a href="https://github.com/qax-os/excelize" class="external-link" target="_blank" rel="noopener">excelize&lt;/a> 讀取 &lt;em>A1&lt;/em> 的值獲得 &lt;strong>4.0000000000000002E-4&lt;/strong>&lt;/li>
+&lt;li>接著使用 &lt;a href="https://github.com/shopspring/decimal" class="external-link" target="_blank" rel="noopener">decimal&lt;/a> 解析這個值得到 &lt;strong>0.00040000000000000002&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>然後改用 &lt;em>C#&lt;/em> 利用 &lt;code>Microsoft.Office.Interop.Excel&lt;/code> 跟 &lt;a href="https://github.com/ExcelDataReader/ExcelDataReader" class="external-link" target="_blank" rel="noopener">ExcelDataReader&lt;/a> 解析出來卻是正確的 &lt;strong>0.0004&lt;/strong>。&lt;/p>
+&lt;p>原以為是 &lt;a href="https://github.com/qax-os/excelize" class="external-link" target="_blank" rel="noopener">excelize&lt;/a> 的 bug，於透過解壓縮 &lt;em>*.xlsx&lt;/em> 的方式找到 &lt;code>\xl\worksheets\sheet1.xml&lt;/code> 發現裡面真的是存 &lt;strong>4.0000000000000002E-4&lt;/strong> 😵&lt;/p>
+&lt;h2 id="差異原因">
+ 差異原因
+ &lt;a class="heading-link" href="#%e5%b7%ae%e7%95%b0%e5%8e%9f%e5%9b%a0">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>基本上這篇 &lt;a href="https://medium.com/starbugs/see-why-floating-point-error-can-not-be-avoided-from-ieee-754-809720b32175" class="external-link" target="_blank" rel="noopener">從 IEEE 754 標準來看為什麼浮點誤差是無法避免的&lt;/a> 已經講得蠻清楚的。另外也可以透過這個 &lt;a href="https://www.binaryconvert.com/convert_double.html" class="external-link" target="_blank" rel="noopener">Double (IEEE754 Double precision 64-bit) Converter&lt;/a> 來得到&lt;/p></description></item></channel></rss>
