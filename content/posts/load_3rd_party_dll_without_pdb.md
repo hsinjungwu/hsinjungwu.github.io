@@ -11,10 +11,10 @@ tags:
 
 ### 如何開啟 Modules 視窗
 + 在偵錯時選取 ➡ 偵錯Windows ➡ 模組
-+ 按 {{< kbd Ctrl >}} + {{< kbd Alt >}} + {{< kbd U >}}
++ 按 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>U</kbd>
 
 ### 如何 Decompile Source to Symbol File
 + 執行全部中斷(Break All)
-+ 按 {{< kbd Ctrl >}} + {{< kbd Alt >}} + {{< kbd Break >}}[^1]
++ 按 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Break</kbd>[^1]
 
 [^1]: [Break鍵](https://zh.m.wikipedia.org/zh-tw/Break%E9%8D%B5)

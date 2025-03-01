@@ -1,4 +1,30 @@
-table th,
-table td {
-    border: 2px solid #dadada !important;
-}
+ table th,
+ table td {
+     border: 2px solid #dadada !important;
+ }
+
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     overflow: hidden;
+ }
+
+ th {
+     background-color: #000;
+     color: #fff;
+ }
+
+ tr:nth-child(even) {
+     background-color: #123d3d;
+     /* 深青綠 */
+ }
+
+ tr:nth-child(odd) {
+     background-color: #0d3333;
+     /* 更深的綠 */
+ }
+
+ tr:hover {
+     background-color: #2c666e;
+     /* Hover 變成柔和的水藍色 */
+ }
