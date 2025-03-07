@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HowTo on FR4NK 乾一杯 🍻</title><link>https://hsinjungwu.github.io/tags/howto/</link><description>Recent content in HowTo on FR4NK 乾一杯 🍻</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 25 Nov 2023 10:20:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/howto/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在 github 幫文字上色</title><link>https://hsinjungwu.github.io/posts/how_to_colored_text_on_github/</link><pubDate>Sat, 25 Nov 2023 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/how_to_colored_text_on_github/</guid><description>&lt;p>最近想把 HACKMD 的文件搬到 github private repo，有些暫定的想法想放在 issue，但它不支援&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>&amp;lt;code style=&amp;quot;color: red;&amp;quot;&amp;gt;Hello&amp;lt;/code&amp;gt;&lt;/code>&lt;/li>
+&lt;li>&lt;code>&amp;lt;font color=&amp;quot;blue&amp;quot;&amp;gt;World&amp;lt;/font&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>後來看到這篇 &lt;a href="https://github.com/orgs/community/discussions/31570#discussioncomment-3571340" class="external-link" target="_blank" rel="noopener">Colored text to markdown&lt;/a> 提出了解法&lt;/p>
+&lt;blockquote>
+&lt;p>Find a way to colorfy text in Github in the best way now (Since May 2022)!&lt;/p>
+&lt;p>If i use the &lt;code>\color{nameColor}&lt;/code> code from LATEX inside &lt;code>$$$$&lt;/code>, now that github can support&lt;/p>&lt;/blockquote>
+&lt;p>沒想到居然是用 $\LaTeX$ 解決 👍&lt;/p></description></item><item><title>golang 開發備忘</title><link>https://hsinjungwu.github.io/posts/golang_dev_note/</link><pubDate>Fri, 17 Nov 2023 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/golang_dev_note/</guid><description>&lt;p>最近在新團隊開始使用 golang，備份一下可能會踩的雷。&lt;/p>
+&lt;h2 id="環境建置前">
+ 環境建置前
+ &lt;a class="heading-link" href="#%e7%92%b0%e5%a2%83%e5%bb%ba%e7%bd%ae%e5%89%8d">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>&lt;code>GO111MODULE&lt;/code> 設定成 &lt;code>ON&lt;/code>&lt;/li>
+&lt;li>將公司 git server 設定到 &lt;code>GOPRIVATE&lt;/code>。&lt;/li>
+&lt;/ol>
+&lt;p>其中這篇 &lt;a href="https://juejin.cn/post/6977261480425029662" class="external-link" target="_blank" rel="noopener">私有化仓库的 GO 模块使用实践&lt;/a> 有整理以下變數說明：&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>GONOPROXY，基于前缀的匹配方式运行，上图中指定了gitlab.com，也就是所有 gitlab.com 上的代码，不从 GOPROXY 服务器上去获取，全部通过传统 VCS 方式，直接去原代码服务器上拉取；&lt;/li>
+&lt;li>GONOSUMDB，可以让前缀匹配上的模块跳过安全性检查；&lt;/li>
+&lt;li>GOPRIVATE，相当于前面两个环境变量的集合，配置了 GOPRIVATE 就相当于把前面的两个环境变量一起配置了；&lt;/li>
+&lt;/ul>&lt;/blockquote>
+
+
+
+
+
+&lt;div class="tabs tabs-right">
+ 
+
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Windows&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;p>設定系統變數&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GO111MODULE&lt;/code> = &lt;em>on&lt;/em>&lt;/li>
+&lt;li>&lt;code>GOPRIVATE&lt;/code> = &lt;em>git server host&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;/div>
+
+
+
+
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">MacOS&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;ol>
+&lt;li>vim ~/.zshrc&lt;/li>
+&lt;li>加上下面兩行
+&lt;ul>
+&lt;li>&lt;code>export GO111MODULE=on&lt;/code>&lt;/li>
+&lt;li>&lt;code>export GOPRIVATE={git server host}&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>source ~/.zshrc&lt;/li>
+&lt;/ol>
+
+&lt;/div>
+
+
+
+
+&lt;/div>
+
+
+
+&lt;h2 id="設定-go-mod">
+ 設定 Go Mod
+ &lt;a class="heading-link" href="#%e8%a8%ad%e5%ae%9a-go-mod">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>go mod init &amp;ldquo;your project&amp;rdquo;&lt;/li>
+&lt;li>go mod tidy&lt;/li>
+&lt;li>第一次加入 plugin &lt;code>go get &amp;quot;your plugin&amp;quot;&lt;/code>&lt;/li>
+&lt;li>更新 plugin &lt;code>go get -u &amp;quot;your plugin&amp;quot;&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="語法與指令">
+ 語法與指令
+ &lt;a class="heading-link" href="#%e8%aa%9e%e6%b3%95%e8%88%87%e6%8c%87%e4%bb%a4">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://stackoverflow.com/questions/28081486/how-can-i-go-run-a-project-with-multiple-files-in-the-main-package" class="external-link" target="_blank" rel="noopener">How can I &amp;ldquo;go run&amp;rdquo; a project with multiple files in the main package?&lt;/a> : &lt;code>go run .&lt;/code>&lt;/li>
+&lt;li>使用 &lt;code>json:&amp;quot;omitempty&amp;quot;&lt;/code> 會跳出 &lt;em>struct field xxx repeats json tag &amp;ldquo;omitempty&amp;rdquo; also at&amp;hellip;&lt;/em> 應該是把它認成 &lt;em>name&lt;/em> 所以才會重複，改成 &lt;code>json:&amp;quot;,omitempty&amp;quot;&lt;/code> 就可以&lt;/li>
+&lt;li>go get xxx 遇到 &lt;code>panic: internal error: net token acquired but not released&lt;/code> 時請更新 go 版本。我從 &lt;em>1.21.0&lt;/em> 升到 &lt;em>1.21.5&lt;/em> 就解決了&lt;/li>
+&lt;/ol></description></item><item><title>如何讀取 Google Sheet</title><link>https://hsinjungwu.github.io/posts/how_to_read_google_sheet/</link><pubDate>Wed, 01 Nov 2023 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/how_to_read_google_sheet/</guid><description>&lt;h2 id="設定-google-sheet-api">
+ 設定 Google Sheet API
+ &lt;a class="heading-link" href="#%e8%a8%ad%e5%ae%9a-google-sheet-api">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>到 &lt;a href="https://console.cloud.google.com/" class="external-link" target="_blank" rel="noopener">https://console.cloud.google.com/&lt;/a> 建立新專案。&lt;/li>
+&lt;li>在新專案下
+&lt;ul>
+&lt;li>建立憑證，目前是採用 &lt;strong>服務帳戶&lt;/strong> 的設定並下載金鑰 &lt;code>client_secret.json&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>將服務帳戶加到 sheet 共享名單中&lt;/p>&lt;/blockquote>
+&lt;ul>
+&lt;li>啟用 &lt;code>Google Sheet API&lt;/code>，如果沒啟用會跳出以下錯誤&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Google Sheets API has not been used in project XXXX before or it is disabled. Enable it by visiting&lt;/p>&lt;/blockquote>
+&lt;/li>
+&lt;li>使用以下程式碼 &lt;code>GoogleSheetsHelper&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">GoogleSheetsHelper&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> SheetsService Service { &lt;span style="color:#ff79c6">get&lt;/span>; &lt;span style="color:#ff79c6">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">const&lt;/span> &lt;span style="color:#8be9fd">string&lt;/span> APPLICATION_NAME = &lt;span style="color:#f1fa8c">&amp;#34;name&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> &lt;span style="color:#ff79c6">readonly&lt;/span> &lt;span style="color:#8be9fd">string&lt;/span>[] Scopes = { SheetsService.Scope.Spreadsheets, SheetsService.Scope.SpreadsheetsReadonly };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> GoogleSheetsHelper()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InitializeService();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#ff79c6">void&lt;/span> InitializeService()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> credential = GetCredentialsFromFile();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Service = &lt;span style="color:#ff79c6">new&lt;/span> SheetsService(&lt;span style="color:#ff79c6">new&lt;/span> BaseClientService.Initializer()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HttpClientInitializer = credential,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ApplicationName = APPLICATION_NAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> GoogleCredential GetCredentialsFromFile()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GoogleCredential credential;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">using&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> stream = &lt;span style="color:#ff79c6">new&lt;/span> FileStream(&lt;span style="color:#f1fa8c">&amp;#34;client_secret.json&amp;#34;&lt;/span>, FileMode.Open, FileAccess.Read))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> credential;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>外部實作&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#ff79c6">void&lt;/span> DoSomething()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GoogleSheetsHelper gsh = &lt;span style="color:#ff79c6">new&lt;/span> GoogleSheetsHelper();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> _gsValues = gsh.Service.Spreadsheets.Values;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> range = &lt;span style="color:#f1fa8c">$&amp;#34;{sheetName}!A:B&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> request = _gsValues.Get(sheetId, range);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> response = request.Execute();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IList&amp;lt;IList&amp;lt;&lt;span style="color:#8be9fd">object&lt;/span>&amp;gt;&amp;gt; values = response.Values;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4">//values is what you want&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="reference">
+ reference
+ &lt;a class="heading-link" href="#reference">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://ithelp.ithome.com.tw/articles/10283037" class="external-link" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10283037&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project" class="external-link" target="_blank" rel="noopener">https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" class="external-link" target="_blank" rel="noopener">https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dotblogs.com.tw/rainmaker/2016/08/08/230646" class="external-link" target="_blank" rel="noopener">https://dotblogs.com.tw/rainmaker/2016/08/08/230646&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.csdn.net/fire555/article/details/106276831" class="external-link" target="_blank" rel="noopener">https://blog.csdn.net/fire555/article/details/106276831&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://developers.google.com/api-client-library/dotnet/apis/sheets/v4" class="external-link" target="_blank" rel="noopener">https://developers.google.com/api-client-library/dotnet/apis/sheets/v4&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ithelp.ithome.com.tw/questions/10207707" class="external-link" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/questions/10207707&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk" class="external-link" target="_blank" rel="noopener">http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Build Your Own Custom Short URL</title><link>https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/</link><pubDate>Wed, 18 Jan 2023 10:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/</guid><description>&lt;p>最近在幫老婆做小工具時突然的靈感，可以透過 &lt;em>Line Bot&lt;/em> + &lt;em>Google Apps Script&lt;/em> + &lt;em>Github Issue&lt;/em> 完成屬於自己的短網址服務。&lt;/p>
+&lt;h2 id="實作">
+ 實作
+ &lt;a class="heading-link" href="#%e5%af%a6%e4%bd%9c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="設定-line-bot-讀訊息">
+ 設定 Line Bot 讀訊息
+ &lt;a class="heading-link" href="#%e8%a8%ad%e5%ae%9a-line-bot-%e8%ae%80%e8%a8%8a%e6%81%af">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>參考 &lt;a href="https://www.oxxostudio.tw/articles/201804/line-bot-apps-script.html" class="external-link" target="_blank" rel="noopener">實作 LINE 聊天機器人 ( Google Apps Script )&lt;/a> 或 &lt;a href="https://medium.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E5%85%A9%E5%B0%8F%E6%99%82%E6%89%93%E9%80%A0%E7%B0%A1%E5%96%AE-line-chatbot-%E4%BD%BF%E7%94%A8-google-apps-script-google-sheet-api-8fff7372ff3d" class="external-link" target="_blank" rel="noopener">兩小時打造簡單 Line Chatbot — 使用 Google Apps Script &amp;amp; Google Sheet API&lt;/a> 就可以。&lt;/p>
+&lt;div class="notice warning">
+ &lt;div class="notice-title">
+ &lt;i class="fa-solid fa-exclamation-triangle" aria-hidden="true">&lt;/i>Warning
+ &lt;/div>
+ &lt;div class="notice-content">記得在 &lt;code>回應功能&lt;/code> 中關掉 &lt;code>聊天&lt;/code> 跟 &lt;code>自動回應&lt;/code>，不然你的機器人不會自動已讀。&lt;/div>
+&lt;/div>
+
+&lt;h3 id="產生短網址">
+ 產生短網址
+ &lt;a class="heading-link" href="#%e7%94%a2%e7%94%9f%e7%9f%ad%e7%b6%b2%e5%9d%80">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>想法來自於用 Github Issue 寫 Blog，可以 fork &lt;a href="https://github.com/casualjavascript/blog" class="external-link" target="_blank" rel="noopener">這份專案&lt;/a>，再參考 &lt;a href="https://stackoverflow.com/questions/5411538/redirect-from-an-html-page" class="external-link" target="_blank" rel="noopener">這篇&lt;/a> 在 &lt;em>index.html&lt;/em> 加入下面這段即可。&lt;/p></description></item><item><title>動態讀取 By Case 的第三方物件 Public Field</title><link>https://hsinjungwu.github.io/posts/dynamic_read_by_case_property/</link><pubDate>Mon, 16 Jan 2023 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/dynamic_read_by_case_property/</guid><description>&lt;p>剛來公司時某個舊專案 &lt;code>BigProject&lt;/code> 因為要對接多個同父異母專案的物件 &lt;code>ExtObject&lt;/code>，有時需特例處理各專案額外開的 &lt;code>Public Field&lt;/code>。 😱&lt;/p>
+&lt;h3 id="暴力法">
+ 暴力法
+ &lt;a class="heading-link" href="#%e6%9a%b4%e5%8a%9b%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>由於有歷史包袱，所以在一開始時是使用 &lt;a href="https://learn.microsoft.com/zh-tw/dotnet/csharp/programming-guide/concepts/reflection" class="external-link" target="_blank" rel="noopener">反射&lt;/a> 暴力處理。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> &lt;span style="color:#8be9fd">bool&lt;/span> SetFieldValue(&lt;span style="color:#8be9fd">string&lt;/span> fn, &lt;span style="color:#8be9fd">object&lt;/span> val, &lt;span style="color:#8be9fd">object&lt;/span> obj)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type t = obj.GetType();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">object&lt;/span> v = Convert.ChangeType(val,t.GetField(fn).FieldType);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t.GetField(fn).SetValue(obj, v);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">catch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> T GetFieldValue&amp;lt;T&amp;gt;(&lt;span style="color:#8be9fd">string&lt;/span> fn, &lt;span style="color:#8be9fd">object&lt;/span> obj)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type t = obj.GetType();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FieldInfo fi = t.GetField(fn);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> (T)fi.GetValue(obj);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">catch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">default&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="溝通後">
+ 溝通後
+ &lt;a class="heading-link" href="#%e6%ba%9d%e9%80%9a%e5%be%8c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>但後來在對方有機會改版的情況下請對方新增下列函數，我們也相對應使用 &lt;code>NewBigProject&lt;/code> 套用 &lt;code>NewExtObject&lt;/code> ，所以未來的新專案都沒事了！🤩&lt;/p></description></item><item><title>Getting .Net Framework version of a DLL using Powershell</title><link>https://hsinjungwu.github.io/posts/getting_dotnet_framework_version_of_a_dll_using_powershell/</link><pubDate>Tue, 03 Jan 2023 23:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/getting_dotnet_framework_version_of_a_dll_using_powershell/</guid><description>&lt;p>工作需求要辨識別部門送來的 dll 使用的 &lt;code>.Net FrameWork&lt;/code> 是哪一種版本。參考了這篇 &lt;a href="https://social.technet.microsoft.com/Forums/en-US/567fbeb3-d868-41b3-af5e-bea1e4036600/getting-net-framework-version-of-a-dll-using-powershell?forum=winserverpowershell" class="external-link" target="_blank" rel="noopener">Getting .Net Framework version of a DLL using Powershell&lt;/a> 裡面提的 :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ps1" data-lang="ps1">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">$dllfile&lt;/span> = &lt;span style="color:#f1fa8c">&amp;#39;SevenZipSharp.dll&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">$sb&lt;/span> = {&lt;span style="color:#8be9fd;font-style:italic">$_&lt;/span>.AttributeType.Name &lt;span style="color:#ff79c6">-eq&lt;/span> &lt;span style="color:#f1fa8c">&amp;#39;TargetFrameworkAttribute&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[Reflection.Assembly]::ReflectionOnlyLoadFrom(&lt;span style="color:#8be9fd;font-style:italic">$dllfile&lt;/span>).CustomAttributes.Where(&lt;span style="color:#8be9fd;font-style:italic">$sb&lt;/span>).ConstructorArguments.Value
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>另外蠻多文章都跟這篇 &lt;a href="https://www.c-sharpcorner.com/blogs/get-net-framework-version-of-a-dll1" class="external-link" target="_blank" rel="noopener">Get .NET Framework Version of a DLL&lt;/a> 的解法一樣 :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ps1" data-lang="ps1">&lt;span style="display:flex;">&lt;span>[Reflection.Assembly]::ReflectionOnlyLoadFrom(&lt;span style="color:#f1fa8c">&amp;#34;C:\SomeTest.dll&amp;#34;&lt;/span>).ImageRuntimeVersion 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>但這個回傳的是 &lt;code>CLR&lt;/code> 的版本&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。😵&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>&lt;a href="https://blog.miniasp.com/post/2015/07/28/Clarify-the-versions-between-CLR-NET-CSharp-Visual-Studio-and-ASPNET" class="external-link" target="_blank" rel="noopener">釐清 CLR、.NET、C#、Visual Studio、ASP.NET 各版本之間的關係&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>免 PDB 載入第三方 lib</title><link>https://hsinjungwu.github.io/posts/load_3rd_party_dll_without_pdb/</link><pubDate>Tue, 03 Jan 2023 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/load_3rd_party_dll_without_pdb/</guid><description>&lt;p>年紀到了，再更詳細記錄 &lt;a href="https://blog.darkthread.net/blog/vs-debug-3rdpty-lib/" class="external-link" target="_blank" rel="noopener">Visual Studio 技巧 - 深入第三方程式庫逐行偵錯&lt;/a> 寫的方法，以免忘了。&lt;/p>
+&lt;h3 id="如何開啟-modules-視窗">
+ 如何開啟 Modules 視窗
+ &lt;a class="heading-link" href="#%e5%a6%82%e4%bd%95%e9%96%8b%e5%95%9f-modules-%e8%a6%96%e7%aa%97">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>在偵錯時選取 ➡ 偵錯Windows ➡ 模組&lt;/li>
+&lt;li>按 &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>Alt&lt;/kbd> + &lt;kbd>U&lt;/kbd>&lt;/li>
+&lt;/ul>
+&lt;h3 id="如何-decompile-source-to-symbol-file">
+ 如何 Decompile Source to Symbol File
+ &lt;a class="heading-link" href="#%e5%a6%82%e4%bd%95-decompile-source-to-symbol-file">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>執行全部中斷(Break All)&lt;/li>
+&lt;li>按 &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>Alt&lt;/kbd> + &lt;kbd>Break&lt;/kbd>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>&lt;a href="https://zh.m.wikipedia.org/zh-tw/Break%E9%8D%B5" class="external-link" target="_blank" rel="noopener">Break鍵&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Batch add overflow check on csharp projects</title><link>https://hsinjungwu.github.io/posts/batch_add_overflow_check_on_csharp_projects/</link><pubDate>Thu, 21 Apr 2022 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/batch_add_overflow_check_on_csharp_projects/</guid><description>&lt;p>因為需要一口氣調整一批 dll 並重新改版號，所以弄出以下暴力解法。基本上就手動作一次，看改了什麼再毫無美感的暴力硬寫。🙈&lt;/p>
+&lt;h2 id="add-overflow-syntax">
+ Add Overflow Syntax
+ &lt;a class="heading-link" href="#add-overflow-syntax">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> AddOverflowSyntax(&lt;span style="color:#8be9fd">string&lt;/span> projFile)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> readText = File.ReadAllText(projFile);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxDebugOpen = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;PropertyGroup Condition=\&amp;#34;&lt;/span>&amp;#39;$(Configuration)|$(Platform)&amp;#39;==&amp;#39;Debug|AnyCPU&amp;#39;\&lt;span style="color:#f1fa8c">&amp;#34;&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxReleaseOpen = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;PropertyGroup Condition=\&amp;#34;&lt;/span>&amp;#39;$(Configuration)|$(Platform)&amp;#39;==&amp;#39;Release|AnyCPU&amp;#39;\&lt;span style="color:#f1fa8c">&amp;#34;&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxData = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;CheckForOverflowUnderflow&amp;gt;true&amp;lt;/CheckForOverflowUnderflow&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxClosed = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;/PropertyGroup&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> search = &lt;span style="color:#f1fa8c">&amp;#34;&amp;lt;/Project&amp;gt;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> newText = syntaxDebugOpen + syntaxData + syntaxClosed + syntaxReleaseOpen + syntaxData + syntaxClosed + serach;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> File.WriteAllText(projFile, readText.Replace(search, newText));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="update-file-version">
+ Update File Version
+ &lt;a class="heading-link" href="#update-file-version">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> UpdateFileVersion(&lt;span style="color:#8be9fd">string&lt;/span> versionFile)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> version = &lt;span style="color:#f1fa8c">&amp;#34;2.0.0.0&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> readText = File.ReadAllText(versionFile);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> readText = readText.Replace(&lt;span style="color:#f1fa8c">&amp;#34;[assembly: AssemblyVersion(&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;//[assembly: AssemblyVersion(&amp;#34;&lt;/span>).Replace(&lt;span style="color:#f1fa8c">&amp;#34;[assembly: AssemblyFileVersion(&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;//[assembly: AssemblyFileVersion(&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> readText += &lt;span style="color:#8be9fd">string&lt;/span>.Format(&lt;span style="color:#f1fa8c">&amp;#34;\n[assembly: AssemblyVersion(\&amp;#34;{0}\&amp;#34;)]\n[assembly: AssemblyFileVersion(\&amp;#34;{0}\&amp;#34;)]&amp;#34;&lt;/span>, version);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> File.WriteAllText(versionFile, readText);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="build-dll">
+ Build dll
+ &lt;a class="heading-link" href="#build-dll">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> BuildDll(&lt;span style="color:#8be9fd">string&lt;/span> solutionFileName, &lt;span style="color:#8be9fd">string&lt;/span> type)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> process = &lt;span style="color:#ff79c6">new&lt;/span> Process();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> startInfo = &lt;span style="color:#ff79c6">new&lt;/span> ProcessStartInfo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FileName = &lt;span style="color:#8be9fd">string&lt;/span>.Format(&lt;span style="color:#f1fa8c">@&amp;#34;{0}\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe&amp;#34;&lt;/span>, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Arguments = &lt;span style="color:#8be9fd">string&lt;/span>.Format(&lt;span style="color:#f1fa8c">&amp;#34;{0} /nologo /t:Rebuild /p:Configuration={1} /v:q /clp:ErrorsOnly&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solutionFileName, type),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UseShellExecute = &lt;span style="color:#ff79c6">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RedirectStandardOutput = &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process.StartInfo = startInfo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process.Start();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#f1fa8c">&amp;#34;Building the solution {1}-[{0}]...&amp;#34;&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Path.GetFileNameWithoutExtension(solutionFileName), type);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process.WaitForExit();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (process.ExitCode != &lt;span style="color:#bd93f9">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">using&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> sr = process.StandardOutput)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> error = sr.ReadToEnd();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#f1fa8c">&amp;#34;Build failed with the following eorror message(s):&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(error);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#f1fa8c">&amp;#34;Build succeeded.&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="run">
+ Run
+ &lt;a class="heading-link" href="#run">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> Run()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> rootFolder = &lt;span style="color:#f1fa8c">@&amp;#34;D:\csharp\projs&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span>[] projFiles = Directory.GetFiles(rootFolder, &lt;span style="color:#f1fa8c">&amp;#34;*.csproj&amp;#34;&lt;/span>, SearchOption.AllDirectories);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> f &lt;span style="color:#ff79c6">in&lt;/span> projFiles)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AddOverflowSyntax(f);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span>[] versionFiles = Directory.GetFiles(rootFolder, &lt;span style="color:#f1fa8c">&amp;#34;AssemblyInfo.cs&amp;#34;&lt;/span>, SearchOption.AllDirectories);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> f &lt;span style="color:#ff79c6">in&lt;/span> versionFiles)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UpdateFileVersion(f);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span>[] slnFiles = Directory.GetFiles(rootFolder, &lt;span style="color:#f1fa8c">&amp;#34;*.sln&amp;#34;&lt;/span>, SearchOption.AllDirectories);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> f &lt;span style="color:#ff79c6">in&lt;/span> slnFiles)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BuildDll(f, &lt;span style="color:#f1fa8c">&amp;#34;Debug&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BuildDll(f, &lt;span style="color:#f1fa8c">&amp;#34;Release&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.ReadLine();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>用 Line 來通知上下班打卡紀錄</title><link>https://hsinjungwu.github.io/posts/line_noftify_with_gas/</link><pubDate>Mon, 27 Sep 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/line_noftify_with_gas/</guid><description>&lt;p>前幾天忘了自己下班有沒有打卡，除了回去補打之外不然就是要經過種種驗證登入公司信箱查詢。套句 &lt;a href="https://blog.gslin.org/" class="external-link" target="_blank" rel="noopener">強者我學長&lt;/a> 說的 &lt;strong>幹壞事是進步最大的原動力&lt;/strong>，於是開始了這段簡單旅程。&lt;/p>
+&lt;p>原本想用 &lt;a href="https://ifttt.com/home" class="external-link" target="_blank" rel="noopener">ifttt&lt;/a> 來處理&lt;/p>
+&lt;ol>
+&lt;li>收到信自動轉寄給 ifttt&lt;/li>
+&lt;li>ifttt 送給 Line Notify&lt;/li>
+&lt;/ol>
+&lt;p>但 gmail 應該是避免亂發郵件，所以自動轉寄的收信信箱要認證。但我又沒辦法跟 ifttt 拿認證碼，所以這條路就不行。&lt;/p>
+&lt;p>後來想到曾看過這篇 &lt;a href="https://www.letswrite.tw/line-notify-gas/" class="external-link" target="_blank" rel="noopener">LINE Notify：用 Google Apps Script 建立簡易網站監測機器人&lt;/a>，於是就照抄他送通知的 code 其他則是看 &lt;a href="https://developers.google.com/apps-script/reference/gmail" class="external-link" target="_blank" rel="noopener">官方文件&lt;/a> 的內容拼湊。&lt;/p>
+&lt;p>至於遇到的問題大概就是在 &lt;code>GmailApp.search&lt;/code> 的條件不知道有哪些關鍵字，但生命會自己找到出路。總之程式碼如下&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> run() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> msg &lt;span style="color:#ff79c6">=&lt;/span> queryMail();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (msg.length &lt;span style="color:#ff79c6">&amp;gt;&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lineMessage(msg);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> token &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;xxx&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> lineMessage(msg) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> option &lt;span style="color:#ff79c6">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> method&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;post&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> headers&lt;span style="color:#ff79c6">:&lt;/span> { Authorization&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;Bearer &amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> token },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> payload&lt;span style="color:#ff79c6">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message&lt;span style="color:#ff79c6">:&lt;/span> msg,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UrlFetchApp.fetch(&lt;span style="color:#f1fa8c">&amp;#34;https://notify-api.line.me/api/notify&amp;#34;&lt;/span>, option);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> queryMail() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> rtnMsg &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> condition &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#39;subject:&amp;#34;刷卡通知&amp;#34; is:unread&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> threads &lt;span style="color:#ff79c6">=&lt;/span> GmailApp.search(condition);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> messages &lt;span style="color:#ff79c6">=&lt;/span> GmailApp.getMessagesForThreads(threads);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> i &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages.length; i&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> j &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; j &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages[i].length; j&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> mail &lt;span style="color:#ff79c6">=&lt;/span> messages[i][j];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (mail.isUnread()) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rtnMsg &lt;span style="color:#ff79c6">+=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34;\n&amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Utilities.formatDate(mail.getDate(), &lt;span style="color:#f1fa8c">&amp;#34;GMT+8&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;yyyy/MM/dd&amp;#34;&lt;/span>) &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34; &amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mail.getPlainBody();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mail.markRead();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> i &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages.length; i&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> threads[i].moveToArchive();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> rtnMsg;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Batch Upload Files To Google Drive</title><link>https://hsinjungwu.github.io/posts/batch_upload_files_to_google_drive/</link><pubDate>Wed, 10 Mar 2021 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/batch_upload_files_to_google_drive/</guid><description>&lt;p>協助公司同仁處理日常工作。🤓&lt;/p>
+&lt;h2 id="建置">
+ 建置
+ &lt;a class="heading-link" href="#%e5%bb%ba%e7%bd%ae">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>Fork from &lt;a href="https://github.com/prasmussen/gdrive" class="external-link" target="_blank" rel="noopener">原版 gdrive&lt;/a>&lt;/li>
+&lt;li>參考 &lt;a href="https://hiraku.tw/2020/01/5894/" class="external-link" target="_blank" rel="noopener">如何在終端機介面使用 Google Drive (gdrive cmd)&lt;/a> 裡的說明修改 &lt;strong>ClientId&lt;/strong> 跟 &lt;strong>ClientSecret&lt;/strong>。&lt;/li>
+&lt;li>執行 &lt;code>CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build&lt;/code> 產生執行檔 &lt;em>gdrive.exe&lt;/em>
+&lt;ul>
+&lt;li>要執行 &lt;code>go mod init&lt;/code>&lt;/li>
+&lt;li>&lt;em>go.mod&lt;/em> 裡面的 &lt;code>golang.org/x/oauth2&lt;/code> 版號要調整&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="安裝">
+ 安裝
+ &lt;a class="heading-link" href="#%e5%ae%89%e8%a3%9d">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>將 &lt;code>gdrive.exe&lt;/code> 放到 &lt;code>C:\Windows&lt;/code>&lt;/li>
+&lt;li>參考 &lt;a href="https://sunxiaoshan.medium.com/google-driver-in-command-line-426c8d4031fb" class="external-link" target="_blank" rel="noopener">Google Drive in Command Line&lt;/a> 的圖解教學即可。&lt;/li>
+&lt;/ol>
+&lt;h2 id="使用">
+ 使用
+ &lt;a class="heading-link" href="#%e4%bd%bf%e7%94%a8">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>可透過以下語法執行批次操作，其他使用 &lt;code>gdrive help&lt;/code> 查詢。&lt;/p></description></item></channel></rss>

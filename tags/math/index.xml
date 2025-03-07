@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math on FR4NK 乾一杯 🍻</title><link>https://hsinjungwu.github.io/tags/math/</link><description>Recent content in Math on FR4NK 乾一杯 🍻</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 16 Aug 2023 10:20:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title>建立數學解答庫</title><link>https://hsinjungwu.github.io/posts/build_math_sols_repo/</link><pubDate>Wed, 16 Aug 2023 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/build_math_sols_repo/</guid><description>&lt;p>一直想把 20 年前在 BBS 上寫的 &lt;a href="https://hjwu.github.io/math-log" class="external-link" target="_blank" rel="noopener">數學解答&lt;/a> 貼出來，但不論是 &lt;a href="https://jekyllrb.com/" class="external-link" target="_blank" rel="noopener">Jekyll&lt;/a> 或是 &lt;a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">HUGO&lt;/a> 都對 $\LaTeX$ 不那麼友善。直到最近看到 &lt;a href="https://docusaurus.io/" class="external-link" target="_blank" rel="noopener">Docusaurus&lt;/a> 才覺得驚為天人。&lt;/p>
+&lt;h2 id="操作備忘">
+ 操作備忘
+ &lt;a class="heading-link" href="#%e6%93%8d%e4%bd%9c%e5%82%99%e5%bf%98">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>基本上 &lt;a href="https://docusaurus.io/docs" class="external-link" target="_blank" rel="noopener">官方文件&lt;/a> 算蠻清楚了。&lt;/p>
+&lt;ul>
+&lt;li>建議使用 &lt;a href="https://yarnpkg.com/" class="external-link" target="_blank" rel="noopener">yarn&lt;/a> 執行一切指令。因為不管 &lt;a href="https://docusaurus.io/docs/deployment#triggering-deployment-with-github-actions" class="external-link" target="_blank" rel="noopener">發佈到 Github&lt;/a> 或是 &lt;a href="https://tw-docs.com/docs/static-site-generators/docusaurus-gitlab-pages/#create-ci-configuration" class="external-link" target="_blank" rel="noopener">發佈到 GitLab&lt;/a> 的設定都以 &lt;code>yarn&lt;/code>為主。&lt;/li>
+&lt;/ul>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">GitHub&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">name&lt;/span>: Deploy to GitHub Pages
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">on&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">push&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">branches&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Review gh actions docs if you want to further define triggers, paths, etc&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">deploy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">name&lt;/span>: Deploy to GitHub Pages
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">runs-on&lt;/span>: ubuntu-latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">steps&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">uses&lt;/span>: actions/checkout@v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">uses&lt;/span>: actions/setup-node@v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">node-version&lt;/span>: &lt;span style="color:#bd93f9">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">cache&lt;/span>: yarn
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">name&lt;/span>: Install dependencies
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">run&lt;/span>: yarn install --frozen-lockfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">name&lt;/span>: Build website
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">run&lt;/span>: yarn build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Popular action to deploy to GitHub Pages:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">name&lt;/span>: Deploy to GitHub Pages
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">uses&lt;/span>: peaceiris/actions-gh-pages@v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">github_token&lt;/span>: ${{ secrets.GITHUB_TOKEN }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Build output to publish to the `gh-pages` branch:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">publish_dir&lt;/span>: ./build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># The following lines assign commit authorship to the official&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># GH-Actions bot for deploys to `gh-pages` branch:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># https://github.com/actions/checkout/issues/13#issuecomment-724415212&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># The GH actions bot is used by default if you didn&amp;#39;t specify the two fields.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># You can swap them out with your own user credentials.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">user_name&lt;/span>: github-actions[bot]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">user_email&lt;/span>: &lt;span style="color:#bd93f9">41898282&lt;/span>+github-actions[bot]@users.noreply.github.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">GitLab&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">image&lt;/span>: node:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"># allow caching for faster deployment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">cache&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">paths&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - node_modules/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - public/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - .cache/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">pages&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">stage&lt;/span>: deploy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">script&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - yarn install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - yarn build:gitlab
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">artifacts&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">paths&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - public
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">only&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+ 
+
+&lt;/div>
+
+
+
+&lt;ul>
+&lt;li>如果要在 &lt;a href="https://github.com/" class="external-link" target="_blank" rel="noopener">GitHub&lt;/a> 上放 &lt;code>CNAME&lt;/code> 的話，要把它放在 &lt;strong>static&lt;/strong> 資料夾裡面，不然每次重 build 都會被移除，感覺 &lt;a href="https://gitlab.com/" class="external-link" target="_blank" rel="noopener">GitLab&lt;/a> 的設計比較簡單。&lt;/li>
+&lt;/ul>
+&lt;h2 id="是否搬家-">
+ 是否搬家 ?
+ &lt;a class="heading-link" href="#%e6%98%af%e5%90%a6%e6%90%ac%e5%ae%b6-">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>其實有糾結是否要放棄 &lt;a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">HUGO&lt;/a> 改用 &lt;a href="https://docusaurus.io/" class="external-link" target="_blank" rel="noopener">Docusaurus&lt;/a>，但發現它的 node_modules 這包資料夾超巨大而且 Build 速度很慢。而且也剛好看到這篇 &lt;a href="https://ricard.dev/moving-from-docusaurus-to-hugo/" class="external-link" target="_blank" rel="noopener">Moving from Docusaurus to Hugo&lt;/a> 有寫類似的內容。所以還是繼續留在 &lt;a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">HUGO&lt;/a> 吧。 ☕&lt;/p></description></item><item><title>關於亂數產生器</title><link>https://hsinjungwu.github.io/posts/about_rng/</link><pubDate>Mon, 01 Nov 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/about_rng/</guid><description>&lt;p>剛好看到 &lt;a href="https://blog.miniasp.com/post/2008/05/13/Random-vs-RNGCryptoServiceProvider" class="external-link" target="_blank" rel="noopener">亂數產生器：Random 與 RNGCryptoServiceProvider&lt;/a>，想到當年回台中面試 &lt;a href="http://www.simbo.com.tw/" class="external-link" target="_blank" rel="noopener">新博&lt;/a> 有被問類似的題目。&lt;/p>
+&lt;p>文中的 &lt;strong>產生亂數&lt;/strong> 的寫法會有一點不均勻的亂，他的做法跟下面的例子是一樣的。&lt;/p>
+&lt;blockquote>
+&lt;p>當你中午有四家餐廳想吃，但不知該選那家。於是想用一顆六面骰來幫你決定，你的策略是超過 4 的取餘數。&lt;/p>
+&lt;p>結果你發現你很常選到第 1, 2 家，因為他們的機率比選 3, 4 的還高。&lt;/p>&lt;/blockquote>
+&lt;p>而原文中的程式碼就出現了這個問題。雖然在指定範圍小的時候，這個誤差可以忽略，但當取值範圍夠大時問題就浮出來。&lt;/p>
+&lt;p>例如在 0 ~ 2147483647(&lt;code>int.MaxValue&lt;/code>) 中取權重比為 &lt;em>1:2:4&lt;/em> 但是取的基數範圍不同。則結果如下&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">基數&lt;/th>
+ &lt;th style="text-align: center">1/7&lt;/th>
+ &lt;th style="text-align: center">2/7&lt;/th>
+ &lt;th style="text-align: center">4/7&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">7&lt;/td>
+ &lt;td style="text-align: center">14.2857%&lt;/td>
+ &lt;td style="text-align: center">28.5714%&lt;/td>
+ &lt;td style="text-align: center">57.1429%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">700&lt;/td>
+ &lt;td style="text-align: center">14.2857%&lt;/td>
+ &lt;td style="text-align: center">28.5714%&lt;/td>
+ &lt;td style="text-align: center">57.1429%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">70000&lt;/td>
+ &lt;td style="text-align: center">14.2860%&lt;/td>
+ &lt;td style="text-align: center">28.5717%&lt;/td>
+ &lt;td style="text-align: center">57.1422%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">7000000&lt;/td>
+ &lt;td style="text-align: center">14.2958%&lt;/td>
+ &lt;td style="text-align: center">28.5916%&lt;/td>
+ &lt;td style="text-align: center">57.1126%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">700000000&lt;/td>
+ &lt;td style="text-align: center">16.1810%&lt;/td>
+ &lt;td style="text-align: center">27.9397%&lt;/td>
+ &lt;td style="text-align: center">55.8794%&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>建議 &lt;strong>產生一個非負數的亂數&lt;/strong> 調整為&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span> Next()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rngp.GetBytes(rb);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> &lt;span style="color:#ff79c6">value&lt;/span> = BitConverter.ToInt32(rb, &lt;span style="color:#bd93f9">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (&lt;span style="color:#ff79c6">value&lt;/span> &amp;lt; &lt;span style="color:#bd93f9">0&lt;/span>) &lt;span style="color:#ff79c6">value&lt;/span> -= &lt;span style="color:#8be9fd">int&lt;/span>.MinValue;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">value&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>而 &lt;strong>產生一個非負數且最大值 max 以下的亂數&lt;/strong> 調整如下。這部分的數學就不特別解釋了。🤭&lt;/p></description></item><item><title>關於 EXCEL 內的浮點數儲存內容</title><link>https://hsinjungwu.github.io/posts/floating_point_of_excel/</link><pubDate>Wed, 06 Oct 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/floating_point_of_excel/</guid><description>&lt;p>遇到 &lt;a href="https://stackoverflow.com/questions/51025969/issue-when-importing-float-as-string-from-excel-adding-precision-incorrectly" class="external-link" target="_blank" rel="noopener">Issue when importing float as string from Excel. Adding precision incorrectly&lt;/a> 跟 &lt;a href="https://community.claris.com/en/s/question/0D50H00006ezK2L/excel-importation-may-misinterpret-fractional-numbers" class="external-link" target="_blank" rel="noopener">Excel importation may misinterpret fractional numbers&lt;/a> 提到的問題，細細研究才發現水很深啊～ 😏&lt;/p>
+&lt;h2 id="問題重現">
+ 問題重現
+ &lt;a class="heading-link" href="#%e5%95%8f%e9%a1%8c%e9%87%8d%e7%8f%be">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>建立一個 Excel 檔案，並在工作表 1 的 &lt;em>A1&lt;/em> 儲存格寫上 &lt;strong>0.0004&lt;/strong>&lt;/li>
+&lt;li>使用 &lt;a href="https://github.com/qax-os/excelize" class="external-link" target="_blank" rel="noopener">excelize&lt;/a> 讀取 &lt;em>A1&lt;/em> 的值獲得 &lt;strong>4.0000000000000002E-4&lt;/strong>&lt;/li>
+&lt;li>接著使用 &lt;a href="https://github.com/shopspring/decimal" class="external-link" target="_blank" rel="noopener">decimal&lt;/a> 解析這個值得到 &lt;strong>0.00040000000000000002&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>然後改用 &lt;em>C#&lt;/em> 利用 &lt;code>Microsoft.Office.Interop.Excel&lt;/code> 跟 &lt;a href="https://github.com/ExcelDataReader/ExcelDataReader" class="external-link" target="_blank" rel="noopener">ExcelDataReader&lt;/a> 解析出來卻是正確的 &lt;strong>0.0004&lt;/strong>。&lt;/p>
+&lt;p>原以為是 &lt;a href="https://github.com/qax-os/excelize" class="external-link" target="_blank" rel="noopener">excelize&lt;/a> 的 bug，於透過解壓縮 &lt;em>*.xlsx&lt;/em> 的方式找到 &lt;code>\xl\worksheets\sheet1.xml&lt;/code> 發現裡面真的是存 &lt;strong>4.0000000000000002E-4&lt;/strong> 😵&lt;/p>
+&lt;h2 id="差異原因">
+ 差異原因
+ &lt;a class="heading-link" href="#%e5%b7%ae%e7%95%b0%e5%8e%9f%e5%9b%a0">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>基本上這篇 &lt;a href="https://medium.com/starbugs/see-why-floating-point-error-can-not-be-avoided-from-ieee-754-809720b32175" class="external-link" target="_blank" rel="noopener">從 IEEE 754 標準來看為什麼浮點誤差是無法避免的&lt;/a> 已經講得蠻清楚的。另外也可以透過這個 &lt;a href="https://www.binaryconvert.com/convert_double.html" class="external-link" target="_blank" rel="noopener">Double (IEEE754 Double precision 64-bit) Converter&lt;/a> 來得到&lt;/p></description></item></channel></rss>

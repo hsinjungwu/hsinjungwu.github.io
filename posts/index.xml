@@ -1,0 +1,1804 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FR4NK 乾一杯 🍻</title><link>https://hsinjungwu.github.io/posts/</link><description>Recent content in Posts on FR4NK 乾一杯 🍻</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 08 Jul 2024 20:25:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>傅立葉展開</title><link>https://hsinjungwu.github.io/posts/fourier_series/</link><pubDate>Mon, 08 Jul 2024 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/fourier_series/</guid><description>&lt;p>前幾天面試到一位剛畢業的新鮮人時，他提到了 &lt;a href="https://zh.wikipedia.org/wiki/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0" class="external-link" target="_blank" rel="noopener">傅立葉級數&lt;/a>，剛好前幾天有向圖書館線上借閱 &lt;a href="https://www.books.com.tw/products/E050203731" class="external-link" target="_blank" rel="noopener">數學女孩物理筆記：波的疊加 (電子書)&lt;/a>，就剛好倚老賣老借花獻佛介紹它啦。&lt;/p>
+&lt;hr>
+&lt;p>問 : 為什麼要用傅利葉表示將函數 $f(x)$ 寫成下面這種形式呢？&lt;/p>
+&lt;p>$$
+f(x) = \sum\limits_{k=0}^{\infty}(a_k\cos \text{k}x+b_k\sin\text{k}x)
+$$&lt;/p>
+&lt;p>答 : 因為想用單純的事物來表示複雜的事物。&lt;/p>
+&lt;blockquote>
+&lt;p>傅利葉展開可以將特定函數表示成三角函數的線性組合，如此一來，便能清楚知道該函數性質，擁有什麼樣的對稱性，還可以當成三角函數的線性組合處理。&lt;/p>&lt;/blockquote></description></item><item><title>[PE 筆記] Pythagorean Triplet</title><link>https://hsinjungwu.github.io/posts/pe/pythagorean_triplet/</link><pubDate>Sat, 24 Feb 2024 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/pe/pythagorean_triplet/</guid><description>&lt;p>記憶中在 &lt;a href="https://projecteuler.net/" class="external-link" target="_blank" rel="noopener">Project Euler&lt;/a> 遇到 &lt;a href="https://en.wikipedia.org/wiki/Pythagorean_triple" class="external-link" target="_blank" rel="noopener">Pythagorean triple(畢氏三元數)&lt;/a> 相關題目時，都會優先使用以下生成方式解題&lt;/p>
+&lt;div class="notice tip">
+ &lt;div class="notice-title">
+ &lt;i class="fa-solid fa-lightbulb" aria-hidden="true">&lt;/i>Tip
+ &lt;/div>
+ &lt;div class="notice-content">&lt;p>當正整數 $m$ 與 $n$ 滿足 $m&amp;gt;n$, 互質且一奇一偶&lt;/p>
+&lt;ul>
+&lt;li>$a = m^2-n^2$&lt;/li>
+&lt;li>$b = 2mn$&lt;/li>
+&lt;li>$c = m^2+n^2$&lt;/li>
+&lt;/ul>
+&lt;p>則 $a,b,c$ 為素畢氏三元數。&lt;/p>&lt;/div>
+&lt;/div></description></item><item><title>如何在 github 幫文字上色</title><link>https://hsinjungwu.github.io/posts/how_to_colored_text_on_github/</link><pubDate>Sat, 25 Nov 2023 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/how_to_colored_text_on_github/</guid><description>&lt;p>最近想把 HACKMD 的文件搬到 github private repo，有些暫定的想法想放在 issue，但它不支援&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>&amp;lt;code style=&amp;quot;color: red;&amp;quot;&amp;gt;Hello&amp;lt;/code&amp;gt;&lt;/code>&lt;/li>
+&lt;li>&lt;code>&amp;lt;font color=&amp;quot;blue&amp;quot;&amp;gt;World&amp;lt;/font&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>後來看到這篇 &lt;a href="https://github.com/orgs/community/discussions/31570#discussioncomment-3571340" class="external-link" target="_blank" rel="noopener">Colored text to markdown&lt;/a> 提出了解法&lt;/p>
+&lt;blockquote>
+&lt;p>Find a way to colorfy text in Github in the best way now (Since May 2022)!&lt;/p>
+&lt;p>If i use the &lt;code>\color{nameColor}&lt;/code> code from LATEX inside &lt;code>$$$$&lt;/code>, now that github can support&lt;/p>&lt;/blockquote>
+&lt;p>沒想到居然是用 $\LaTeX$ 解決 👍&lt;/p></description></item><item><title>golang 開發備忘</title><link>https://hsinjungwu.github.io/posts/golang_dev_note/</link><pubDate>Fri, 17 Nov 2023 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/golang_dev_note/</guid><description>&lt;p>最近在新團隊開始使用 golang，備份一下可能會踩的雷。&lt;/p>
+&lt;h2 id="環境建置前">
+ 環境建置前
+ &lt;a class="heading-link" href="#%e7%92%b0%e5%a2%83%e5%bb%ba%e7%bd%ae%e5%89%8d">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>&lt;code>GO111MODULE&lt;/code> 設定成 &lt;code>ON&lt;/code>&lt;/li>
+&lt;li>將公司 git server 設定到 &lt;code>GOPRIVATE&lt;/code>。&lt;/li>
+&lt;/ol>
+&lt;p>其中這篇 &lt;a href="https://juejin.cn/post/6977261480425029662" class="external-link" target="_blank" rel="noopener">私有化仓库的 GO 模块使用实践&lt;/a> 有整理以下變數說明：&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>GONOPROXY，基于前缀的匹配方式运行，上图中指定了gitlab.com，也就是所有 gitlab.com 上的代码，不从 GOPROXY 服务器上去获取，全部通过传统 VCS 方式，直接去原代码服务器上拉取；&lt;/li>
+&lt;li>GONOSUMDB，可以让前缀匹配上的模块跳过安全性检查；&lt;/li>
+&lt;li>GOPRIVATE，相当于前面两个环境变量的集合，配置了 GOPRIVATE 就相当于把前面的两个环境变量一起配置了；&lt;/li>
+&lt;/ul>&lt;/blockquote>
+
+
+
+
+
+&lt;div class="tabs tabs-right">
+ 
+
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Windows&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;p>設定系統變數&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GO111MODULE&lt;/code> = &lt;em>on&lt;/em>&lt;/li>
+&lt;li>&lt;code>GOPRIVATE&lt;/code> = &lt;em>git server host&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;/div>
+
+
+
+
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">MacOS&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;ol>
+&lt;li>vim ~/.zshrc&lt;/li>
+&lt;li>加上下面兩行
+&lt;ul>
+&lt;li>&lt;code>export GO111MODULE=on&lt;/code>&lt;/li>
+&lt;li>&lt;code>export GOPRIVATE={git server host}&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>source ~/.zshrc&lt;/li>
+&lt;/ol>
+
+&lt;/div>
+
+
+
+
+&lt;/div>
+
+
+
+&lt;h2 id="設定-go-mod">
+ 設定 Go Mod
+ &lt;a class="heading-link" href="#%e8%a8%ad%e5%ae%9a-go-mod">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>go mod init &amp;ldquo;your project&amp;rdquo;&lt;/li>
+&lt;li>go mod tidy&lt;/li>
+&lt;li>第一次加入 plugin &lt;code>go get &amp;quot;your plugin&amp;quot;&lt;/code>&lt;/li>
+&lt;li>更新 plugin &lt;code>go get -u &amp;quot;your plugin&amp;quot;&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="語法與指令">
+ 語法與指令
+ &lt;a class="heading-link" href="#%e8%aa%9e%e6%b3%95%e8%88%87%e6%8c%87%e4%bb%a4">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://stackoverflow.com/questions/28081486/how-can-i-go-run-a-project-with-multiple-files-in-the-main-package" class="external-link" target="_blank" rel="noopener">How can I &amp;ldquo;go run&amp;rdquo; a project with multiple files in the main package?&lt;/a> : &lt;code>go run .&lt;/code>&lt;/li>
+&lt;li>使用 &lt;code>json:&amp;quot;omitempty&amp;quot;&lt;/code> 會跳出 &lt;em>struct field xxx repeats json tag &amp;ldquo;omitempty&amp;rdquo; also at&amp;hellip;&lt;/em> 應該是把它認成 &lt;em>name&lt;/em> 所以才會重複，改成 &lt;code>json:&amp;quot;,omitempty&amp;quot;&lt;/code> 就可以&lt;/li>
+&lt;li>go get xxx 遇到 &lt;code>panic: internal error: net token acquired but not released&lt;/code> 時請更新 go 版本。我從 &lt;em>1.21.0&lt;/em> 升到 &lt;em>1.21.5&lt;/em> 就解決了&lt;/li>
+&lt;/ol></description></item><item><title>如何讀取 Google Sheet</title><link>https://hsinjungwu.github.io/posts/how_to_read_google_sheet/</link><pubDate>Wed, 01 Nov 2023 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/how_to_read_google_sheet/</guid><description>&lt;h2 id="設定-google-sheet-api">
+ 設定 Google Sheet API
+ &lt;a class="heading-link" href="#%e8%a8%ad%e5%ae%9a-google-sheet-api">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>到 &lt;a href="https://console.cloud.google.com/" class="external-link" target="_blank" rel="noopener">https://console.cloud.google.com/&lt;/a> 建立新專案。&lt;/li>
+&lt;li>在新專案下
+&lt;ul>
+&lt;li>建立憑證，目前是採用 &lt;strong>服務帳戶&lt;/strong> 的設定並下載金鑰 &lt;code>client_secret.json&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>將服務帳戶加到 sheet 共享名單中&lt;/p>&lt;/blockquote>
+&lt;ul>
+&lt;li>啟用 &lt;code>Google Sheet API&lt;/code>，如果沒啟用會跳出以下錯誤&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Google Sheets API has not been used in project XXXX before or it is disabled. Enable it by visiting&lt;/p>&lt;/blockquote>
+&lt;/li>
+&lt;li>使用以下程式碼 &lt;code>GoogleSheetsHelper&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">GoogleSheetsHelper&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> SheetsService Service { &lt;span style="color:#ff79c6">get&lt;/span>; &lt;span style="color:#ff79c6">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">const&lt;/span> &lt;span style="color:#8be9fd">string&lt;/span> APPLICATION_NAME = &lt;span style="color:#f1fa8c">&amp;#34;name&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> &lt;span style="color:#ff79c6">readonly&lt;/span> &lt;span style="color:#8be9fd">string&lt;/span>[] Scopes = { SheetsService.Scope.Spreadsheets, SheetsService.Scope.SpreadsheetsReadonly };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> GoogleSheetsHelper()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InitializeService();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#ff79c6">void&lt;/span> InitializeService()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> credential = GetCredentialsFromFile();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Service = &lt;span style="color:#ff79c6">new&lt;/span> SheetsService(&lt;span style="color:#ff79c6">new&lt;/span> BaseClientService.Initializer()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HttpClientInitializer = credential,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ApplicationName = APPLICATION_NAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> GoogleCredential GetCredentialsFromFile()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GoogleCredential credential;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">using&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> stream = &lt;span style="color:#ff79c6">new&lt;/span> FileStream(&lt;span style="color:#f1fa8c">&amp;#34;client_secret.json&amp;#34;&lt;/span>, FileMode.Open, FileAccess.Read))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> credential;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>外部實作&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#ff79c6">void&lt;/span> DoSomething()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GoogleSheetsHelper gsh = &lt;span style="color:#ff79c6">new&lt;/span> GoogleSheetsHelper();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> _gsValues = gsh.Service.Spreadsheets.Values;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> range = &lt;span style="color:#f1fa8c">$&amp;#34;{sheetName}!A:B&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> request = _gsValues.Get(sheetId, range);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> response = request.Execute();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IList&amp;lt;IList&amp;lt;&lt;span style="color:#8be9fd">object&lt;/span>&amp;gt;&amp;gt; values = response.Values;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4">//values is what you want&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="reference">
+ reference
+ &lt;a class="heading-link" href="#reference">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://ithelp.ithome.com.tw/articles/10283037" class="external-link" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10283037&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project" class="external-link" target="_blank" rel="noopener">https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" class="external-link" target="_blank" rel="noopener">https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dotblogs.com.tw/rainmaker/2016/08/08/230646" class="external-link" target="_blank" rel="noopener">https://dotblogs.com.tw/rainmaker/2016/08/08/230646&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.csdn.net/fire555/article/details/106276831" class="external-link" target="_blank" rel="noopener">https://blog.csdn.net/fire555/article/details/106276831&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://developers.google.com/api-client-library/dotnet/apis/sheets/v4" class="external-link" target="_blank" rel="noopener">https://developers.google.com/api-client-library/dotnet/apis/sheets/v4&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ithelp.ithome.com.tw/questions/10207707" class="external-link" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/questions/10207707&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk" class="external-link" target="_blank" rel="noopener">http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>建立數學解答庫</title><link>https://hsinjungwu.github.io/posts/build_math_sols_repo/</link><pubDate>Wed, 16 Aug 2023 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/build_math_sols_repo/</guid><description>&lt;p>一直想把 20 年前在 BBS 上寫的 &lt;a href="https://hjwu.github.io/math-log" class="external-link" target="_blank" rel="noopener">數學解答&lt;/a> 貼出來，但不論是 &lt;a href="https://jekyllrb.com/" class="external-link" target="_blank" rel="noopener">Jekyll&lt;/a> 或是 &lt;a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">HUGO&lt;/a> 都對 $\LaTeX$ 不那麼友善。直到最近看到 &lt;a href="https://docusaurus.io/" class="external-link" target="_blank" rel="noopener">Docusaurus&lt;/a> 才覺得驚為天人。&lt;/p>
+&lt;h2 id="操作備忘">
+ 操作備忘
+ &lt;a class="heading-link" href="#%e6%93%8d%e4%bd%9c%e5%82%99%e5%bf%98">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>基本上 &lt;a href="https://docusaurus.io/docs" class="external-link" target="_blank" rel="noopener">官方文件&lt;/a> 算蠻清楚了。&lt;/p>
+&lt;ul>
+&lt;li>建議使用 &lt;a href="https://yarnpkg.com/" class="external-link" target="_blank" rel="noopener">yarn&lt;/a> 執行一切指令。因為不管 &lt;a href="https://docusaurus.io/docs/deployment#triggering-deployment-with-github-actions" class="external-link" target="_blank" rel="noopener">發佈到 Github&lt;/a> 或是 &lt;a href="https://tw-docs.com/docs/static-site-generators/docusaurus-gitlab-pages/#create-ci-configuration" class="external-link" target="_blank" rel="noopener">發佈到 GitLab&lt;/a> 的設定都以 &lt;code>yarn&lt;/code>為主。&lt;/li>
+&lt;/ul>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">GitHub&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">name&lt;/span>: Deploy to GitHub Pages
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">on&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">push&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">branches&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Review gh actions docs if you want to further define triggers, paths, etc&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">deploy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">name&lt;/span>: Deploy to GitHub Pages
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">runs-on&lt;/span>: ubuntu-latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">steps&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">uses&lt;/span>: actions/checkout@v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">uses&lt;/span>: actions/setup-node@v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">node-version&lt;/span>: &lt;span style="color:#bd93f9">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">cache&lt;/span>: yarn
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">name&lt;/span>: Install dependencies
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">run&lt;/span>: yarn install --frozen-lockfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">name&lt;/span>: Build website
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">run&lt;/span>: yarn build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Popular action to deploy to GitHub Pages:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ff79c6">name&lt;/span>: Deploy to GitHub Pages
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">uses&lt;/span>: peaceiris/actions-gh-pages@v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">github_token&lt;/span>: ${{ secrets.GITHUB_TOKEN }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># Build output to publish to the `gh-pages` branch:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">publish_dir&lt;/span>: ./build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># The following lines assign commit authorship to the official&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># GH-Actions bot for deploys to `gh-pages` branch:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># https://github.com/actions/checkout/issues/13#issuecomment-724415212&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># The GH actions bot is used by default if you didn&amp;#39;t specify the two fields.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6272a4"># You can swap them out with your own user credentials.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">user_name&lt;/span>: github-actions[bot]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">user_email&lt;/span>: &lt;span style="color:#bd93f9">41898282&lt;/span>+github-actions[bot]@users.noreply.github.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">GitLab&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">image&lt;/span>: node:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"># allow caching for faster deployment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">cache&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">paths&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - node_modules/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - public/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - .cache/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">pages&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">stage&lt;/span>: deploy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">script&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - yarn install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - yarn build:gitlab
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">artifacts&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">paths&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - public
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">only&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+ 
+
+&lt;/div>
+
+
+
+&lt;ul>
+&lt;li>如果要在 &lt;a href="https://github.com/" class="external-link" target="_blank" rel="noopener">GitHub&lt;/a> 上放 &lt;code>CNAME&lt;/code> 的話，要把它放在 &lt;strong>static&lt;/strong> 資料夾裡面，不然每次重 build 都會被移除，感覺 &lt;a href="https://gitlab.com/" class="external-link" target="_blank" rel="noopener">GitLab&lt;/a> 的設計比較簡單。&lt;/li>
+&lt;/ul>
+&lt;h2 id="是否搬家-">
+ 是否搬家 ?
+ &lt;a class="heading-link" href="#%e6%98%af%e5%90%a6%e6%90%ac%e5%ae%b6-">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>其實有糾結是否要放棄 &lt;a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">HUGO&lt;/a> 改用 &lt;a href="https://docusaurus.io/" class="external-link" target="_blank" rel="noopener">Docusaurus&lt;/a>，但發現它的 node_modules 這包資料夾超巨大而且 Build 速度很慢。而且也剛好看到這篇 &lt;a href="https://ricard.dev/moving-from-docusaurus-to-hugo/" class="external-link" target="_blank" rel="noopener">Moving from Docusaurus to Hugo&lt;/a> 有寫類似的內容。所以還是繼續留在 &lt;a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">HUGO&lt;/a> 吧。 ☕&lt;/p></description></item><item><title>面試 - 6</title><link>https://hsinjungwu.github.io/posts/interview/06/</link><pubDate>Wed, 05 Jul 2023 01:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/06/</guid><description>&lt;p>前幾天去台北某外商面試機率工程師。筆試題目如下 :&lt;/p>
+&lt;ol>
+&lt;li>求以下機率
+&lt;ul>
+&lt;li>有兩個小孩其中一個不為男，2 個都女的&lt;/li>
+&lt;li>有兩個小孩，已知年紀大的是男，年紀小的是女的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>求平均速度&lt;/li>
+&lt;li>貝氏定理應用
+&lt;ul>
+&lt;li>工廠產出壞東西的機率&lt;/li>
+&lt;li>壞東西出現在某個工廠的機率。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>52 張牌，翻開第一張，賭下一張點數大或小。
+&lt;ul>
+&lt;li>開第一張牌可以選擇換或不換，你有沒有最佳策略：例如多少點數就換。&lt;/li>
+&lt;li>之後開第二張牌，猜大或猜小的策略是什麼？&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>其中前 3 題手寫，約高中程度。大概 5 分鐘就能完成。如果有錯可能就被感謝了。😅。&lt;/p>
+&lt;p>而第 4 題跟面試人員一起討論，他們會引導你。不要太緊張的話應該都很順利。&lt;/p></description></item><item><title>Build Your Own Custom Short URL</title><link>https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/</link><pubDate>Wed, 18 Jan 2023 10:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/</guid><description>&lt;p>最近在幫老婆做小工具時突然的靈感，可以透過 &lt;em>Line Bot&lt;/em> + &lt;em>Google Apps Script&lt;/em> + &lt;em>Github Issue&lt;/em> 完成屬於自己的短網址服務。&lt;/p>
+&lt;h2 id="實作">
+ 實作
+ &lt;a class="heading-link" href="#%e5%af%a6%e4%bd%9c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="設定-line-bot-讀訊息">
+ 設定 Line Bot 讀訊息
+ &lt;a class="heading-link" href="#%e8%a8%ad%e5%ae%9a-line-bot-%e8%ae%80%e8%a8%8a%e6%81%af">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>參考 &lt;a href="https://www.oxxostudio.tw/articles/201804/line-bot-apps-script.html" class="external-link" target="_blank" rel="noopener">實作 LINE 聊天機器人 ( Google Apps Script )&lt;/a> 或 &lt;a href="https://medium.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E5%85%A9%E5%B0%8F%E6%99%82%E6%89%93%E9%80%A0%E7%B0%A1%E5%96%AE-line-chatbot-%E4%BD%BF%E7%94%A8-google-apps-script-google-sheet-api-8fff7372ff3d" class="external-link" target="_blank" rel="noopener">兩小時打造簡單 Line Chatbot — 使用 Google Apps Script &amp;amp; Google Sheet API&lt;/a> 就可以。&lt;/p>
+&lt;div class="notice warning">
+ &lt;div class="notice-title">
+ &lt;i class="fa-solid fa-exclamation-triangle" aria-hidden="true">&lt;/i>Warning
+ &lt;/div>
+ &lt;div class="notice-content">記得在 &lt;code>回應功能&lt;/code> 中關掉 &lt;code>聊天&lt;/code> 跟 &lt;code>自動回應&lt;/code>，不然你的機器人不會自動已讀。&lt;/div>
+&lt;/div>
+
+&lt;h3 id="產生短網址">
+ 產生短網址
+ &lt;a class="heading-link" href="#%e7%94%a2%e7%94%9f%e7%9f%ad%e7%b6%b2%e5%9d%80">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>想法來自於用 Github Issue 寫 Blog，可以 fork &lt;a href="https://github.com/casualjavascript/blog" class="external-link" target="_blank" rel="noopener">這份專案&lt;/a>，再參考 &lt;a href="https://stackoverflow.com/questions/5411538/redirect-from-an-html-page" class="external-link" target="_blank" rel="noopener">這篇&lt;/a> 在 &lt;em>index.html&lt;/em> 加入下面這段即可。&lt;/p></description></item><item><title>動態讀取 By Case 的第三方物件 Public Field</title><link>https://hsinjungwu.github.io/posts/dynamic_read_by_case_property/</link><pubDate>Mon, 16 Jan 2023 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/dynamic_read_by_case_property/</guid><description>&lt;p>剛來公司時某個舊專案 &lt;code>BigProject&lt;/code> 因為要對接多個同父異母專案的物件 &lt;code>ExtObject&lt;/code>，有時需特例處理各專案額外開的 &lt;code>Public Field&lt;/code>。 😱&lt;/p>
+&lt;h3 id="暴力法">
+ 暴力法
+ &lt;a class="heading-link" href="#%e6%9a%b4%e5%8a%9b%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>由於有歷史包袱，所以在一開始時是使用 &lt;a href="https://learn.microsoft.com/zh-tw/dotnet/csharp/programming-guide/concepts/reflection" class="external-link" target="_blank" rel="noopener">反射&lt;/a> 暴力處理。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> &lt;span style="color:#8be9fd">bool&lt;/span> SetFieldValue(&lt;span style="color:#8be9fd">string&lt;/span> fn, &lt;span style="color:#8be9fd">object&lt;/span> val, &lt;span style="color:#8be9fd">object&lt;/span> obj)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type t = obj.GetType();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">object&lt;/span> v = Convert.ChangeType(val,t.GetField(fn).FieldType);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t.GetField(fn).SetValue(obj, v);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">catch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> T GetFieldValue&amp;lt;T&amp;gt;(&lt;span style="color:#8be9fd">string&lt;/span> fn, &lt;span style="color:#8be9fd">object&lt;/span> obj)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type t = obj.GetType();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FieldInfo fi = t.GetField(fn);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> (T)fi.GetValue(obj);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">catch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">default&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="溝通後">
+ 溝通後
+ &lt;a class="heading-link" href="#%e6%ba%9d%e9%80%9a%e5%be%8c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>但後來在對方有機會改版的情況下請對方新增下列函數，我們也相對應使用 &lt;code>NewBigProject&lt;/code> 套用 &lt;code>NewExtObject&lt;/code> ，所以未來的新專案都沒事了！🤩&lt;/p></description></item><item><title>啟用 kbd tag</title><link>https://hsinjungwu.github.io/posts/enable_kbd_tag/</link><pubDate>Wed, 04 Jan 2023 00:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/enable_kbd_tag/</guid><description>&lt;p>一直好奇為什麼 &lt;code>kbd&lt;/code> tag 在某些 theme 一直無法正確呈現，剛剛才發現原始碼有這段 &lt;code>&amp;lt;!-- raw HTML omitted --&amp;gt;&lt;/code>。&lt;/p>
+&lt;p>Google 後發現 &lt;a href="https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032" class="external-link" target="_blank" rel="noopener">Raw HTML getting omitted in 0.60.0&lt;/a> 所以表示這是老問題了。解法可以在 &lt;em>config.toml&lt;/em> 加入這段&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[markup.goldmark.renderer]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>unsafe= &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>但看到 &lt;code>unsafe= true&lt;/code> 總覺得彆扭，所以我決定採取使用 &lt;code>shortcodes&lt;/code> 來處理。&lt;/p>
+&lt;ol>
+&lt;li>參考這篇 &lt;a href="https://ouch1978.github.io/docs/docusaurus/customization/apply-kbd-style-in-markdown" class="external-link" target="_blank" rel="noopener">讓你的 Markdown 有更漂亮的鍵盤按鍵表示方式&lt;/a> 新增 &lt;em>assests\kbd.css&lt;/em>。&lt;/li>
+&lt;li>調整 &lt;em>config.toml&lt;/em> 為 &lt;code>customCSS = [&amp;quot;kbd.css&amp;quot;]&lt;/code>&lt;/li>
+&lt;li>新增 &lt;em>layouts\shortcodes\kbd.html&lt;/em>&lt;/li>
+&lt;/ol></description></item><item><title>Getting .Net Framework version of a DLL using Powershell</title><link>https://hsinjungwu.github.io/posts/getting_dotnet_framework_version_of_a_dll_using_powershell/</link><pubDate>Tue, 03 Jan 2023 23:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/getting_dotnet_framework_version_of_a_dll_using_powershell/</guid><description>&lt;p>工作需求要辨識別部門送來的 dll 使用的 &lt;code>.Net FrameWork&lt;/code> 是哪一種版本。參考了這篇 &lt;a href="https://social.technet.microsoft.com/Forums/en-US/567fbeb3-d868-41b3-af5e-bea1e4036600/getting-net-framework-version-of-a-dll-using-powershell?forum=winserverpowershell" class="external-link" target="_blank" rel="noopener">Getting .Net Framework version of a DLL using Powershell&lt;/a> 裡面提的 :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ps1" data-lang="ps1">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">$dllfile&lt;/span> = &lt;span style="color:#f1fa8c">&amp;#39;SevenZipSharp.dll&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">$sb&lt;/span> = {&lt;span style="color:#8be9fd;font-style:italic">$_&lt;/span>.AttributeType.Name &lt;span style="color:#ff79c6">-eq&lt;/span> &lt;span style="color:#f1fa8c">&amp;#39;TargetFrameworkAttribute&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[Reflection.Assembly]::ReflectionOnlyLoadFrom(&lt;span style="color:#8be9fd;font-style:italic">$dllfile&lt;/span>).CustomAttributes.Where(&lt;span style="color:#8be9fd;font-style:italic">$sb&lt;/span>).ConstructorArguments.Value
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>另外蠻多文章都跟這篇 &lt;a href="https://www.c-sharpcorner.com/blogs/get-net-framework-version-of-a-dll1" class="external-link" target="_blank" rel="noopener">Get .NET Framework Version of a DLL&lt;/a> 的解法一樣 :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ps1" data-lang="ps1">&lt;span style="display:flex;">&lt;span>[Reflection.Assembly]::ReflectionOnlyLoadFrom(&lt;span style="color:#f1fa8c">&amp;#34;C:\SomeTest.dll&amp;#34;&lt;/span>).ImageRuntimeVersion 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>但這個回傳的是 &lt;code>CLR&lt;/code> 的版本&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。😵&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>&lt;a href="https://blog.miniasp.com/post/2015/07/28/Clarify-the-versions-between-CLR-NET-CSharp-Visual-Studio-and-ASPNET" class="external-link" target="_blank" rel="noopener">釐清 CLR、.NET、C#、Visual Studio、ASP.NET 各版本之間的關係&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>免 PDB 載入第三方 lib</title><link>https://hsinjungwu.github.io/posts/load_3rd_party_dll_without_pdb/</link><pubDate>Tue, 03 Jan 2023 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/load_3rd_party_dll_without_pdb/</guid><description>&lt;p>年紀到了，再更詳細記錄 &lt;a href="https://blog.darkthread.net/blog/vs-debug-3rdpty-lib/" class="external-link" target="_blank" rel="noopener">Visual Studio 技巧 - 深入第三方程式庫逐行偵錯&lt;/a> 寫的方法，以免忘了。&lt;/p>
+&lt;h3 id="如何開啟-modules-視窗">
+ 如何開啟 Modules 視窗
+ &lt;a class="heading-link" href="#%e5%a6%82%e4%bd%95%e9%96%8b%e5%95%9f-modules-%e8%a6%96%e7%aa%97">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>在偵錯時選取 ➡ 偵錯Windows ➡ 模組&lt;/li>
+&lt;li>按 &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>Alt&lt;/kbd> + &lt;kbd>U&lt;/kbd>&lt;/li>
+&lt;/ul>
+&lt;h3 id="如何-decompile-source-to-symbol-file">
+ 如何 Decompile Source to Symbol File
+ &lt;a class="heading-link" href="#%e5%a6%82%e4%bd%95-decompile-source-to-symbol-file">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>執行全部中斷(Break All)&lt;/li>
+&lt;li>按 &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>Alt&lt;/kbd> + &lt;kbd>Break&lt;/kbd>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>&lt;a href="https://zh.m.wikipedia.org/zh-tw/Break%E9%8D%B5" class="external-link" target="_blank" rel="noopener">Break鍵&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>面試 - 5</title><link>https://hsinjungwu.github.io/posts/interview/05/</link><pubDate>Fri, 16 Dec 2022 01:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/05/</guid><description>&lt;p>N 年前去 &lt;a href="https://www.trendmicro.com/zh_tw/forHome.html" class="external-link" target="_blank" rel="noopener">趨勢科技&lt;/a> 面試時，有一位主管問我一塊蛋糕切四刀最多能切多少塊，我當時只想到平面切三刀能切七塊，接著再腰斬就有 14 塊。答完後我問那位主管 14 是否是最好的答案，他說他覺得是 16 並畫出答案。不過我後來離開時才想到他的答案應該是 12 塊而已。&lt;/p>
+&lt;p>而這件事情就不了了之。直到剛剛發現這個影片 &lt;a href="https://www.bilibili.com/video/BV1p24y1d7gW/" class="external-link" target="_blank" rel="noopener">帅气学霸切蛋糕四刀如何切成十五块&lt;/a> 終於解了我多年疑惑。&lt;/p></description></item><item><title>Batch add overflow check on csharp projects</title><link>https://hsinjungwu.github.io/posts/batch_add_overflow_check_on_csharp_projects/</link><pubDate>Thu, 21 Apr 2022 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/batch_add_overflow_check_on_csharp_projects/</guid><description>&lt;p>因為需要一口氣調整一批 dll 並重新改版號，所以弄出以下暴力解法。基本上就手動作一次，看改了什麼再毫無美感的暴力硬寫。🙈&lt;/p>
+&lt;h2 id="add-overflow-syntax">
+ Add Overflow Syntax
+ &lt;a class="heading-link" href="#add-overflow-syntax">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> AddOverflowSyntax(&lt;span style="color:#8be9fd">string&lt;/span> projFile)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> readText = File.ReadAllText(projFile);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxDebugOpen = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;PropertyGroup Condition=\&amp;#34;&lt;/span>&amp;#39;$(Configuration)|$(Platform)&amp;#39;==&amp;#39;Debug|AnyCPU&amp;#39;\&lt;span style="color:#f1fa8c">&amp;#34;&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxReleaseOpen = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;PropertyGroup Condition=\&amp;#34;&lt;/span>&amp;#39;$(Configuration)|$(Platform)&amp;#39;==&amp;#39;Release|AnyCPU&amp;#39;\&lt;span style="color:#f1fa8c">&amp;#34;&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxData = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;CheckForOverflowUnderflow&amp;gt;true&amp;lt;/CheckForOverflowUnderflow&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> syntaxClosed = &lt;span style="color:#f1fa8c">$&amp;#34;&amp;lt;/PropertyGroup&amp;gt;\n&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> search = &lt;span style="color:#f1fa8c">&amp;#34;&amp;lt;/Project&amp;gt;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> newText = syntaxDebugOpen + syntaxData + syntaxClosed + syntaxReleaseOpen + syntaxData + syntaxClosed + serach;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> File.WriteAllText(projFile, readText.Replace(search, newText));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="update-file-version">
+ Update File Version
+ &lt;a class="heading-link" href="#update-file-version">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> UpdateFileVersion(&lt;span style="color:#8be9fd">string&lt;/span> versionFile)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> version = &lt;span style="color:#f1fa8c">&amp;#34;2.0.0.0&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> readText = File.ReadAllText(versionFile);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> readText = readText.Replace(&lt;span style="color:#f1fa8c">&amp;#34;[assembly: AssemblyVersion(&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;//[assembly: AssemblyVersion(&amp;#34;&lt;/span>).Replace(&lt;span style="color:#f1fa8c">&amp;#34;[assembly: AssemblyFileVersion(&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;//[assembly: AssemblyFileVersion(&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> readText += &lt;span style="color:#8be9fd">string&lt;/span>.Format(&lt;span style="color:#f1fa8c">&amp;#34;\n[assembly: AssemblyVersion(\&amp;#34;{0}\&amp;#34;)]\n[assembly: AssemblyFileVersion(\&amp;#34;{0}\&amp;#34;)]&amp;#34;&lt;/span>, version);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> File.WriteAllText(versionFile, readText);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="build-dll">
+ Build dll
+ &lt;a class="heading-link" href="#build-dll">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> BuildDll(&lt;span style="color:#8be9fd">string&lt;/span> solutionFileName, &lt;span style="color:#8be9fd">string&lt;/span> type)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> process = &lt;span style="color:#ff79c6">new&lt;/span> Process();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> startInfo = &lt;span style="color:#ff79c6">new&lt;/span> ProcessStartInfo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FileName = &lt;span style="color:#8be9fd">string&lt;/span>.Format(&lt;span style="color:#f1fa8c">@&amp;#34;{0}\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe&amp;#34;&lt;/span>, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Arguments = &lt;span style="color:#8be9fd">string&lt;/span>.Format(&lt;span style="color:#f1fa8c">&amp;#34;{0} /nologo /t:Rebuild /p:Configuration={1} /v:q /clp:ErrorsOnly&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solutionFileName, type),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UseShellExecute = &lt;span style="color:#ff79c6">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RedirectStandardOutput = &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process.StartInfo = startInfo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process.Start();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#f1fa8c">&amp;#34;Building the solution {1}-[{0}]...&amp;#34;&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Path.GetFileNameWithoutExtension(solutionFileName), type);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process.WaitForExit();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (process.ExitCode != &lt;span style="color:#bd93f9">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">using&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> sr = process.StandardOutput)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> error = sr.ReadToEnd();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#f1fa8c">&amp;#34;Build failed with the following eorror message(s):&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(error);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#f1fa8c">&amp;#34;Build succeeded.&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="run">
+ Run
+ &lt;a class="heading-link" href="#run">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">void&lt;/span> Run()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> rootFolder = &lt;span style="color:#f1fa8c">@&amp;#34;D:\csharp\projs&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span>[] projFiles = Directory.GetFiles(rootFolder, &lt;span style="color:#f1fa8c">&amp;#34;*.csproj&amp;#34;&lt;/span>, SearchOption.AllDirectories);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> f &lt;span style="color:#ff79c6">in&lt;/span> projFiles)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AddOverflowSyntax(f);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span>[] versionFiles = Directory.GetFiles(rootFolder, &lt;span style="color:#f1fa8c">&amp;#34;AssemblyInfo.cs&amp;#34;&lt;/span>, SearchOption.AllDirectories);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> f &lt;span style="color:#ff79c6">in&lt;/span> versionFiles)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UpdateFileVersion(f);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span>[] slnFiles = Directory.GetFiles(rootFolder, &lt;span style="color:#f1fa8c">&amp;#34;*.sln&amp;#34;&lt;/span>, SearchOption.AllDirectories);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">var&lt;/span> f &lt;span style="color:#ff79c6">in&lt;/span> slnFiles)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BuildDll(f, &lt;span style="color:#f1fa8c">&amp;#34;Debug&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BuildDll(f, &lt;span style="color:#f1fa8c">&amp;#34;Release&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.ReadLine();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>關於亂數產生器</title><link>https://hsinjungwu.github.io/posts/about_rng/</link><pubDate>Mon, 01 Nov 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/about_rng/</guid><description>&lt;p>剛好看到 &lt;a href="https://blog.miniasp.com/post/2008/05/13/Random-vs-RNGCryptoServiceProvider" class="external-link" target="_blank" rel="noopener">亂數產生器：Random 與 RNGCryptoServiceProvider&lt;/a>，想到當年回台中面試 &lt;a href="http://www.simbo.com.tw/" class="external-link" target="_blank" rel="noopener">新博&lt;/a> 有被問類似的題目。&lt;/p>
+&lt;p>文中的 &lt;strong>產生亂數&lt;/strong> 的寫法會有一點不均勻的亂，他的做法跟下面的例子是一樣的。&lt;/p>
+&lt;blockquote>
+&lt;p>當你中午有四家餐廳想吃，但不知該選那家。於是想用一顆六面骰來幫你決定，你的策略是超過 4 的取餘數。&lt;/p>
+&lt;p>結果你發現你很常選到第 1, 2 家，因為他們的機率比選 3, 4 的還高。&lt;/p>&lt;/blockquote>
+&lt;p>而原文中的程式碼就出現了這個問題。雖然在指定範圍小的時候，這個誤差可以忽略，但當取值範圍夠大時問題就浮出來。&lt;/p>
+&lt;p>例如在 0 ~ 2147483647(&lt;code>int.MaxValue&lt;/code>) 中取權重比為 &lt;em>1:2:4&lt;/em> 但是取的基數範圍不同。則結果如下&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">基數&lt;/th>
+ &lt;th style="text-align: center">1/7&lt;/th>
+ &lt;th style="text-align: center">2/7&lt;/th>
+ &lt;th style="text-align: center">4/7&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">7&lt;/td>
+ &lt;td style="text-align: center">14.2857%&lt;/td>
+ &lt;td style="text-align: center">28.5714%&lt;/td>
+ &lt;td style="text-align: center">57.1429%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">700&lt;/td>
+ &lt;td style="text-align: center">14.2857%&lt;/td>
+ &lt;td style="text-align: center">28.5714%&lt;/td>
+ &lt;td style="text-align: center">57.1429%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">70000&lt;/td>
+ &lt;td style="text-align: center">14.2860%&lt;/td>
+ &lt;td style="text-align: center">28.5717%&lt;/td>
+ &lt;td style="text-align: center">57.1422%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">7000000&lt;/td>
+ &lt;td style="text-align: center">14.2958%&lt;/td>
+ &lt;td style="text-align: center">28.5916%&lt;/td>
+ &lt;td style="text-align: center">57.1126%&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">700000000&lt;/td>
+ &lt;td style="text-align: center">16.1810%&lt;/td>
+ &lt;td style="text-align: center">27.9397%&lt;/td>
+ &lt;td style="text-align: center">55.8794%&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>建議 &lt;strong>產生一個非負數的亂數&lt;/strong> 調整為&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">static&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span> Next()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rngp.GetBytes(rb);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> &lt;span style="color:#ff79c6">value&lt;/span> = BitConverter.ToInt32(rb, &lt;span style="color:#bd93f9">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (&lt;span style="color:#ff79c6">value&lt;/span> &amp;lt; &lt;span style="color:#bd93f9">0&lt;/span>) &lt;span style="color:#ff79c6">value&lt;/span> -= &lt;span style="color:#8be9fd">int&lt;/span>.MinValue;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">value&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>而 &lt;strong>產生一個非負數且最大值 max 以下的亂數&lt;/strong> 調整如下。這部分的數學就不特別解釋了。🤭&lt;/p></description></item><item><title>關於 EXCEL 內的浮點數儲存內容</title><link>https://hsinjungwu.github.io/posts/floating_point_of_excel/</link><pubDate>Wed, 06 Oct 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/floating_point_of_excel/</guid><description>&lt;p>遇到 &lt;a href="https://stackoverflow.com/questions/51025969/issue-when-importing-float-as-string-from-excel-adding-precision-incorrectly" class="external-link" target="_blank" rel="noopener">Issue when importing float as string from Excel. Adding precision incorrectly&lt;/a> 跟 &lt;a href="https://community.claris.com/en/s/question/0D50H00006ezK2L/excel-importation-may-misinterpret-fractional-numbers" class="external-link" target="_blank" rel="noopener">Excel importation may misinterpret fractional numbers&lt;/a> 提到的問題，細細研究才發現水很深啊～ 😏&lt;/p>
+&lt;h2 id="問題重現">
+ 問題重現
+ &lt;a class="heading-link" href="#%e5%95%8f%e9%a1%8c%e9%87%8d%e7%8f%be">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>建立一個 Excel 檔案，並在工作表 1 的 &lt;em>A1&lt;/em> 儲存格寫上 &lt;strong>0.0004&lt;/strong>&lt;/li>
+&lt;li>使用 &lt;a href="https://github.com/qax-os/excelize" class="external-link" target="_blank" rel="noopener">excelize&lt;/a> 讀取 &lt;em>A1&lt;/em> 的值獲得 &lt;strong>4.0000000000000002E-4&lt;/strong>&lt;/li>
+&lt;li>接著使用 &lt;a href="https://github.com/shopspring/decimal" class="external-link" target="_blank" rel="noopener">decimal&lt;/a> 解析這個值得到 &lt;strong>0.00040000000000000002&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>然後改用 &lt;em>C#&lt;/em> 利用 &lt;code>Microsoft.Office.Interop.Excel&lt;/code> 跟 &lt;a href="https://github.com/ExcelDataReader/ExcelDataReader" class="external-link" target="_blank" rel="noopener">ExcelDataReader&lt;/a> 解析出來卻是正確的 &lt;strong>0.0004&lt;/strong>。&lt;/p>
+&lt;p>原以為是 &lt;a href="https://github.com/qax-os/excelize" class="external-link" target="_blank" rel="noopener">excelize&lt;/a> 的 bug，於透過解壓縮 &lt;em>*.xlsx&lt;/em> 的方式找到 &lt;code>\xl\worksheets\sheet1.xml&lt;/code> 發現裡面真的是存 &lt;strong>4.0000000000000002E-4&lt;/strong> 😵&lt;/p>
+&lt;h2 id="差異原因">
+ 差異原因
+ &lt;a class="heading-link" href="#%e5%b7%ae%e7%95%b0%e5%8e%9f%e5%9b%a0">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>基本上這篇 &lt;a href="https://medium.com/starbugs/see-why-floating-point-error-can-not-be-avoided-from-ieee-754-809720b32175" class="external-link" target="_blank" rel="noopener">從 IEEE 754 標準來看為什麼浮點誤差是無法避免的&lt;/a> 已經講得蠻清楚的。另外也可以透過這個 &lt;a href="https://www.binaryconvert.com/convert_double.html" class="external-link" target="_blank" rel="noopener">Double (IEEE754 Double precision 64-bit) Converter&lt;/a> 來得到&lt;/p></description></item><item><title>用 Line 來通知上下班打卡紀錄</title><link>https://hsinjungwu.github.io/posts/line_noftify_with_gas/</link><pubDate>Mon, 27 Sep 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/line_noftify_with_gas/</guid><description>&lt;p>前幾天忘了自己下班有沒有打卡，除了回去補打之外不然就是要經過種種驗證登入公司信箱查詢。套句 &lt;a href="https://blog.gslin.org/" class="external-link" target="_blank" rel="noopener">強者我學長&lt;/a> 說的 &lt;strong>幹壞事是進步最大的原動力&lt;/strong>，於是開始了這段簡單旅程。&lt;/p>
+&lt;p>原本想用 &lt;a href="https://ifttt.com/home" class="external-link" target="_blank" rel="noopener">ifttt&lt;/a> 來處理&lt;/p>
+&lt;ol>
+&lt;li>收到信自動轉寄給 ifttt&lt;/li>
+&lt;li>ifttt 送給 Line Notify&lt;/li>
+&lt;/ol>
+&lt;p>但 gmail 應該是避免亂發郵件，所以自動轉寄的收信信箱要認證。但我又沒辦法跟 ifttt 拿認證碼，所以這條路就不行。&lt;/p>
+&lt;p>後來想到曾看過這篇 &lt;a href="https://www.letswrite.tw/line-notify-gas/" class="external-link" target="_blank" rel="noopener">LINE Notify：用 Google Apps Script 建立簡易網站監測機器人&lt;/a>，於是就照抄他送通知的 code 其他則是看 &lt;a href="https://developers.google.com/apps-script/reference/gmail" class="external-link" target="_blank" rel="noopener">官方文件&lt;/a> 的內容拼湊。&lt;/p>
+&lt;p>至於遇到的問題大概就是在 &lt;code>GmailApp.search&lt;/code> 的條件不知道有哪些關鍵字，但生命會自己找到出路。總之程式碼如下&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> run() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> msg &lt;span style="color:#ff79c6">=&lt;/span> queryMail();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (msg.length &lt;span style="color:#ff79c6">&amp;gt;&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lineMessage(msg);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> token &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;xxx&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> lineMessage(msg) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> option &lt;span style="color:#ff79c6">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> method&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;post&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> headers&lt;span style="color:#ff79c6">:&lt;/span> { Authorization&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;Bearer &amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> token },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> payload&lt;span style="color:#ff79c6">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message&lt;span style="color:#ff79c6">:&lt;/span> msg,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UrlFetchApp.fetch(&lt;span style="color:#f1fa8c">&amp;#34;https://notify-api.line.me/api/notify&amp;#34;&lt;/span>, option);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> queryMail() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> rtnMsg &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> condition &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#39;subject:&amp;#34;刷卡通知&amp;#34; is:unread&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> threads &lt;span style="color:#ff79c6">=&lt;/span> GmailApp.search(condition);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> messages &lt;span style="color:#ff79c6">=&lt;/span> GmailApp.getMessagesForThreads(threads);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> i &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages.length; i&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> j &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; j &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages[i].length; j&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> mail &lt;span style="color:#ff79c6">=&lt;/span> messages[i][j];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (mail.isUnread()) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rtnMsg &lt;span style="color:#ff79c6">+=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34;\n&amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Utilities.formatDate(mail.getDate(), &lt;span style="color:#f1fa8c">&amp;#34;GMT+8&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;yyyy/MM/dd&amp;#34;&lt;/span>) &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34; &amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mail.getPlainBody();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mail.markRead();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> i &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages.length; i&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> threads[i].moveToArchive();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> rtnMsg;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Batch Upload Files To Google Drive</title><link>https://hsinjungwu.github.io/posts/batch_upload_files_to_google_drive/</link><pubDate>Wed, 10 Mar 2021 20:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/batch_upload_files_to_google_drive/</guid><description>&lt;p>協助公司同仁處理日常工作。🤓&lt;/p>
+&lt;h2 id="建置">
+ 建置
+ &lt;a class="heading-link" href="#%e5%bb%ba%e7%bd%ae">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>Fork from &lt;a href="https://github.com/prasmussen/gdrive" class="external-link" target="_blank" rel="noopener">原版 gdrive&lt;/a>&lt;/li>
+&lt;li>參考 &lt;a href="https://hiraku.tw/2020/01/5894/" class="external-link" target="_blank" rel="noopener">如何在終端機介面使用 Google Drive (gdrive cmd)&lt;/a> 裡的說明修改 &lt;strong>ClientId&lt;/strong> 跟 &lt;strong>ClientSecret&lt;/strong>。&lt;/li>
+&lt;li>執行 &lt;code>CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build&lt;/code> 產生執行檔 &lt;em>gdrive.exe&lt;/em>
+&lt;ul>
+&lt;li>要執行 &lt;code>go mod init&lt;/code>&lt;/li>
+&lt;li>&lt;em>go.mod&lt;/em> 裡面的 &lt;code>golang.org/x/oauth2&lt;/code> 版號要調整&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="安裝">
+ 安裝
+ &lt;a class="heading-link" href="#%e5%ae%89%e8%a3%9d">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>將 &lt;code>gdrive.exe&lt;/code> 放到 &lt;code>C:\Windows&lt;/code>&lt;/li>
+&lt;li>參考 &lt;a href="https://sunxiaoshan.medium.com/google-driver-in-command-line-426c8d4031fb" class="external-link" target="_blank" rel="noopener">Google Drive in Command Line&lt;/a> 的圖解教學即可。&lt;/li>
+&lt;/ol>
+&lt;h2 id="使用">
+ 使用
+ &lt;a class="heading-link" href="#%e4%bd%bf%e7%94%a8">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>可透過以下語法執行批次操作，其他使用 &lt;code>gdrive help&lt;/code> 查詢。&lt;/p></description></item><item><title>0015－3Sum</title><link>https://hsinjungwu.github.io/posts/leetcode/0015/</link><pubDate>Thu, 24 Sep 2020 23:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0015/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Given an array &lt;code>nums&lt;/code> of n integers, are there elements &lt;em>a, b, c&lt;/em> in nums such that &lt;em>a + b + c = 0&lt;/em>? Find all unique triplets in the array which gives the sum of zero.&lt;/p>
+&lt;p>Notice that the solution set must not contain duplicate triplets.&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的 &lt;code>Go&lt;/code> 版解答：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">threeSum&lt;/span>(nums []&lt;span style="color:#8be9fd">int&lt;/span>) [][]&lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> ans [][]&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(nums) &amp;lt; &lt;span style="color:#bd93f9">3&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> ans
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> nbs []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> nb2s []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	cnt0 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	table &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">map&lt;/span>[&lt;span style="color:#8be9fd">int&lt;/span>]&lt;span style="color:#8be9fd">int&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, n &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> nums {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> n &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			cnt0&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		_, has &lt;span style="color:#ff79c6">:=&lt;/span> table[n]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> has {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			table[n]&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> table[n] &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				nb2s = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(nb2s, n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			table[n] = &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			nbs = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(nbs, n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> cnt0 &amp;gt; &lt;span style="color:#bd93f9">2&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		ans = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(ans, []&lt;span style="color:#8be9fd">int&lt;/span>{&lt;span style="color:#bd93f9">0&lt;/span>, &lt;span style="color:#bd93f9">0&lt;/span>, &lt;span style="color:#bd93f9">0&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, n1 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> nb2s {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> n1 &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		n2 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">2&lt;/span> &lt;span style="color:#ff79c6">*&lt;/span> n1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		_, ok2 &lt;span style="color:#ff79c6">:=&lt;/span> table[n2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> ok2 {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			ans = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(ans, []&lt;span style="color:#8be9fd">int&lt;/span>{n1, n1, n2})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	sort.&lt;span style="color:#50fa7b">Ints&lt;/span>(nbs)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i1 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i1 &amp;lt; &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(nbs)&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>; i1&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		n1 &lt;span style="color:#ff79c6">:=&lt;/span> nbs[i1]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> n1 &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> i2 &lt;span style="color:#ff79c6">:=&lt;/span> i1 &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>; i2 &amp;lt; &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(nbs); i2&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			n2 &lt;span style="color:#ff79c6">:=&lt;/span> nbs[i2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> n1&lt;span style="color:#ff79c6">+&lt;/span>n2 &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				&lt;span style="color:#ff79c6">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			n3 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>n1 &lt;span style="color:#ff79c6">-&lt;/span> n2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> n1 &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> n3 &lt;span style="color:#ff79c6">||&lt;/span> n2 &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> n3 {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				&lt;span style="color:#ff79c6">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			_, ok &lt;span style="color:#ff79c6">:=&lt;/span> table[n3]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> ok {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				ans = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(ans, []&lt;span style="color:#8be9fd">int&lt;/span>{n1, n2, n3})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> ans
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>0515－Find Largest Value in Each Tree Row</title><link>https://hsinjungwu.github.io/posts/leetcode/0515/</link><pubDate>Thu, 24 Sep 2020 22:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0515/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Given the &lt;code>root&lt;/code> of a binary tree, return an array of the largest value in each row of the tree &lt;strong>(0-indexed)&lt;/strong>.&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的 &lt;code>Go&lt;/code> 版解答：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * Definition for a binary tree node.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * type TreeNode struct {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * Val int
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * Left *TreeNode
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * Right *TreeNode
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">largestValues&lt;/span>(root &lt;span style="color:#ff79c6">*&lt;/span>TreeNode) []&lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> root &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> []&lt;span style="color:#8be9fd">int&lt;/span>{}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> ans []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> checkNodes []&lt;span style="color:#ff79c6">*&lt;/span>TreeNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	checkNodes = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(checkNodes, root)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(checkNodes) &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> values []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> tmp []&lt;span style="color:#ff79c6">*&lt;/span>TreeNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> _, n &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> checkNodes {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> n &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				values = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(values, n.Val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				&lt;span style="color:#ff79c6">if&lt;/span> n.Left &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>					tmp = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(tmp, n.Left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				&lt;span style="color:#ff79c6">if&lt;/span> n.Right &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>					tmp = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(tmp, n.Right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		ans = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(ans, &lt;span style="color:#8be9fd;font-style:italic">max&lt;/span>(values))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		checkNodes = tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> ans
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">max&lt;/span>(values []&lt;span style="color:#8be9fd">int&lt;/span>) &lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	m &lt;span style="color:#ff79c6">:=&lt;/span> values[&lt;span style="color:#bd93f9">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>; i &amp;lt; &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(values); i&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> m &amp;lt; values[i] {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			m = values[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> m
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>0349－Intersection of Two Arrays</title><link>https://hsinjungwu.github.io/posts/leetcode/0349/</link><pubDate>Thu, 24 Sep 2020 21:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0349/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Given two arrays, write a function to compute their intersection.&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的 &lt;code>Go&lt;/code> 版解答：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">intersection&lt;/span>(nums1 []&lt;span style="color:#8be9fd">int&lt;/span>, nums2 []&lt;span style="color:#8be9fd">int&lt;/span>) []&lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	m &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">map&lt;/span>[&lt;span style="color:#8be9fd">int&lt;/span>]&lt;span style="color:#8be9fd">int&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, n1 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> nums1 {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> _, has &lt;span style="color:#ff79c6">:=&lt;/span> m[n1]; !has {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			m[n1] = &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> result []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, n2 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> nums2 {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> v, has &lt;span style="color:#ff79c6">:=&lt;/span> m[n2]; has &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> v &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			m[n2] = &lt;span style="color:#bd93f9">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			result = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(result, n2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>過去曾用 &lt;code>Python&lt;/code> 寫的解法，能用一行也太神奇了。而且語法很數學，難怪大家都愛用 &lt;code>python&lt;/code>。&lt;/p></description></item><item><title>0175－Combine Two Tables</title><link>https://hsinjungwu.github.io/posts/leetcode/0175/</link><pubDate>Thu, 24 Sep 2020 20:50:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0175/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Write a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people:&lt;/p>
+&lt;p>&lt;code>FirstName, LastName, City, State&lt;/code>&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的 &lt;code>MySQL&lt;/code> 版解答。不過我很好奇當初我怎麼不是選 &lt;code>MS SQL Server&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-mysql" data-lang="mysql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"># Write your MySQL query statement below
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4">&lt;/span>&lt;span style="color:#ff79c6">SELECT&lt;/span> p.FirstName, p.LastName, a.City, a.State
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">FROM&lt;/span> Person p
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">LEFT&lt;/span> &lt;span style="color:#ff79c6">JOIN&lt;/span> Address a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">ON&lt;/span> p.PersonId &lt;span style="color:#ff79c6">=&lt;/span> a.PersonId
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>0029－Divide Two Integers</title><link>https://hsinjungwu.github.io/posts/leetcode/0029/</link><pubDate>Thu, 24 Sep 2020 20:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0029/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Given two integers &lt;code>dividend&lt;/code> and &lt;code>divisor&lt;/code>, divide two integers without using multiplication, division and mod operator.&lt;/p>
+&lt;p>Return the quotient after &lt;code>dividing&lt;/code> dividend by &lt;code>divisor&lt;/code>.&lt;/p>
+&lt;p>The integer division should truncate toward zero, which means losing its fractional part. For example, &lt;code>truncate(8.345) = 8&lt;/code> and &lt;code>truncate(-2.7335) = -2&lt;/code>.&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的解答：&lt;/p>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Go&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">divide&lt;/span>(dividend &lt;span style="color:#8be9fd">int&lt;/span>, divisor &lt;span style="color:#8be9fd">int&lt;/span>) &lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> divisor &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> dividend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> dividend &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	max &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">2147483647&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	min &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">2147483648&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> divisor &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> dividend &amp;gt; min {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>dividend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> max
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> dividend &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> divisor &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#50fa7b">innerDivide&lt;/span>(dividend, divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#50fa7b">innerDivide&lt;/span>(dividend, &lt;span style="color:#ff79c6">-&lt;/span>divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> divisor &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#50fa7b">innerDivide&lt;/span>(&lt;span style="color:#ff79c6">-&lt;/span>dividend, divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#50fa7b">innerDivide&lt;/span>(&lt;span style="color:#ff79c6">-&lt;/span>dividend, &lt;span style="color:#ff79c6">-&lt;/span>divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">innerDivide&lt;/span>(a, b &lt;span style="color:#8be9fd">int&lt;/span>) &lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> a &amp;lt; b {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	c &lt;span style="color:#ff79c6">:=&lt;/span> b
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ans &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> a &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> c {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		a &lt;span style="color:#ff79c6">-=&lt;/span> c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		c &lt;span style="color:#ff79c6">+=&lt;/span> c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		ans = &lt;span style="color:#bd93f9">2&lt;/span>&lt;span style="color:#ff79c6">*&lt;/span>ans &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> ans &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#50fa7b">innerDivide&lt;/span>(a, b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">C#&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">Solution&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span> Divide(&lt;span style="color:#8be9fd">int&lt;/span> dividend, &lt;span style="color:#8be9fd">int&lt;/span> divisor) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (divisor == &lt;span style="color:#bd93f9">0&lt;/span>) &lt;span style="color:#ff79c6">throw&lt;/span> &lt;span style="color:#ff79c6">new&lt;/span> DivideByZeroException();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (divisor == &lt;span style="color:#bd93f9">1&lt;/span>) &lt;span style="color:#ff79c6">return&lt;/span> dividend;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (divisor == -&lt;span style="color:#bd93f9">1&lt;/span>) &lt;span style="color:#ff79c6">return&lt;/span> dividend &amp;gt; &lt;span style="color:#8be9fd">int&lt;/span>.MinValue ? &lt;span style="color:#bd93f9">0&lt;/span> - dividend : &lt;span style="color:#8be9fd">int&lt;/span>.MaxValue;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> ans = Divide(Math.Abs((&lt;span style="color:#8be9fd">long&lt;/span>)dividend), Math.Abs((&lt;span style="color:#8be9fd">long&lt;/span>)divisor));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> ((dividend &amp;gt;= &lt;span style="color:#bd93f9">0&lt;/span> &amp;amp;&amp;amp; divisor &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span>) || (dividend &amp;lt; &lt;span style="color:#bd93f9">0&lt;/span> &amp;amp;&amp;amp; divisor &amp;lt; &lt;span style="color:#bd93f9">0&lt;/span>)) &lt;span style="color:#ff79c6">return&lt;/span> ans;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> - ans;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">private&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span> Divide(&lt;span style="color:#8be9fd">long&lt;/span> a, &lt;span style="color:#8be9fd">long&lt;/span> b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (a &amp;lt; b) &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> finalAns = &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">while&lt;/span>(a &amp;gt;= b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">long&lt;/span> c = b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> ans = &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">while&lt;/span> (a &amp;gt;= c)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a -= c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c += c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ans += ans + &lt;span style="color:#bd93f9">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> finalAns += ans;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> finalAns;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+
+&lt;/div></description></item><item><title>0006－Longest Substring Without Repeating Characters</title><link>https://hsinjungwu.github.io/posts/leetcode/0006/</link><pubDate>Thu, 24 Sep 2020 12:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0006/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>And then read line by line: &lt;code>&amp;quot;PAHNAPLSIIGYIR&amp;quot;&lt;/code>&lt;/p>
+&lt;p>Write the code that will take a string and make this conversion given a number of rows:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>string convert(string s, int numRows);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;p>只求 pass 的解答：&lt;/p>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Go&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">convert&lt;/span>(s &lt;span style="color:#8be9fd">string&lt;/span>, numRows &lt;span style="color:#8be9fd">int&lt;/span>) &lt;span style="color:#8be9fd">string&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> numRows &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	table &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>([]strings.Builder, numRows)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	y &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	down &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, r &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> s {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		table[y].&lt;span style="color:#50fa7b">WriteRune&lt;/span>(r)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> down {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> y &lt;span style="color:#ff79c6">==&lt;/span> numRows&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				y&lt;span style="color:#ff79c6">--&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				down = &lt;span style="color:#ff79c6">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				y&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> y &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				y&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				down = &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				y&lt;span style="color:#ff79c6">--&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> result strings.Builder
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, v &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> table {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		result.&lt;span style="color:#50fa7b">WriteString&lt;/span>(v.&lt;span style="color:#50fa7b">String&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> result.&lt;span style="color:#50fa7b">String&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">Python&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">Solution&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">object&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">def&lt;/span> &lt;span style="color:#50fa7b">convert&lt;/span>(self, s, numRows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :type s: str
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :type numRows: int
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :rtype: str
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> numRows &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">in&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">range&lt;/span>(&lt;span style="color:#bd93f9">0&lt;/span>, numRows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> step &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span> &lt;span style="color:#ff79c6">*&lt;/span> (numRows &lt;span style="color:#ff79c6">-&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span> i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#ff79c6">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">while&lt;/span> idx &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#ff79c6">=&lt;/span> result &lt;span style="color:#ff79c6">+&lt;/span> s[idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> i &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> numRows &lt;span style="color:#ff79c6">-&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nidx &lt;span style="color:#ff79c6">=&lt;/span> idx &lt;span style="color:#ff79c6">+&lt;/span> step
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> nidx &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#ff79c6">=&lt;/span> result &lt;span style="color:#ff79c6">+&lt;/span> s[nidx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#ff79c6">=&lt;/span> idx &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span> &lt;span style="color:#ff79c6">*&lt;/span> numRows &lt;span style="color:#ff79c6">-&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+
+&lt;/div></description></item><item><title>0007－Reverse Integer</title><link>https://hsinjungwu.github.io/posts/leetcode/0007/</link><pubDate>Thu, 24 Sep 2020 12:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0007/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Given a 32-bit signed integer, reverse digits of an integer.&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的解答：&lt;/p>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Go&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">reverse&lt;/span>(x &lt;span style="color:#8be9fd">int&lt;/span>) &lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> x &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	bound &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">2147483647&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	isPositive &lt;span style="color:#ff79c6">:=&lt;/span> x &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> !isPositive {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		x &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		bound&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ans &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> x &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		ans = ans&lt;span style="color:#ff79c6">*&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> x&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> ans &amp;gt; bound {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		x &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> isPositive {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">return&lt;/span> ans
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>ans
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">Python&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">Solution&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">object&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">def&lt;/span> &lt;span style="color:#50fa7b">reverse&lt;/span>(self, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :type x: int
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :rtype: int
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxint &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span> &lt;span style="color:#ff79c6">**&lt;/span> &lt;span style="color:#bd93f9">31&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> minint &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span> &lt;span style="color:#ff79c6">*&lt;/span> (&lt;span style="color:#bd93f9">2&lt;/span> &lt;span style="color:#ff79c6">**&lt;/span> &lt;span style="color:#bd93f9">31&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> x &lt;span style="color:#ff79c6">&amp;gt;&lt;/span> maxint &lt;span style="color:#ff79c6">or&lt;/span> x &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> minint:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> operator &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> x &lt;span style="color:#ff79c6">&amp;gt;&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> absx &lt;span style="color:#ff79c6">=&lt;/span> math&lt;span style="color:#ff79c6">.&lt;/span>fabs(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">while&lt;/span> absx &lt;span style="color:#ff79c6">&amp;gt;&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> digit &lt;span style="color:#ff79c6">=&lt;/span> absx &lt;span style="color:#ff79c6">%&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#ff79c6">=&lt;/span> result &lt;span style="color:#ff79c6">*&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> digit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> absx &lt;span style="color:#ff79c6">=&lt;/span> (absx &lt;span style="color:#ff79c6">-&lt;/span> digit) &lt;span style="color:#ff79c6">//&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> minint &lt;span style="color:#ff79c6">&amp;lt;=&lt;/span> result &lt;span style="color:#ff79c6">&amp;lt;=&lt;/span> maxint:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">int&lt;/span>(operator &lt;span style="color:#ff79c6">*&lt;/span> result)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+
+&lt;/div></description></item><item><title>0003－Longest Substring Without Repeating Characters</title><link>https://hsinjungwu.github.io/posts/leetcode/0003/</link><pubDate>Wed, 23 Sep 2020 12:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0003/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Given a string &lt;code>s&lt;/code>, find the length of the longest substring without repeating characters.&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的解答：&lt;/p>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Go&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">lengthOfLongestSubstring&lt;/span>(s &lt;span style="color:#8be9fd">string&lt;/span>) &lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	m &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">map&lt;/span>[&lt;span style="color:#8be9fd">rune&lt;/span>]&lt;span style="color:#8be9fd">int&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	max &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i, r &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> s {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> d, has &lt;span style="color:#ff79c6">:=&lt;/span> m[r]; has {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> max &amp;lt; &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(m) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				max = &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(m)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">for&lt;/span> k, v &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> m {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				&lt;span style="color:#ff79c6">if&lt;/span> v &amp;lt; d {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>					&lt;span style="color:#8be9fd;font-style:italic">delete&lt;/span>(m, k)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		m[r] = i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> max &amp;lt; &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(m) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		max = &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(m)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> max
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">C#&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">Solution&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span> LengthOfLongestSubstring(&lt;span style="color:#8be9fd">string&lt;/span> s) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> ans = &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">string&lt;/span> tmp = &lt;span style="color:#8be9fd">string&lt;/span>.Empty;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span>(&lt;span style="color:#8be9fd">int&lt;/span> i = &lt;span style="color:#bd93f9">0&lt;/span>; i &amp;lt; s.Length; i++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> j = tmp.IndexOf(s[i]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (j == -&lt;span style="color:#bd93f9">1&lt;/span>) tmp += s[i].ToString();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ans = Math.Max(ans, tmp.Length);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp = (j == tmp.Length ? &lt;span style="color:#8be9fd">string&lt;/span>.Empty : tmp.Substring(j+&lt;span style="color:#bd93f9">1&lt;/span>)) + s[i].ToString();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> Math.Max(ans, tmp.Length);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+
+&lt;/div></description></item><item><title>0002－Add Two Numbers</title><link>https://hsinjungwu.github.io/posts/leetcode/0002/</link><pubDate>Tue, 22 Sep 2020 12:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0002/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.&lt;/p>
+&lt;p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p>&lt;/blockquote>
+&lt;p>只求 pass 的解答：&lt;/p>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Go&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">addTwoNumbers&lt;/span>(l1 &lt;span style="color:#ff79c6">*&lt;/span>ListNode, l2 &lt;span style="color:#ff79c6">*&lt;/span>ListNode) &lt;span style="color:#ff79c6">*&lt;/span>ListNode {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> r []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	v &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> l1 &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> &lt;span style="color:#ff79c6">||&lt;/span> l2 &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> l1 &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			v &lt;span style="color:#ff79c6">+=&lt;/span> l1.Val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			l1 = l1.Next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> l2 &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			v &lt;span style="color:#ff79c6">+=&lt;/span> l2.Val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			l2 = l2.Next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		r = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(r, v&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		v &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	s &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(r) &lt;span style="color:#ff79c6">-&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	result &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">&amp;amp;&lt;/span>ListNode{}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> v &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		result.Val = v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		result.Val = r[s]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		s&lt;span style="color:#ff79c6">--&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> s; i &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i&lt;span style="color:#ff79c6">--&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		result = &lt;span style="color:#ff79c6">&amp;amp;&lt;/span>ListNode{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			Val: r[i],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			Next: result,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">C#&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * Definition for singly-linked list.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * public class ListNode {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * public int val;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * public ListNode next;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * public ListNode(int x) { val = x; }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> * }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6272a4"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">Solution&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> sum = l1.val + l2.val;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ListNode ans = &lt;span style="color:#ff79c6">new&lt;/span> ListNode(sum % &lt;span style="color:#bd93f9">10&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ListNode n1 = l1.next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ListNode n2 = l2.next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ListNode tmp = ans;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">while&lt;/span>(n1 != &lt;span style="color:#ff79c6">null&lt;/span> || n2 != &lt;span style="color:#ff79c6">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sum = (sum / &lt;span style="color:#bd93f9">10&lt;/span>) + (n1 == &lt;span style="color:#ff79c6">null&lt;/span> ? &lt;span style="color:#bd93f9">0&lt;/span> : n1.val) + (n2 == &lt;span style="color:#ff79c6">null&lt;/span> ? &lt;span style="color:#bd93f9">0&lt;/span> : n2.val);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp.next = &lt;span style="color:#ff79c6">new&lt;/span> ListNode(sum % &lt;span style="color:#bd93f9">10&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n1 = n1 == &lt;span style="color:#ff79c6">null&lt;/span> ? &lt;span style="color:#ff79c6">null&lt;/span> : n1.next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n2 = n2 == &lt;span style="color:#ff79c6">null&lt;/span> ? &lt;span style="color:#ff79c6">null&lt;/span> : n2.next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp = tmp.next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (sum &amp;gt;= &lt;span style="color:#bd93f9">10&lt;/span>) tmp.next = &lt;span style="color:#ff79c6">new&lt;/span> ListNode(&lt;span style="color:#bd93f9">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> ans;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+
+&lt;/div></description></item><item><title>0001－Two Sum</title><link>https://hsinjungwu.github.io/posts/leetcode/0001/</link><pubDate>Mon, 21 Sep 2020 12:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/leetcode/0001/</guid><description>&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.&lt;/p>
+&lt;p>You may assume that each input would have exactly one solution, and you may not use the same element twice.&lt;/p>
+&lt;p>You can return the answer in any order.&lt;/p>&lt;/blockquote>
+&lt;p>我之前拿這題來當好多語言入門的練習題啊～&lt;/p>
+
+
+
+
+
+&lt;div class="tabs tabs-code tabs-right">
+ 
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">Python&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">Solution&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">object&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">def&lt;/span> &lt;span style="color:#50fa7b">twoSum&lt;/span>(self, nums, target):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :type nums: List[int]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :type target: int
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> :rtype: List[int]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f1fa8c"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">in&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">range&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(nums)&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> j &lt;span style="color:#ff79c6">in&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">range&lt;/span>(i&lt;span style="color:#ff79c6">+&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>, &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> nums[i] &lt;span style="color:#ff79c6">+&lt;/span> nums[j] &lt;span style="color:#ff79c6">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> [i, j]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">C#&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#ff79c6">class&lt;/span> &lt;span style="color:#50fa7b">Solution&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">public&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span>[] TwoSum(&lt;span style="color:#8be9fd">int&lt;/span>[] nums, &lt;span style="color:#8be9fd">int&lt;/span> target) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span>(&lt;span style="color:#8be9fd">int&lt;/span> i = &lt;span style="color:#bd93f9">0&lt;/span>; i&amp;lt;nums.Length; i++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span>(&lt;span style="color:#8be9fd">int&lt;/span> j = i+&lt;span style="color:#bd93f9">1&lt;/span>; j&amp;lt;nums.Length; j++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (nums[i] + nums[j] == target)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">new&lt;/span> &lt;span style="color:#8be9fd">int&lt;/span>[] {i,j};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+ 
+
+
+
+&lt;style>
+ .tabs input#tab-0-2:checked ~ .tab-content-0-2 {
+ display: block;
+ }
+&lt;/style>
+
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-2" />
+&lt;label for="tab-0-2" class="tab-label">Go&lt;/label>
+&lt;div class="tab-content tab-content-0-2">
+ &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">twoSum&lt;/span>(nums []&lt;span style="color:#8be9fd">int&lt;/span>, target &lt;span style="color:#8be9fd">int&lt;/span>) []&lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	m &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">map&lt;/span>[&lt;span style="color:#8be9fd">int&lt;/span>]&lt;span style="color:#8be9fd">int&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i &amp;lt; &lt;span style="color:#8be9fd;font-style:italic">len&lt;/span>(nums); i&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		k &lt;span style="color:#ff79c6">:=&lt;/span> target &lt;span style="color:#ff79c6">-&lt;/span> nums[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		v, ok &lt;span style="color:#ff79c6">:=&lt;/span> m[k]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> ok {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">return&lt;/span> []&lt;span style="color:#8be9fd">int&lt;/span>{i, v}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			m[nums[i]] = i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+
+
+
+&lt;/div></description></item><item><title>面試 - 4</title><link>https://hsinjungwu.github.io/posts/interview/04/</link><pubDate>Mon, 14 Sep 2020 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/04/</guid><description>&lt;p>前同事今天面試的題目，我稍微改了題目敘述。😁&lt;/p>
+&lt;blockquote>
+&lt;p>給定 5 張撲克牌，判斷它是否是順子。如果不是，顯示出有幾個不同的數字, 最長的長度為何，有著這個長度的數字是哪些？&lt;/p>&lt;/blockquote>
+&lt;p>我前同事是用 &lt;code>map&lt;/code> + &lt;code>sort&lt;/code> 去處理。但我選擇了另一個路子來解這題。當然，一些細節(如果它是用一副撲克牌發的話、長度可以開到 14 不用 15)我就先跳過。總之程式碼如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;strconv&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>([]&lt;span style="color:#8be9fd">string&lt;/span>, &lt;span style="color:#bd93f9">15&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span>; i &amp;lt; &lt;span style="color:#bd93f9">11&lt;/span>; i&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		names[i] = strconv.&lt;span style="color:#50fa7b">Itoa&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">1&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;A&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">14&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;A&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">11&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;J&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">12&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;Q&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	names[&lt;span style="color:#bd93f9">13&lt;/span>] = &lt;span style="color:#f1fa8c">&amp;#34;K&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	data &lt;span style="color:#ff79c6">:=&lt;/span> []&lt;span style="color:#8be9fd">int&lt;/span>{&lt;span style="color:#bd93f9">1&lt;/span>, &lt;span style="color:#bd93f9">12&lt;/span>, &lt;span style="color:#bd93f9">12&lt;/span>, &lt;span style="color:#bd93f9">12&lt;/span>, &lt;span style="color:#bd93f9">11&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	s, c, m, ids &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#50fa7b">getRank&lt;/span>(data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> s &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		fmt.&lt;span style="color:#50fa7b">Printf&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;順子：%s,%s,%s,%s,%s\n&amp;#34;&lt;/span>, names[s], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">2&lt;/span>], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">3&lt;/span>], names[s&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">4&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		fmt.&lt;span style="color:#50fa7b">Printf&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;有 %d 個不同的數字, 最長的長度為 %d，有著這個長度的數字是 %v\n&amp;#34;&lt;/span>, c, m, ids)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">getRank&lt;/span>(data []&lt;span style="color:#8be9fd">int&lt;/span>) (&lt;span style="color:#8be9fd">int&lt;/span>, &lt;span style="color:#8be9fd">int&lt;/span>, &lt;span style="color:#8be9fd">int&lt;/span>, []&lt;span style="color:#8be9fd">int&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	m &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">make&lt;/span>([]&lt;span style="color:#8be9fd">int&lt;/span>, &lt;span style="color:#bd93f9">15&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> _, d &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#ff79c6">range&lt;/span> data {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		m[d]&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> d &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			m[&lt;span style="color:#bd93f9">14&lt;/span>]&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">14&lt;/span>; i &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> &lt;span style="color:#bd93f9">5&lt;/span>; i&lt;span style="color:#ff79c6">--&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		t &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> j &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; j &amp;lt; &lt;span style="color:#bd93f9">5&lt;/span>; j&lt;span style="color:#ff79c6">++&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			t &lt;span style="color:#ff79c6">*=&lt;/span> m[i&lt;span style="color:#ff79c6">-&lt;/span>j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> t &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">return&lt;/span> i, &lt;span style="color:#bd93f9">0&lt;/span>, &lt;span style="color:#bd93f9">0&lt;/span>, &lt;span style="color:#ff79c6">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	cnt &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	max &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> maxID []&lt;span style="color:#8be9fd">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">for&lt;/span> i &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">13&lt;/span>; i &lt;span style="color:#ff79c6">&amp;gt;=&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>; i&lt;span style="color:#ff79c6">--&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">if&lt;/span> m[i] &amp;gt; &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			cnt&lt;span style="color:#ff79c6">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#ff79c6">if&lt;/span> m[i] &amp;gt; max {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				max = m[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				maxID = []&lt;span style="color:#8be9fd">int&lt;/span>{i}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> m[i] &lt;span style="color:#ff79c6">==&lt;/span> max {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				maxID = &lt;span style="color:#8be9fd;font-style:italic">append&lt;/span>(maxID, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>, cnt, max, maxID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>面試 - 3</title><link>https://hsinjungwu.github.io/posts/interview/03/</link><pubDate>Thu, 20 Aug 2020 11:26:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/03/</guid><description>&lt;p>這題在大學時曾被問過，而最近(2017 年)在面試時或聽人面試過程時也出現，不知道這些面試官們為什麼這麼有志一同？ 😑&lt;/p>
+&lt;p>題目如下：&lt;/p>
+&lt;blockquote>
+&lt;p>在 12 個球中有一個特殊球的重量與眾不同（不知道偏重還是偏輕），而其他球的重量全部相同，請用無砝碼的天平稱 3 次找出特殊球，並確定特殊球是偏輕還是偏重。&lt;/p>&lt;/blockquote>
+&lt;p>下面提供我的解法，如果對這個問題有更深的興趣的話可以參考 &lt;a href="https://en.wikipedia.org/wiki/Balance_puzzle" class="external-link" target="_blank" rel="noopener">Balance puzzle&lt;/a>。不過就算解答出這題面試也不會上啊～哭哭 😭&lt;/p>
+&lt;h3 id="前置作業">
+ 前置作業：
+ &lt;a class="heading-link" href="#%e5%89%8d%e7%bd%ae%e4%bd%9c%e6%a5%ad">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>一開始先將球分成 3 堆，以 ${ A_1, A_2, A_3, A_4 }$、${ B_1, B_2, B_3, B_4 }$ 與 ${ C_1, C_2, C_3, C_4 }$ 記之。&lt;/p>
+&lt;p>接著有一個 &lt;strong>已知事實&lt;/strong>：&lt;/p>
+&lt;blockquote>
+&lt;p>已知三球其中一顆較重(輕)。任意取兩球相比，若一樣則沒秤到的球較重(輕)。若不同，則較重(輕)的球就是答案。&lt;/p>&lt;/blockquote>
+&lt;h3 id="解法">
+ 解法：
+ &lt;a class="heading-link" href="#%e8%a7%a3%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>拿 $\mathcal{L}_1 = { A_1, A_2, A_3, A_4 }$ 與 $\mathcal{R}_1 = { B_1, B_2, B_3, B_4 }$ 進行第一次秤重，這時會有 3 種情形：&lt;/p></description></item><item><title>面試 - 2</title><link>https://hsinjungwu.github.io/posts/interview/02/</link><pubDate>Thu, 20 Aug 2020 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/02/</guid><description>&lt;p>2017 年獵頭幫我介紹的面試考題。當時信上寫 &lt;strong>Before 2017-10-30&lt;/strong> 結果我發現時已經是 &lt;strong>2017-10-31 凌晨&lt;/strong> 了&amp;hellip; 😅&lt;/p>
+&lt;p>由於已經遲繳了，因此看到 &lt;a href="https://codility.com" class="external-link" target="_blank" rel="noopener">Codility&lt;/a> 題目只要求 &lt;strong>正確性&lt;/strong> 後我對時間 / 空間複雜度也就不太在意了。&lt;/p>
+&lt;p>總共是 3 題兩小時，下面列出我理解後的內容與解答，但程式碼可能跟我交付的有差。 😩&lt;/p>
+&lt;h2 id="第一題">
+ 第一題
+ &lt;a class="heading-link" href="#%e7%ac%ac%e4%b8%80%e9%a1%8c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;blockquote>
+&lt;p>給定一字串 S (只有數字與英文字母)，找出最長子字串滿足內容沒有數字且至少有一大寫字母。如果存在回傳該子字串長度，否則回傳 -1&lt;/p>&lt;/blockquote>
+&lt;p>看著倒數計時的數字，我還是有點緊張。所以我直接暴力這題&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd">int&lt;/span> Solution(&lt;span style="color:#8be9fd">string&lt;/span> S)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (&lt;span style="color:#8be9fd">string&lt;/span>.IsNullOrWhiteSpace(S)) &lt;span style="color:#ff79c6">return&lt;/span> -&lt;span style="color:#bd93f9">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">var&lt;/span> longestSub = S.Split(&lt;span style="color:#ff79c6">new&lt;/span> &lt;span style="color:#8be9fd">char&lt;/span>{&lt;span style="color:#f1fa8c">&amp;#39;0&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;1&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;2&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;3&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;4&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;5&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;6&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;7&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;8&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;9&amp;#39;&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Where(s =&amp;gt; s.Any(c =&amp;gt; &lt;span style="color:#8be9fd">char&lt;/span>.IsUpper(c)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .OrderByDescending(s =&amp;gt; s.Length)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .FirstOrDefault();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> longestSub == &lt;span style="color:#ff79c6">null&lt;/span> ? -&lt;span style="color:#bd93f9">1&lt;/span> : longestSub.Length;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>等醒來後才想到也可以不用 &lt;code>Linq&lt;/code> 這樣寫&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd">int&lt;/span> Solution(&lt;span style="color:#8be9fd">string&lt;/span> S)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> ans = -&lt;span style="color:#bd93f9">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">int&lt;/span> sum = &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd">bool&lt;/span> hasUpper = &lt;span style="color:#ff79c6">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">foreach&lt;/span> (&lt;span style="color:#8be9fd">char&lt;/span> c &lt;span style="color:#ff79c6">in&lt;/span> S)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (Char.IsDigit(c))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (hasUpper) ans = Math.Max(ans, sum);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sum = &lt;span style="color:#bd93f9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hasUpper = &lt;span style="color:#ff79c6">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">continue&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hasUpper |= Char.IsUpper(c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sum++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (hasUpper) ans = Math.Max(ans, sum);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> ans;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="第二題">
+ 第二題
+ &lt;a class="heading-link" href="#%e7%ac%ac%e4%ba%8c%e9%a1%8c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;blockquote>
+&lt;p>給定 &lt;code>POP&lt;/code>, &lt;code>DUP&lt;/code>, &lt;code>+&lt;/code>, &lt;code>-&lt;/code> 跟 &lt;code>數字&lt;/code> 組成的字串算出結果。請依下表計算答案，若答案為負或是無法計算請回傳 &lt;code>-1&lt;/code>。&lt;/p></description></item><item><title>面試 - 1</title><link>https://hsinjungwu.github.io/posts/interview/01/</link><pubDate>Wed, 19 Aug 2020 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/interview/01/</guid><description>&lt;p>前同事的同事去某間公司被問的題目。&lt;/p>
+&lt;h2 id="題目">
+ 題目
+ &lt;a class="heading-link" href="#%e9%a1%8c%e7%9b%ae">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>給定正整數 $n$，找出位數總和與它相同，而且大於它的最小正整數。例如&lt;/p>
+&lt;ul>
+&lt;li>772 =&amp;gt; 781&lt;/li>
+&lt;li>293 =&amp;gt; 329&lt;/li>
+&lt;li>100 =&amp;gt; 10000&lt;/li>
+&lt;/ul>
+&lt;h2 id="解法">
+ 解法
+ &lt;a class="heading-link" href="#%e8%a7%a3%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="初始作法">
+ 初始作法
+ &lt;a class="heading-link" href="#%e5%88%9d%e5%a7%8b%e4%bd%9c%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>對於末兩位數字小於 90，且非 10 的倍數的數字，&lt;code>+9&lt;/code> 就結束。&lt;/li>
+&lt;li>剩下的數字，我是先推出至少要加幾個 9，搭配 &lt;code>+9&lt;/code> 迴圈檢查 &lt;strong>digit sum&lt;/strong> 是否相同。&lt;/li>
+&lt;/ul>
+&lt;h3 id="改善解法">
+ 改善解法
+ &lt;a class="heading-link" href="#%e6%94%b9%e5%96%84%e8%a7%a3%e6%b3%95">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>做出來之後，我測試了一下剩餘的例子，發現有規律性，所以改成以下寫法。但沒有也沒空證明是對的 😆&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff79c6">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f1fa8c">&amp;#34;time&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	t &lt;span style="color:#ff79c6">:=&lt;/span> time.&lt;span style="color:#50fa7b">Now&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	data &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">998&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ans &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#50fa7b">getAns&lt;/span>(data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	elapsed &lt;span style="color:#ff79c6">:=&lt;/span> time.&lt;span style="color:#50fa7b">Since&lt;/span>(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	fmt.&lt;span style="color:#50fa7b">Printf&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;Elapsed time: %v, data = %d, ans = %d&amp;#34;&lt;/span>, elapsed, data, ans)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">getAns&lt;/span>(data &lt;span style="color:#8be9fd">int&lt;/span>) &lt;span style="color:#8be9fd">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	r &lt;span style="color:#ff79c6">:=&lt;/span> data &lt;span style="color:#ff79c6">%&lt;/span> &lt;span style="color:#bd93f9">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	q &lt;span style="color:#ff79c6">:=&lt;/span> data &lt;span style="color:#ff79c6">/&lt;/span> &lt;span style="color:#bd93f9">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	step &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">if&lt;/span> r &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		b0 &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			b0 &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		s0 &lt;span style="color:#ff79c6">:=&lt;/span> q &lt;span style="color:#ff79c6">%&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = (b0&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>)&lt;span style="color:#ff79c6">*&lt;/span>(&lt;span style="color:#bd93f9">10&lt;/span>&lt;span style="color:#ff79c6">-&lt;/span>s0)&lt;span style="color:#ff79c6">/&lt;/span>&lt;span style="color:#bd93f9">9&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">9&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			step &lt;span style="color:#ff79c6">+=&lt;/span> s0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			s0 &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> r &amp;gt; &lt;span style="color:#bd93f9">90&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		b9X &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		s9X &lt;span style="color:#ff79c6">:=&lt;/span> r &lt;span style="color:#ff79c6">%&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">9&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			b9X &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = (b9X&lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>)&lt;span style="color:#ff79c6">*&lt;/span>s9X&lt;span style="color:#ff79c6">/&lt;/span>&lt;span style="color:#bd93f9">9&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> r&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		sX0 &lt;span style="color:#ff79c6">:=&lt;/span> r &lt;span style="color:#ff79c6">/&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = &lt;span style="color:#bd93f9">11&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span> sX0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#ff79c6">for&lt;/span> q&lt;span style="color:#ff79c6">%&lt;/span>&lt;span style="color:#bd93f9">10&lt;/span> &lt;span style="color:#ff79c6">==&lt;/span> &lt;span style="color:#bd93f9">9&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			step &lt;span style="color:#ff79c6">+=&lt;/span> sX0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			sX0 &lt;span style="color:#ff79c6">*=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			q &lt;span style="color:#ff79c6">/=&lt;/span> &lt;span style="color:#bd93f9">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	} &lt;span style="color:#ff79c6">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		step = &lt;span style="color:#bd93f9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#ff79c6">return&lt;/span> data &lt;span style="color:#ff79c6">+&lt;/span> step&lt;span style="color:#ff79c6">*&lt;/span>&lt;span style="color:#bd93f9">9&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="結論">
+ 結論
+ &lt;a class="heading-link" href="#%e7%b5%90%e8%ab%96">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>不知道我前同事的同事是在什麼情況下被問。如果是白板題，我差不多就用初始解法打發，因為我數學不好也缺乏敏銳度。如果是考線上我才會用觀察法重新改寫。&lt;/p></description></item></channel></rss>
