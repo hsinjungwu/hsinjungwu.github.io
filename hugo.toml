@@ -1,5 +1,5 @@
 baseURL = "https://hsinjungwu.github.io"
-title = "FR4NK 乾一杯"
+title = "FR4NK 乾一杯 🍻"
 theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -14,12 +14,12 @@ enableEmoji = true
 pagerSize = 10
 
 [params]
-author = "FR4NK 與陳馬尼 🐶"
+author = "法蘭克🤪 + 陳馬尼🐶"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "比 90% RD 的數學強，比 90% 數值的程式強"
 keywords = "blog,developer,personal"
 info = ["Game Mathematician"]
-avatarURL = "images/whoami/avatar.png"
+avatarURL = "images/whoami/avatar.webp"
 #gravatar = "john.doe@example.com"
 # dateFormat = "January 2, 2006"
 dateFormat = "2006/01/02"
