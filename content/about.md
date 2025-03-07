@@ -4,7 +4,7 @@ date: "2022-04-17"
 type: "about"
 ---
 
-![me](/images/whoami/we.webp)
+![we](/images/whoami/we.webp)
 
 開發過⽼虎機、棋牌、彩票，超過 20 款遊戲數學模型。主要負責
 
