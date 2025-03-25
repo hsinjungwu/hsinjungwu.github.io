@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Line on FR4NK 乾一杯 🍻</title><link>https://hsinjungwu.github.io/tags/line/</link><description>Recent content in Line on FR4NK 乾一杯 🍻</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 18 Jan 2023 10:25:00 +0800</lastBuildDate><atom:link href="https://hsinjungwu.github.io/tags/line/index.xml" rel="self" type="application/rss+xml"/><item><title>Build Your Own Custom Short URL</title><link>https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/</link><pubDate>Wed, 18 Jan 2023 10:25:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/</guid><description>&lt;p>最近在幫老婆做小工具時突然的靈感，可以透過 &lt;em>Line Bot&lt;/em> + &lt;em>Google Apps Script&lt;/em> + &lt;em>Github Issue&lt;/em> 完成屬於自己的短網址服務。&lt;/p>
+&lt;h2 id="實作">
+ 實作
+ &lt;a class="heading-link" href="#%e5%af%a6%e4%bd%9c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="設定-line-bot-讀訊息">
+ 設定 Line Bot 讀訊息
+ &lt;a class="heading-link" href="#%e8%a8%ad%e5%ae%9a-line-bot-%e8%ae%80%e8%a8%8a%e6%81%af">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>參考 &lt;a href="https://www.oxxostudio.tw/articles/201804/line-bot-apps-script.html" class="external-link" target="_blank" rel="noopener">實作 LINE 聊天機器人 ( Google Apps Script )&lt;/a> 或 &lt;a href="https://medium.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E5%85%A9%E5%B0%8F%E6%99%82%E6%89%93%E9%80%A0%E7%B0%A1%E5%96%AE-line-chatbot-%E4%BD%BF%E7%94%A8-google-apps-script-google-sheet-api-8fff7372ff3d" class="external-link" target="_blank" rel="noopener">兩小時打造簡單 Line Chatbot — 使用 Google Apps Script &amp;amp; Google Sheet API&lt;/a> 就可以。&lt;/p>
+&lt;div class="notice warning">
+ &lt;div class="notice-title">
+ &lt;i class="fa-solid fa-exclamation-triangle" aria-hidden="true">&lt;/i>Warning
+ &lt;/div>
+ &lt;div class="notice-content">記得在 &lt;code>回應功能&lt;/code> 中關掉 &lt;code>聊天&lt;/code> 跟 &lt;code>自動回應&lt;/code>，不然你的機器人不會自動已讀。&lt;/div>
+&lt;/div>
+
+&lt;h3 id="產生短網址">
+ 產生短網址
+ &lt;a class="heading-link" href="#%e7%94%a2%e7%94%9f%e7%9f%ad%e7%b6%b2%e5%9d%80">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>想法來自於用 Github Issue 寫 Blog，可以 fork &lt;a href="https://github.com/casualjavascript/blog" class="external-link" target="_blank" rel="noopener">這份專案&lt;/a>，再參考 &lt;a href="https://stackoverflow.com/questions/5411538/redirect-from-an-html-page" class="external-link" target="_blank" rel="noopener">這篇&lt;/a> 在 &lt;em>index.html&lt;/em> 加入下面這段即可。&lt;/p></description></item><item><title>用 Line 來通知上下班打卡紀錄</title><link>https://hsinjungwu.github.io/posts/line_noftify_with_gas/</link><pubDate>Mon, 27 Sep 2021 10:20:00 +0800</pubDate><guid>https://hsinjungwu.github.io/posts/line_noftify_with_gas/</guid><description>&lt;p>前幾天忘了自己下班有沒有打卡，除了回去補打之外不然就是要經過種種驗證登入公司信箱查詢。套句 &lt;a href="https://blog.gslin.org/" class="external-link" target="_blank" rel="noopener">強者我學長&lt;/a> 說的 &lt;strong>幹壞事是進步最大的原動力&lt;/strong>，於是開始了這段簡單旅程。&lt;/p>
+&lt;p>原本想用 &lt;a href="https://ifttt.com/home" class="external-link" target="_blank" rel="noopener">ifttt&lt;/a> 來處理&lt;/p>
+&lt;ol>
+&lt;li>收到信自動轉寄給 ifttt&lt;/li>
+&lt;li>ifttt 送給 Line Notify&lt;/li>
+&lt;/ol>
+&lt;p>但 gmail 應該是避免亂發郵件，所以自動轉寄的收信信箱要認證。但我又沒辦法跟 ifttt 拿認證碼，所以這條路就不行。&lt;/p>
+&lt;p>後來想到曾看過這篇 &lt;a href="https://www.letswrite.tw/line-notify-gas/" class="external-link" target="_blank" rel="noopener">LINE Notify：用 Google Apps Script 建立簡易網站監測機器人&lt;/a>，於是就照抄他送通知的 code 其他則是看 &lt;a href="https://developers.google.com/apps-script/reference/gmail" class="external-link" target="_blank" rel="noopener">官方文件&lt;/a> 的內容拼湊。&lt;/p>
+&lt;p>至於遇到的問題大概就是在 &lt;code>GmailApp.search&lt;/code> 的條件不知道有哪些關鍵字，但生命會自己找到出路。總之程式碼如下&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> run() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> msg &lt;span style="color:#ff79c6">=&lt;/span> queryMail();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (msg.length &lt;span style="color:#ff79c6">&amp;gt;&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lineMessage(msg);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> token &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;xxx&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> lineMessage(msg) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> option &lt;span style="color:#ff79c6">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> method&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;post&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> headers&lt;span style="color:#ff79c6">:&lt;/span> { Authorization&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;Bearer &amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> token },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> payload&lt;span style="color:#ff79c6">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message&lt;span style="color:#ff79c6">:&lt;/span> msg,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UrlFetchApp.fetch(&lt;span style="color:#f1fa8c">&amp;#34;https://notify-api.line.me/api/notify&amp;#34;&lt;/span>, option);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8be9fd;font-style:italic">function&lt;/span> queryMail() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> rtnMsg &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> condition &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#39;subject:&amp;#34;刷卡通知&amp;#34; is:unread&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> threads &lt;span style="color:#ff79c6">=&lt;/span> GmailApp.search(condition);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> messages &lt;span style="color:#ff79c6">=&lt;/span> GmailApp.getMessagesForThreads(threads);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> i &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages.length; i&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> j &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; j &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages[i].length; j&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> mail &lt;span style="color:#ff79c6">=&lt;/span> messages[i][j];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">if&lt;/span> (mail.isUnread()) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rtnMsg &lt;span style="color:#ff79c6">+=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34;\n&amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Utilities.formatDate(mail.getDate(), &lt;span style="color:#f1fa8c">&amp;#34;GMT+8&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;yyyy/MM/dd&amp;#34;&lt;/span>) &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f1fa8c">&amp;#34; &amp;#34;&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mail.getPlainBody();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mail.markRead();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">for&lt;/span> (&lt;span style="color:#8be9fd;font-style:italic">var&lt;/span> i &lt;span style="color:#ff79c6">=&lt;/span> &lt;span style="color:#bd93f9">0&lt;/span>; i &lt;span style="color:#ff79c6">&amp;lt;&lt;/span> messages.length; i&lt;span style="color:#ff79c6">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> threads[i].moveToArchive();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff79c6">return&lt;/span> rtnMsg;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

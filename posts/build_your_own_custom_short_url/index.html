@@ -1,0 +1,90 @@
+<!doctype html><html lang=en><head><title>Build Your Own Custom Short URL · FR4NK 乾一杯 🍻
+</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="法蘭克🤪 + 陳馬尼🐶"><meta name=description content="最近在幫老婆做小工具時突然的靈感，可以透過 Line Bot + Google Apps Script + Github Issue 完成屬於自己的短網址服務。
+
+  實作
+  
+    
+    Link to heading
+  
+
+
+  設定 Line Bot 讀訊息
+  
+    
+    Link to heading
+  
+
+參考 實作 LINE 聊天機器人 ( Google Apps Script ) 或 兩小時打造簡單 Line Chatbot — 使用 Google Apps Script & Google Sheet API 就可以。
+
+  
+    Warning
+  
+  記得在 回應功能 中關掉 聊天 跟 自動回應，不然你的機器人不會自動已讀。
+
+
+
+  產生短網址
+  
+    
+    Link to heading
+  
+
+想法來自於用 Github Issue 寫 Blog，可以 fork 這份專案，再參考 這篇 在 index.html 加入下面這段即可。"><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="Build Your Own Custom Short URL"><meta name=twitter:description content="最近在幫老婆做小工具時突然的靈感，可以透過 Line Bot + Google Apps Script + Github Issue 完成屬於自己的短網址服務。
+實作 Link to heading 設定 Line Bot 讀訊息 Link to heading 參考 實作 LINE 聊天機器人 ( Google Apps Script ) 或 兩小時打造簡單 Line Chatbot — 使用 Google Apps Script & Google Sheet API 就可以。
+Warning 記得在 回應功能 中關掉 聊天 跟 自動回應，不然你的機器人不會自動已讀。 產生短網址 Link to heading 想法來自於用 Github Issue 寫 Blog，可以 fork 這份專案，再參考 這篇 在 index.html 加入下面這段即可。"><meta property="og:url" content="https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/"><meta property="og:site_name" content="FR4NK 乾一杯 🍻"><meta property="og:title" content="Build Your Own Custom Short URL"><meta property="og:description" content="最近在幫老婆做小工具時突然的靈感，可以透過 Line Bot + Google Apps Script + Github Issue 完成屬於自己的短網址服務。
+實作 Link to heading 設定 Line Bot 讀訊息 Link to heading 參考 實作 LINE 聊天機器人 ( Google Apps Script ) 或 兩小時打造簡單 Line Chatbot — 使用 Google Apps Script & Google Sheet API 就可以。
+Warning 記得在 回應功能 中關掉 聊天 跟 自動回應，不然你的機器人不會自動已讀。 產生短網址 Link to heading 想法來自於用 Github Issue 寫 Blog，可以 fork 這份專案，再參考 這篇 在 index.html 加入下面這段即可。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-01-18T10:25:00+08:00"><meta property="article:modified_time" content="2023-01-18T10:25:00+08:00"><meta property="article:tag" content="HowTo"><meta property="article:tag" content="Line"><meta property="article:tag" content="Google Apps Script"><meta property="article:tag" content="Github Issue"><link rel=canonical href=https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=stylesheet href=/kbd.min.ede294452924ed1c7fe8f864b4a95082f9f30ab56bad8316a0adc2aa57984f45.css integrity="sha256-7eKURSkk7Rx/6PhktKlQgvnzCrVrrYMWoK3CqleYT0U=" crossorigin=anonymous media=screen><link rel=stylesheet href=/table.min.2e07f8da4d6371fee43bd40fd819d2049e79564e705f950772336f415383891a.css integrity="sha256-Lgf42k1jcf7kO9QP2BnSBJ55Vk5wX5UHcjNvQVODiRo=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-dark"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://hsinjungwu.github.io/>FR4NK 乾一杯 🍻
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/>Posts</a></li><li class=navigation-item><a class=navigation-link href=/tags/>Tags</a></li><li class=navigation-item><a class=navigation-link href=/pe/>Project Euler</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://hsinjungwu.github.io/posts/build_your_own_custom_short_url/>Build Your Own Custom Short URL</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
+<time datetime=2023-01-18T10:25:00+08:00>2023/01/18
+</time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
+2-minute read</span></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/howto/>HowTo</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/line/>Line</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/google-apps-script/>Google Apps Script</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/github-issue/>Github Issue</a></span></div></div></header><div class=post-content><p>最近在幫老婆做小工具時突然的靈感，可以透過 <em>Line Bot</em> + <em>Google Apps Script</em> + <em>Github Issue</em> 完成屬於自己的短網址服務。</p><h2 id=實作>實作
+<a class=heading-link href=#%e5%af%a6%e4%bd%9c><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=設定-line-bot-讀訊息>設定 Line Bot 讀訊息
+<a class=heading-link href=#%e8%a8%ad%e5%ae%9a-line-bot-%e8%ae%80%e8%a8%8a%e6%81%af><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>參考 <a href=https://www.oxxostudio.tw/articles/201804/line-bot-apps-script.html class=external-link target=_blank rel=noopener>實作 LINE 聊天機器人 ( Google Apps Script )</a> 或 <a href=https://medium.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E5%85%A9%E5%B0%8F%E6%99%82%E6%89%93%E9%80%A0%E7%B0%A1%E5%96%AE-line-chatbot-%E4%BD%BF%E7%94%A8-google-apps-script-google-sheet-api-8fff7372ff3d class=external-link target=_blank rel=noopener>兩小時打造簡單 Line Chatbot — 使用 Google Apps Script & Google Sheet API</a> 就可以。</p><div class="notice warning"><div class=notice-title><i class="fa-solid fa-exclamation-triangle" aria-hidden=true></i>Warning</div><div class=notice-content>記得在 <code>回應功能</code> 中關掉 <code>聊天</code> 跟 <code>自動回應</code>，不然你的機器人不會自動已讀。</div></div><h3 id=產生短網址>產生短網址
+<a class=heading-link href=#%e7%94%a2%e7%94%9f%e7%9f%ad%e7%b6%b2%e5%9d%80><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>想法來自於用 Github Issue 寫 Blog，可以 fork <a href=https://github.com/casualjavascript/blog class=external-link target=_blank rel=noopener>這份專案</a>，再參考 <a href=https://stackoverflow.com/questions/5411538/redirect-from-an-html-page class=external-link target=_blank rel=noopener>這篇</a> 在 <em>index.html</em> 加入下面這段即可。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#ff79c6>meta</span> <span style=color:#50fa7b>http-equiv</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;refresh&#34;</span> <span style=color:#50fa7b>content</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;0; url=http://example.com/&#34;</span> /&gt;
+</span></span></code></pre></div><p>然後再於 Google Apps Script 內透過 <a href="https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue" class=external-link target=_blank rel=noopener>API 產生 Issue</a> 獲得短網址並讓 Line Bot 回傳。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> getShortUrl(r) {
+</span></span><span style=display:flex><span>  <span style=color:#8be9fd;font-style:italic>let</span> url <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#39;https://api.github.com/repos/{OWNER}/{REPO}/issues&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#8be9fd;font-style:italic>let</span> data <span style=color:#ff79c6>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#f1fa8c>&#34;title&#34;</span><span style=color:#ff79c6>:</span> r.title,
+</span></span><span style=display:flex><span>    <span style=color:#f1fa8c>&#34;body&#34;</span><span style=color:#ff79c6>:</span> r.link,
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#8be9fd;font-style:italic>let</span> token <span style=color:#ff79c6>=</span> PropertiesService.getScriptProperties().getProperty(<span style=color:#f1fa8c>&#39;&lt;YOUR-TOKEN-KEY&gt;&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#8be9fd;font-style:italic>let</span> requestOptions <span style=color:#ff79c6>=</span> {
+</span></span><span style=display:flex><span>    method<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#39;post&#39;</span>,
+</span></span><span style=display:flex><span>    headers<span style=color:#ff79c6>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#f1fa8c>&#39;Accept&#39;</span><span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#39;application/vnd.github+json&#39;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f1fa8c>&#39;Authorization&#39;</span><span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#39;Bearer &#39;</span> <span style=color:#ff79c6>+</span> token,
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    payload<span style=color:#ff79c6>:</span> JSON.stringify(data),
+</span></span><span style=display:flex><span>    muteHttpExceptions<span style=color:#ff79c6>:</span> <span style=color:#ff79c6>true</span>,
+</span></span><span style=display:flex><span>    followRedirects<span style=color:#ff79c6>:</span> <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>  <span style=color:#8be9fd;font-style:italic>let</span> n <span style=color:#ff79c6>=</span> JSON.parse(UrlFetchApp.fetch(url, requestOptions)).number;
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> <span style=color:#f1fa8c>&#39;https://{OWNER}.github.io/{REPO}/?&#39;</span> <span style=color:#ff79c6>+</span> n;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class="notice tip"><div class=notice-title><i class="fa-solid fa-lightbulb" aria-hidden=true></i>Tip</div><div class=notice-content><ol><li>在執行 <code>POST</code> issue 遇到問題，參考了 <a href=https://community.airtable.com/t5/other-questions/how-to-post-via-api-from-google-scripts/td-p/136323 class=external-link target=_blank rel=noopener>How to post via API from google scripts</a>，加入 <code>muteHttpExceptions: true,</code>。</li><li>參考 <a href=https://stackoverflow.com/questions/24721226/how-to-define-global-variable-in-google-apps-script class=external-link target=_blank rel=noopener>How to define global variable in Google Apps Script</a> 的作法，其中設定位置在 <code>齒輪 => 指令碼屬性</code>。</li></ol></div></div><h2 id=後記>後記
+<a class=heading-link href=#%e5%be%8c%e8%a8%98><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ol><li>沒使用 GCP(Google Cloud Platform) debug，而是用土炮法建立一個 debug 用的 google sheet，然後訊息寫進去。<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> debug(cell, value) {
+</span></span><span style=display:flex><span>   <span style=color:#8be9fd;font-style:italic>let</span> ss <span style=color:#ff79c6>=</span> SpreadsheetApp.openById(<span style=color:#f1fa8c>&#34;&lt;sheet id&gt;&#34;</span>);
+</span></span><span style=display:flex><span>   <span style=color:#8be9fd;font-style:italic>let</span> rs <span style=color:#ff79c6>=</span> ss.getSheetByName(<span style=color:#f1fa8c>&#34;&lt;sheet name&gt;&#34;</span>);  
+</span></span><span style=display:flex><span>   rs.getRange(cell).setValue(value);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></li><li>這篇 <a href=https://medium.com/@dustfantasy/google-app-script-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E9%BA%BC-6a37a06a85a8 class=external-link target=_blank rel=noopener>Google App Script到底是什麼？</a> 提供了新手會踩的雷。 😝<ul><li><code>doGet</code>,<code>doPost</code> 背就對了！</li><li>Latest Version (Head) 的 API 是測試部屬作業，但 Messaging API 的 Webhook 套用它測試會失敗。</li></ul></li><li>其實 Line Bot 只要能完成 <strong>回傳你打的字</strong>，剩下的就是創造力！🥂</li></ol></div><footer></footer></article><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></section></div><footer class=footer><section class=container>©
+2020 -
+2025
+法蘭克🤪 + 陳馬尼🐶
+·
+Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.</section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>

@@ -1,0 +1,147 @@
+<!doctype html><html lang=en><head><title>如何讀取 Google Sheet · FR4NK 乾一杯 🍻
+</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="法蘭克🤪 + 陳馬尼🐶"><meta name=description content='
+  設定 Google Sheet API
+  
+    
+    Link to heading
+  
+
+
+到 https://console.cloud.google.com/ 建立新專案。
+在新專案下
+
+建立憑證，目前是採用 服務帳戶 的設定並下載金鑰 client_secret.json
+
+
+將服務帳戶加到 sheet 共享名單中
+
+啟用 Google Sheet API，如果沒啟用會跳出以下錯誤
+
+
+Google Sheets API has not been used in project XXXX before or it is disabled. Enable it by visiting
+
+使用以下程式碼 GoogleSheetsHelper
+
+public class GoogleSheetsHelper
+{
+    public SheetsService Service { get; set; }
+    private const string APPLICATION_NAME = "name";
+    private static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets, SheetsService.Scope.SpreadsheetsReadonly };
+
+    public GoogleSheetsHelper()
+    {
+        InitializeService();
+    }
+
+    private void InitializeService()
+    {
+        var credential = GetCredentialsFromFile();
+        Service = new SheetsService(new BaseClientService.Initializer()
+        {
+            HttpClientInitializer = credential,
+            ApplicationName = APPLICATION_NAME
+        });
+    }
+
+    private GoogleCredential GetCredentialsFromFile()
+    {
+        GoogleCredential credential;
+
+        using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
+        {
+            credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+        }
+        return credential;
+    }
+}
+
+外部實作
+
+private void DoSomething()
+{
+    GoogleSheetsHelper gsh = new GoogleSheetsHelper();
+    var _gsValues = gsh.Service.Spreadsheets.Values;
+    var range = $"{sheetName}!A:B";
+    var request = _gsValues.Get(sheetId, range);
+    var response = request.Execute();
+    IList<IList<object>> values = response.Values;
+    //values is what you want
+}
+
+  reference
+  
+    
+    Link to heading
+  
+
+
+https://ithelp.ithome.com.tw/articles/10283037
+https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project
+https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97
+https://dotblogs.com.tw/rainmaker/2016/08/08/230646
+https://blog.csdn.net/fire555/article/details/106276831
+https://developers.google.com/api-client-library/dotnet/apis/sheets/v4
+https://ithelp.ithome.com.tw/questions/10207707
+http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk
+'><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="如何讀取 Google Sheet"><meta name=twitter:description content='設定 Google Sheet API Link to heading 到 https://console.cloud.google.com/ 建立新專案。 在新專案下 建立憑證，目前是採用 服務帳戶 的設定並下載金鑰 client_secret.json 將服務帳戶加到 sheet 共享名單中
+啟用 Google Sheet API，如果沒啟用會跳出以下錯誤 Google Sheets API has not been used in project XXXX before or it is disabled. Enable it by visiting
+使用以下程式碼 GoogleSheetsHelper public class GoogleSheetsHelper { public SheetsService Service { get; set; } private const string APPLICATION_NAME = "name"; private static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets, SheetsService.Scope.SpreadsheetsReadonly }; public GoogleSheetsHelper() { InitializeService(); } private void InitializeService() { var credential = GetCredentialsFromFile(); Service = new SheetsService(new BaseClientService.Initializer() { HttpClientInitializer = credential, ApplicationName = APPLICATION_NAME }); } private GoogleCredential GetCredentialsFromFile() { GoogleCredential credential; using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read)) { credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes); } return credential; } } 外部實作 private void DoSomething() { GoogleSheetsHelper gsh = new GoogleSheetsHelper(); var _gsValues = gsh.Service.Spreadsheets.Values; var range = $"{sheetName}!A:B"; var request = _gsValues.Get(sheetId, range); var response = request.Execute(); IList<IList<object>> values = response.Values; //values is what you want } reference Link to heading https://ithelp.ithome.com.tw/articles/10283037 https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97 https://dotblogs.com.tw/rainmaker/2016/08/08/230646 https://blog.csdn.net/fire555/article/details/106276831 https://developers.google.com/api-client-library/dotnet/apis/sheets/v4 https://ithelp.ithome.com.tw/questions/10207707 http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk'><meta property="og:url" content="https://hsinjungwu.github.io/posts/how_to_read_google_sheet/"><meta property="og:site_name" content="FR4NK 乾一杯 🍻"><meta property="og:title" content="如何讀取 Google Sheet"><meta property="og:description" content='設定 Google Sheet API Link to heading 到 https://console.cloud.google.com/ 建立新專案。 在新專案下 建立憑證，目前是採用 服務帳戶 的設定並下載金鑰 client_secret.json 將服務帳戶加到 sheet 共享名單中
+啟用 Google Sheet API，如果沒啟用會跳出以下錯誤 Google Sheets API has not been used in project XXXX before or it is disabled. Enable it by visiting
+使用以下程式碼 GoogleSheetsHelper public class GoogleSheetsHelper { public SheetsService Service { get; set; } private const string APPLICATION_NAME = "name"; private static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets, SheetsService.Scope.SpreadsheetsReadonly }; public GoogleSheetsHelper() { InitializeService(); } private void InitializeService() { var credential = GetCredentialsFromFile(); Service = new SheetsService(new BaseClientService.Initializer() { HttpClientInitializer = credential, ApplicationName = APPLICATION_NAME }); } private GoogleCredential GetCredentialsFromFile() { GoogleCredential credential; using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read)) { credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes); } return credential; } } 外部實作 private void DoSomething() { GoogleSheetsHelper gsh = new GoogleSheetsHelper(); var _gsValues = gsh.Service.Spreadsheets.Values; var range = $"{sheetName}!A:B"; var request = _gsValues.Get(sheetId, range); var response = request.Execute(); IList<IList<object>> values = response.Values; //values is what you want } reference Link to heading https://ithelp.ithome.com.tw/articles/10283037 https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97 https://dotblogs.com.tw/rainmaker/2016/08/08/230646 https://blog.csdn.net/fire555/article/details/106276831 https://developers.google.com/api-client-library/dotnet/apis/sheets/v4 https://ithelp.ithome.com.tw/questions/10207707 http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk'><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-11-01T20:25:00+08:00"><meta property="article:modified_time" content="2023-11-01T20:25:00+08:00"><meta property="article:tag" content="HowTo"><link rel=canonical href=https://hsinjungwu.github.io/posts/how_to_read_google_sheet/><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=stylesheet href=/kbd.min.ede294452924ed1c7fe8f864b4a95082f9f30ab56bad8316a0adc2aa57984f45.css integrity="sha256-7eKURSkk7Rx/6PhktKlQgvnzCrVrrYMWoK3CqleYT0U=" crossorigin=anonymous media=screen><link rel=stylesheet href=/table.min.2e07f8da4d6371fee43bd40fd819d2049e79564e705f950772336f415383891a.css integrity="sha256-Lgf42k1jcf7kO9QP2BnSBJ55Vk5wX5UHcjNvQVODiRo=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-dark"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://hsinjungwu.github.io/>FR4NK 乾一杯 🍻
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/>Posts</a></li><li class=navigation-item><a class=navigation-link href=/tags/>Tags</a></li><li class=navigation-item><a class=navigation-link href=/pe/>Project Euler</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://hsinjungwu.github.io/posts/how_to_read_google_sheet/>如何讀取 Google Sheet</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
+<time datetime=2023-11-01T20:25:00+08:00>2023/11/01
+</time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
+One-minute read</span></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/howto/>HowTo</a></span></div></div></header><div class=post-content><h2 id=設定-google-sheet-api>設定 Google Sheet API
+<a class=heading-link href=#%e8%a8%ad%e5%ae%9a-google-sheet-api><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ol><li>到 <a href=https://console.cloud.google.com/ class=external-link target=_blank rel=noopener>https://console.cloud.google.com/</a> 建立新專案。</li><li>在新專案下<ul><li>建立憑證，目前是採用 <strong>服務帳戶</strong> 的設定並下載金鑰 <code>client_secret.json</code></li></ul><blockquote><p>將服務帳戶加到 sheet 共享名單中</p></blockquote><ul><li>啟用 <code>Google Sheet API</code>，如果沒啟用會跳出以下錯誤</li></ul><blockquote><p>Google Sheets API has not been used in project XXXX before or it is disabled. Enable it by visiting</p></blockquote></li><li>使用以下程式碼 <code>GoogleSheetsHelper</code></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>public</span> <span style=color:#ff79c6>class</span> <span style=color:#50fa7b>GoogleSheetsHelper</span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>public</span> SheetsService Service { <span style=color:#ff79c6>get</span>; <span style=color:#ff79c6>set</span>; }
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>private</span> <span style=color:#8be9fd;font-style:italic>const</span> <span style=color:#8be9fd>string</span> APPLICATION_NAME = <span style=color:#f1fa8c>&#34;name&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>private</span> <span style=color:#8be9fd;font-style:italic>static</span> <span style=color:#ff79c6>readonly</span> <span style=color:#8be9fd>string</span>[] Scopes = { SheetsService.Scope.Spreadsheets, SheetsService.Scope.SpreadsheetsReadonly };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>public</span> GoogleSheetsHelper()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        InitializeService();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>private</span> <span style=color:#ff79c6>void</span> InitializeService()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#8be9fd>var</span> credential = GetCredentialsFromFile();
+</span></span><span style=display:flex><span>        Service = <span style=color:#ff79c6>new</span> SheetsService(<span style=color:#ff79c6>new</span> BaseClientService.Initializer()
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            HttpClientInitializer = credential,
+</span></span><span style=display:flex><span>            ApplicationName = APPLICATION_NAME
+</span></span><span style=display:flex><span>        });
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>private</span> GoogleCredential GetCredentialsFromFile()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        GoogleCredential credential;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>using</span> (<span style=color:#8be9fd>var</span> stream = <span style=color:#ff79c6>new</span> FileStream(<span style=color:#f1fa8c>&#34;client_secret.json&#34;</span>, FileMode.Open, FileAccess.Read))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> credential;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><ol start=4><li>外部實作</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>private</span> <span style=color:#ff79c6>void</span> DoSomething()
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    GoogleSheetsHelper gsh = <span style=color:#ff79c6>new</span> GoogleSheetsHelper();
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd>var</span> _gsValues = gsh.Service.Spreadsheets.Values;
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd>var</span> range = <span style=color:#f1fa8c>$&#34;{sheetName}!A:B&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd>var</span> request = _gsValues.Get(sheetId, range);
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd>var</span> response = request.Execute();
+</span></span><span style=display:flex><span>    IList&lt;IList&lt;<span style=color:#8be9fd>object</span>&gt;&gt; values = response.Values;
+</span></span><span style=display:flex><span>    <span style=color:#6272a4>//values is what you want</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=reference>reference
+<a class=heading-link href=#reference><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li><a href=https://ithelp.ithome.com.tw/articles/10283037 class=external-link target=_blank rel=noopener>https://ithelp.ithome.com.tw/articles/10283037</a></li><li><a href=https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project class=external-link target=_blank rel=noopener>https://stackoverflow.com/questions/68721853/how-to-fix-google-sheets-api-has-not-been-used-in-project</a></li><li><a href=https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97 class=external-link target=_blank rel=noopener>https://xenby.com/b/245-%E6%95%99%E5%AD%B8-google-oauth-2-0-%E7%94%B3%E8%AB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97</a></li><li><a href=https://dotblogs.com.tw/rainmaker/2016/08/08/230646 class=external-link target=_blank rel=noopener>https://dotblogs.com.tw/rainmaker/2016/08/08/230646</a></li><li><a href=https://blog.csdn.net/fire555/article/details/106276831 class=external-link target=_blank rel=noopener>https://blog.csdn.net/fire555/article/details/106276831</a></li><li><a href=https://developers.google.com/api-client-library/dotnet/apis/sheets/v4 class=external-link target=_blank rel=noopener>https://developers.google.com/api-client-library/dotnet/apis/sheets/v4</a></li><li><a href=https://ithelp.ithome.com.tw/questions/10207707 class=external-link target=_blank rel=noopener>https://ithelp.ithome.com.tw/questions/10207707</a></li><li><a href=http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk class=external-link target=_blank rel=noopener>http://white5168.blogspot.com/2016/09/google-sheets-api-google-spreadsheet.html#.Y5w_RHZByUk</a></li></ul></div><footer></footer></article><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></section></div><footer class=footer><section class=container>©
+2020 -
+2025
+法蘭克🤪 + 陳馬尼🐶
+·
+Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.</section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>

@@ -1,0 +1,124 @@
+<!doctype html><html lang=en><head><title>golang 開發備忘 · FR4NK 乾一杯 🍻
+</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="法蘭克🤪 + 陳馬尼🐶"><meta name=description content='最近在新團隊開始使用 golang，備份一下可能會踩的雷。
+
+  環境建置前
+  
+    
+    Link to heading
+  
+
+
+GO111MODULE 設定成 ON
+將公司 git server 設定到 GOPRIVATE。
+
+其中這篇 私有化仓库的 GO 模块使用实践 有整理以下變數說明：
+
+
+GONOPROXY，基于前缀的匹配方式运行，上图中指定了gitlab.com，也就是所有 gitlab.com 上的代码，不从 GOPROXY 服务器上去获取，全部通过传统 VCS 方式，直接去原代码服务器上拉取；
+GONOSUMDB，可以让前缀匹配上的模块跳过安全性检查；
+GOPRIVATE，相当于前面两个环境变量的集合，配置了 GOPRIVATE 就相当于把前面的两个环境变量一起配置了；
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+Windows
+
+  設定系統變數
+
+GO111MODULE = on
+GOPRIVATE = git server host
+
+
+
+
+
+
+
+
+
+
+
+
+MacOS
+
+  
+vim ~/.zshrc
+加上下面兩行
+
+export GO111MODULE=on
+export GOPRIVATE={git server host}
+
+
+source ~/.zshrc
+
+
+
+
+
+
+
+
+
+
+
+
+  設定 Go Mod
+  
+    
+    Link to heading
+  
+
+
+go mod init &ldquo;your project&rdquo;
+go mod tidy
+第一次加入 plugin go get "your plugin"
+更新 plugin go get -u "your plugin"
+
+
+  語法與指令
+  
+    
+    Link to heading
+  
+
+
+How can I &ldquo;go run&rdquo; a project with multiple files in the main package? : go run .
+使用 json:"omitempty" 會跳出 struct field xxx repeats json tag &ldquo;omitempty&rdquo; also at&mldr; 應該是把它認成 name 所以才會重複，改成 json:",omitempty" 就可以
+go get xxx 遇到 panic: internal error: net token acquired but not released 時請更新 go 版本。我從 1.21.0 升到 1.21.5 就解決了
+'><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="golang 開發備忘"><meta name=twitter:description content='最近在新團隊開始使用 golang，備份一下可能會踩的雷。
+環境建置前 Link to heading GO111MODULE 設定成 ON 將公司 git server 設定到 GOPRIVATE。 其中這篇 私有化仓库的 GO 模块使用实践 有整理以下變數說明：
+GONOPROXY，基于前缀的匹配方式运行，上图中指定了gitlab.com，也就是所有 gitlab.com 上的代码，不从 GOPROXY 服务器上去获取，全部通过传统 VCS 方式，直接去原代码服务器上拉取； GONOSUMDB，可以让前缀匹配上的模块跳过安全性检查； GOPRIVATE，相当于前面两个环境变量的集合，配置了 GOPRIVATE 就相当于把前面的两个环境变量一起配置了； Windows 設定系統變數
+GO111MODULE = on GOPRIVATE = git server host MacOS vim ~/.zshrc 加上下面兩行 export GO111MODULE=on export GOPRIVATE={git server host} source ~/.zshrc 設定 Go Mod Link to heading go mod init “your project” go mod tidy 第一次加入 plugin go get "your plugin" 更新 plugin go get -u "your plugin" 語法與指令 Link to heading How can I “go run” a project with multiple files in the main package? : go run . 使用 json:"omitempty" 會跳出 struct field xxx repeats json tag “omitempty” also at… 應該是把它認成 name 所以才會重複，改成 json:",omitempty" 就可以 go get xxx 遇到 panic: internal error: net token acquired but not released 時請更新 go 版本。我從 1.21.0 升到 1.21.5 就解決了'><meta property="og:url" content="https://hsinjungwu.github.io/posts/golang_dev_note/"><meta property="og:site_name" content="FR4NK 乾一杯 🍻"><meta property="og:title" content="golang 開發備忘"><meta property="og:description" content='最近在新團隊開始使用 golang，備份一下可能會踩的雷。
+環境建置前 Link to heading GO111MODULE 設定成 ON 將公司 git server 設定到 GOPRIVATE。 其中這篇 私有化仓库的 GO 模块使用实践 有整理以下變數說明：
+GONOPROXY，基于前缀的匹配方式运行，上图中指定了gitlab.com，也就是所有 gitlab.com 上的代码，不从 GOPROXY 服务器上去获取，全部通过传统 VCS 方式，直接去原代码服务器上拉取； GONOSUMDB，可以让前缀匹配上的模块跳过安全性检查； GOPRIVATE，相当于前面两个环境变量的集合，配置了 GOPRIVATE 就相当于把前面的两个环境变量一起配置了； Windows 設定系統變數
+GO111MODULE = on GOPRIVATE = git server host MacOS vim ~/.zshrc 加上下面兩行 export GO111MODULE=on export GOPRIVATE={git server host} source ~/.zshrc 設定 Go Mod Link to heading go mod init “your project” go mod tidy 第一次加入 plugin go get "your plugin" 更新 plugin go get -u "your plugin" 語法與指令 Link to heading How can I “go run” a project with multiple files in the main package? : go run . 使用 json:"omitempty" 會跳出 struct field xxx repeats json tag “omitempty” also at… 應該是把它認成 name 所以才會重複，改成 json:",omitempty" 就可以 go get xxx 遇到 panic: internal error: net token acquired but not released 時請更新 go 版本。我從 1.21.0 升到 1.21.5 就解決了'><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-11-17T10:20:00+08:00"><meta property="article:modified_time" content="2023-11-17T10:20:00+08:00"><meta property="article:tag" content="HowTo"><link rel=canonical href=https://hsinjungwu.github.io/posts/golang_dev_note/><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=stylesheet href=/kbd.min.ede294452924ed1c7fe8f864b4a95082f9f30ab56bad8316a0adc2aa57984f45.css integrity="sha256-7eKURSkk7Rx/6PhktKlQgvnzCrVrrYMWoK3CqleYT0U=" crossorigin=anonymous media=screen><link rel=stylesheet href=/table.min.2e07f8da4d6371fee43bd40fd819d2049e79564e705f950772336f415383891a.css integrity="sha256-Lgf42k1jcf7kO9QP2BnSBJ55Vk5wX5UHcjNvQVODiRo=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-dark"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://hsinjungwu.github.io/>FR4NK 乾一杯 🍻
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/>Posts</a></li><li class=navigation-item><a class=navigation-link href=/tags/>Tags</a></li><li class=navigation-item><a class=navigation-link href=/pe/>Project Euler</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://hsinjungwu.github.io/posts/golang_dev_note/>golang 開發備忘</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
+<time datetime=2023-11-17T10:20:00+08:00>2023/11/17
+</time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
+One-minute read</span></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/howto/>HowTo</a></span></div></div></header><div class=post-content><p>最近在新團隊開始使用 golang，備份一下可能會踩的雷。</p><h2 id=環境建置前>環境建置前
+<a class=heading-link href=#%e7%92%b0%e5%a2%83%e5%bb%ba%e7%bd%ae%e5%89%8d><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ol><li><code>GO111MODULE</code> 設定成 <code>ON</code></li><li>將公司 git server 設定到 <code>GOPRIVATE</code>。</li></ol><p>其中這篇 <a href=https://juejin.cn/post/6977261480425029662 class=external-link target=_blank rel=noopener>私有化仓库的 GO 模块使用实践</a> 有整理以下變數說明：</p><blockquote><ul><li>GONOPROXY，基于前缀的匹配方式运行，上图中指定了gitlab.com，也就是所有 gitlab.com 上的代码，不从 GOPROXY 服务器上去获取，全部通过传统 VCS 方式，直接去原代码服务器上拉取；</li><li>GONOSUMDB，可以让前缀匹配上的模块跳过安全性检查；</li><li>GOPRIVATE，相当于前面两个环境变量的集合，配置了 GOPRIVATE 就相当于把前面的两个环境变量一起配置了；</li></ul></blockquote><div class="tabs tabs-right"><style>.tabs input#tab-0-0:checked~.tab-content-0-0{display:block}</style><input type=radio class=tab-input name=tab-select-0 id=tab-0-0 checked>
+<label for=tab-0-0 class=tab-label>Windows</label><div class="tab-content tab-content-0-0"><p>設定系統變數</p><ul><li><code>GO111MODULE</code> = <em>on</em></li><li><code>GOPRIVATE</code> = <em>git server host</em></li></ul></div><style>.tabs input#tab-0-1:checked~.tab-content-0-1{display:block}</style><input type=radio class=tab-input name=tab-select-0 id=tab-0-1>
+<label for=tab-0-1 class=tab-label>MacOS</label><div class="tab-content tab-content-0-1"><ol><li>vim ~/.zshrc</li><li>加上下面兩行<ul><li><code>export GO111MODULE=on</code></li><li><code>export GOPRIVATE={git server host}</code></li></ul></li><li>source ~/.zshrc</li></ol></div></div><h2 id=設定-go-mod>設定 Go Mod
+<a class=heading-link href=#%e8%a8%ad%e5%ae%9a-go-mod><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ol><li>go mod init &ldquo;your project&rdquo;</li><li>go mod tidy</li><li>第一次加入 plugin <code>go get "your plugin"</code></li><li>更新 plugin <code>go get -u "your plugin"</code></li></ol><h2 id=語法與指令>語法與指令
+<a class=heading-link href=#%e8%aa%9e%e6%b3%95%e8%88%87%e6%8c%87%e4%bb%a4><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ol><li><a href=https://stackoverflow.com/questions/28081486/how-can-i-go-run-a-project-with-multiple-files-in-the-main-package class=external-link target=_blank rel=noopener>How can I &ldquo;go run&rdquo; a project with multiple files in the main package?</a> : <code>go run .</code></li><li>使用 <code>json:"omitempty"</code> 會跳出 <em>struct field xxx repeats json tag &ldquo;omitempty&rdquo; also at&mldr;</em> 應該是把它認成 <em>name</em> 所以才會重複，改成 <code>json:",omitempty"</code> 就可以</li><li>go get xxx 遇到 <code>panic: internal error: net token acquired but not released</code> 時請更新 go 版本。我從 <em>1.21.0</em> 升到 <em>1.21.5</em> 就解決了</li></ol></div><footer></footer></article><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></section></div><footer class=footer><section class=container>©
+2020 -
+2025
+法蘭克🤪 + 陳馬尼🐶
+·
+Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.</section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
